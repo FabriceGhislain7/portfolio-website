@@ -23,7 +23,7 @@ Personal portfolio website built with **HTML5**, **CSS3**, and **vanilla JavaScr
 
 ## Live Demo
 
-View the portfolio at: **[Portfolio Website](https://fabriceghislain7.github.io/portfolio/)**
+View the portfolio at: **[Portfolio Website](https://fabriceghislain7.github.io/portfolio-website/)**
 
 ## Technology Stack
 
