@@ -8,11 +8,11 @@
       "level": 85,
       "description": "Sviluppo di applicazioni web scalabili e API RESTful con Python",
       "technologies": [
-        { "name": "Python", "level": 95 },
-        { "name": "Django", "level": 90 },
-        { "name": "Flask", "level": 85 },
-        { "name": "FastAPI", "level": 75 },
-        { "name": "Streamlit", "level": 80 }
+        { "name": "Python", "level": 70 },
+        { "name": "Django", "level": 60 },
+        { "name": "Flask", "level": 70 },
+        { "name": "FastAPI", "level": 20 },
+        { "name": "Streamlit", "level": 50 }
       ],
       "tags": ["Python", "Django", "Flask", "FastAPI", "Streamlit", "REST API"],
       "projects": ["pizzamama-django", "portfolio-backend"],
