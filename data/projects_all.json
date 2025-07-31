@@ -1,11 +1,10 @@
 {
   "projects": [
     {
-      "_comment": "PRIMO PROGETTO: PIZZAMAMA DJANGO",
       "id": "pizzamama-django",
       "title": "PizzaMama Django",
       "description": "Applicazione web full-stack per la gestione di un ristorante pizzeria, sviluppata con Django framework. Include sistema di autenticazione utenti, gestione ordini, interfaccia admin e design responsive.",
-      "image": "assets/images/projects/pizzamama-icone.jpg",
+      "image": "assets/images/projects/pizzamama.jpg",
       "category": "web",
       "status": "completed",
       "featured": true,
@@ -26,7 +25,7 @@
         "Sistema di validazione form"
       ],
       "links": {
-        "github": "https://github.com/FabriceGhislain7/python-dev-portfolio/tree/main/pizzamama",
+        "github": "https://github.com/FabriceGhislain7/python-dev-portfolio/tree/main/web_projects/PizzaMamaDjango/pizzamama",
         "live": "#",
         "demo": "#"
       },
@@ -50,7 +49,6 @@
     },
 
     {
-      "_comment":"SECONDO PROGETTO: WEBSITE-PORTFOLIO",
       "id": "portfolio-website",
       "title": "Portfolio Website",
       "description": "Portfolio personale moderno e responsive sviluppato con HTML, CSS e JavaScript vanilla. Include sezioni dinamiche, tema scuro/chiaro, animazioni smooth e caricamento dati da JSON.",
@@ -75,7 +73,7 @@
       ],
       "links": {
         "github": "https://github.com/FabriceGhislain7/portfolio-website",
-        "live": "https://fabriceghislain7.github.io/portfolio-website/",
+        "live": "#",
         "demo": "#"
       },
       "date_created": "2025-01-15",
@@ -98,11 +96,10 @@
     },
 
     {
-      "_comment":"TERZO PROGETTO TESI: MACHINE LEARNING & DATA ANALYSIS ON HETEROGENEOUS COVID'S DATASET",
       "id": "thesis-ml-project",
-      "title": "Relationship and Dimensionality Reduction in Heterogeneous Datasets",
+      "title": "Analisi Dimensionalità Dataset Eterogenei",
       "description": "Progetto di tesi magistrale focalizzato sull'applicazione di tecniche di machine learning per l'analisi delle relazioni e riduzione dimensionalità in dataset complessi ed eterogenei.",
-      "image": "assets/images/projects/DA_ML_covid.jpg",
+      "image": "assets/images/projects/demo-data.jpg",
       "category": "data",
       "status": "completed",
       "featured": true,
@@ -147,74 +144,50 @@
     },
 
     {
-      "_comment":"QUARTO PROGETTO: MACHINE LEARNING & DATA ANALYSIS OF TITANIC",
-      "id": "titanic-ml-analysis",
-      "title": "Titanic Survival Prediction - Machine Learning Analysis",
-      "description": "Analisi completa di Machine Learning per predire la sopravvivenza dei passeggeri del Titanic. Include data analysis esplorativa, feature engineering avanzato, multiple algoritmi ML, ensemble methods e dashboard interattiva con Streamlit.",
-      "image": "assets/images/projects/Titanic_DA_ML3.jpg",
-      "category": "machine-learning",
-      "status": "completed",
-      "featured": true,
+      "id": "iot-monitoring-system",
+      "title": "Sistema Monitoraggio IoT",
+      "description": "Sistema IoT per monitoraggio ambientale sviluppato con Raspberry Pi e sensori. Include raccolta dati in tempo reale, dashboard web per visualizzazione e allerte automatiche.",
+      "image": "assets/images/projects/demo-iot.jpg",
+      "category": "iot",
+      "status": "in_progress",
+      "featured": false,
       "technologies": [
+        "Raspberry Pi",
         "Python",
-        "Pandas",
-        "Scikit-learn",
-        "Streamlit",
-        "Matplotlib",
-        "Seaborn",
-        "Jupyter Notebook",
-        "NumPy"
+        "MQTT",
+        "Sensors",
+        "SQLite",
+        "Flask"
       ],
       "features": [
-        "Exploratory Data Analysis completa",
-        "Feature Engineering avanzato con title extraction",
-        "Multiple ML algorithms (Random Forest, SVM, Logistic Regression)",
-        "Hyperparameter tuning con GridSearchCV",
-        "Ensemble methods e Voting Classifier",
-        "Dashboard interattiva Streamlit multi-page",
-        "Cross-validation stratificata 10-fold",
-        "Model interpretation e feature importance analysis",
-        "Learning curves e bias-variance analysis",
-        "Automated EDA con Sweetviz e Pandas Profiling",
-        "Link diretti a Google Colab notebooks",
-        "Performance metrics: 83.79% accuracy, 0.8567 ROC-AUC"
+        "Monitoraggio temperatura e umidità",
+        "Comunicazione MQTT real-time",
+        "Dashboard web responsive",
+        "Sistema allerte email/SMS",
+        "Storico dati con grafici",
+        "API REST per integrazione"
       ],
       "links": {
-        "github": "https://github.com/tuousername/titanic-ml-analysis",
-        "documentation": "https://github.com/tuousername/titanic-ml-analysis/blob/main/README.md"
+        "github": "#",
+        "documentation": "#"
       },
-      "date_created": "2025-07-15",
-      "date_updated": "2025-07-30",
-      "duration": "2 settimane",
+      "date_created": "2025-03-01",
+      "date_updated": "2025-01-24",
+      "duration": "In corso",
       "team_size": 1,
-      "role": "Data Scientist / ML Engineer",
+      "role": "IoT Developer",
       "challenges": [
-        "Gestione missing values strategica per evitare data leakage",
-        "Feature engineering creativo basato su domain knowledge storico",
-        "Bilanciamento bias-variance per generalizzazione ottimale",
-        "Integrazione seamless tra analisi esplorativa e predittiva",
-        "Ottimizzazione ensemble methods per performance superiori"
+        "Integrazione hardware-software",
+        "Gestione connettività di rete",
+        "Ottimizzazione consumo energetico"
       ],
       "learnings": [
-        "Advanced feature engineering techniques",
-        "Ensemble methods e model stacking",
-        "Cross-validation strategies per small datasets",
-        "Model interpretation e explainable AI",
-        "End-to-end ML pipeline development",
-        "Professional data science workflow",
-        "Streamlit multi-page applications"
+        "Programmazione embedded",
+        "Protocolli IoT (MQTT)",
+        "Integrazione sensori"
       ],
-      "tags": [
-        "Machine Learning",
-        "Data Science", 
-        "Feature Engineering",
-        "Ensemble Methods",
-        "Streamlit",
-        "Classification",
-        "Python",
-        "Scikit-learn"
-      ],
-      "priority": 5
+      "tags": ["IoT", "Raspberry Pi", "Python", "MQTT", "Sensors", "Real-time"],
+      "priority": 4
     },
 
     {

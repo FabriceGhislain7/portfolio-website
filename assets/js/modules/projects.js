@@ -549,13 +549,15 @@ function createProjectHTML(project) {
             <div class="project-content">
                 <h3 class="project-title">${project.title}</h3>
                 <p class="project-description">${project.description}</p>
-                
+
+                <!--Tecnologie del progetto-->
                 <div class="project-technologies">
                     ${project.technologies.map(tech => `
                         <span class="tech-tag">${tech}</span>
                     `).join('')}
                 </div>
-                
+
+                <!--footer del progetto-->
                 <div class="project-footer">
                     <div class="project-links">
                         ${project.links.github ? `
