@@ -975,3 +975,24 @@
         border: 1px solid #000;
     }
 }
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.project-links a:hover {
+    transform: scale(1.1); /* meno aggressivo = meno tremolio */
+}
+
+.project-links a img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}

@@ -111,7 +111,7 @@ Carica e gestisce la sezione progetti
                         <div class="project-links">
                             ${project.links.github ? `
                                 <a href="${project.links.github}" class="project-link" target="_blank" rel="noopener" title="Codice GitHub">
-                                    <i class="fab fa-github"></i>
+                                    <i class="fa-brands fa-github"></i>
                                 </a>
                             ` : ''}
                             ${project.links.live ? `
@@ -125,7 +125,7 @@ Carica e gestisce la sezione progetti
                             Dettagli
                         </button>
                     </div>
-                    ${project.featured ? '<div class="project-featured-badge">In Evidenza</div>' : ''}
+
                     <div class="project-status" style="background-color: ${statusInfo.color};">
                         <i class="${statusInfo.icon}"></i>
                         <span>${statusInfo.label}</span>
