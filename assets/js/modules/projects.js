@@ -1,6 +1,6 @@
 /*
 ===========================================
-PROJECTS MODULE
+PROJECTS MODULE - OTTIMIZZATO
 ===========================================
 Carica e gestisce la sezione progetti
 */
@@ -58,13 +58,8 @@ Carica e gestisce la sezione progetti
                 throw new Error('Invalid projects data format');
             }
 
-            // Ordina progetti per priorità e data
-            projectsData.projects.sort((a, b) => {
-                if (a.priority !== b.priority) {
-                    return a.priority - b.priority;
-                }
-                return new Date(b.date_updated) - new Date(a.date_updated);
-            });
+            // Ordina progetti per priorità
+            projectsData.projects.sort((a, b) => a.priority - b.priority);
 
             // Renderizza progetti
             renderProjects();
@@ -124,11 +119,6 @@ Carica e gestisce la sezione progetti
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             ` : ''}
-                            ${project.links.demo ? `
-                                <a href="${project.links.demo}" class="project-link" target="_blank" rel="noopener" title="Demo">
-                                    <i class="fas fa-play"></i>
-                                </a>
-                            ` : ''}
                         </div>
                         <button class="project-details-btn" onclick="window.ProjectsModule.showDetails('${project.id}')">
                             <i class="fas fa-info-circle"></i>
@@ -146,7 +136,6 @@ Carica e gestisce la sezione progetti
                     <div class="project-header">
                         <h3 class="project-title">${project.title}</h3>
                         <div class="project-meta">
-                            <span class="project-date">${formatDate(project.date_updated)}</span>
                             <span class="project-duration">${project.duration}</span>
                         </div>
                     </div>
@@ -160,25 +149,6 @@ Carica e gestisce la sezione progetti
                         ${project.technologies.length > 4 ? `
                             <span class="tech-more">+${project.technologies.length - 4}</span>
                         ` : ''}
-                    </div>
-                    
-                    <div class="project-footer">
-                        <div class="project-stats">
-                            <span class="stat-item">
-                                <i class="fas fa-code"></i>
-                                ${project.technologies.length} tech
-                            </span>
-                            <span class="stat-item">
-                                <i class="fas fa-calendar"></i>
-                                ${project.duration}
-                            </span>
-                            ${project.team_size > 1 ? `
-                                <span class="stat-item">
-                                    <i class="fas fa-users"></i>
-                                    ${project.team_size} membri
-                                </span>
-                            ` : ''}
-                        </div>
                     </div>
                 </div>
             </div>
@@ -329,16 +299,7 @@ Carica e gestisce la sezione progetti
                         
                         <div class="project-meta-full">
                             <div class="meta-item">
-                                <strong>Ruolo:</strong> ${project.role}
-                            </div>
-                            <div class="meta-item">
                                 <strong>Durata:</strong> ${project.duration}
-                            </div>
-                            <div class="meta-item">
-                                <strong>Team:</strong> ${project.team_size} ${project.team_size === 1 ? 'persona' : 'persone'}
-                            </div>
-                            <div class="meta-item">
-                                <strong>Ultimo aggiornamento:</strong> ${formatDate(project.date_updated)}
                             </div>
                         </div>
                         
@@ -353,12 +314,6 @@ Carica e gestisce la sezione progetti
                                 <a href="${project.links.live}" class="btn btn-secondary" target="_blank" rel="noopener">
                                     <i class="fas fa-external-link-alt"></i>
                                     Sito Live
-                                </a>
-                            ` : ''}
-                            ${project.links.demo ? `
-                                <a href="${project.links.demo}" class="btn btn-outline" target="_blank" rel="noopener">
-                                    <i class="fas fa-play"></i>
-                                    Demo
                                 </a>
                             ` : ''}
                         </div>
@@ -495,15 +450,6 @@ Carica e gestisce la sezione progetti
         return projectsData.project_status[status] || { label: status, color: '#6b7280', icon: 'fas fa-circle' };
     }
 
-    function formatDate(dateString) {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('it-IT', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-    }
-
     function truncateText(text, maxLength) {
         if (text.length <= maxLength) return text;
         return text.substr(0, maxLength) + '...';
@@ -532,55 +478,5 @@ Carica e gestisce la sezione progetti
     } else {
         init();
     }
-
-    // Cerca questa funzione e sostituiscila COMPLETAMENTE
-function createProjectHTML(project) {
-    return `
-        <div class="project-card" data-category="${project.category}">
-            <div class="project-image">
-                <img src="${project.image}" alt="${project.title}" loading="lazy">
-                <div class="project-overlay">
-                    <div class="project-status ${project.status}">
-                        ${getStatusLabel(project.status)}
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-content">
-                <h3 class="project-title">${project.title}</h3>
-                <p class="project-description">${project.description}</p>
-
-                <!--Tecnologie del progetto-->
-                <div class="project-technologies">
-                    ${project.technologies.map(tech => `
-                        <span class="tech-tag">${tech}</span>
-                    `).join('')}
-                </div>
-
-                <!--footer del progetto-->
-                <div class="project-footer">
-                    <div class="project-links">
-                        ${project.links.github ? `
-                            <a href="${project.links.github}" class="project-link" target="_blank" rel="noopener">
-                                <i class="fa-brands fa-github"></i>
-                                <span>GitHub</span>
-                            </a>
-                        ` : ''}
-                        ${project.links.live ? `
-                            <a href="${project.links.live}" class="project-link" target="_blank" rel="noopener">
-                                <i class="fa-solid fa-external-link-alt"></i>
-                                <span>Demo</span>
-                            </a>
-                        ` : ''}
-                    </div>
-                    
-                    <div class="project-meta">
-                        <span>${project.duration || 'N/A'}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-}
 
 })();

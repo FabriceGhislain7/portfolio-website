@@ -1,316 +1,84 @@
 {
   "education": [
     {
-      "id": "master-cs",
-      "type": "degree",
-      "institution": "Università di Genova",
-      "degree": "Laurea Magistrale in Informatica",
-      "field": "Computer Science - Machine Learning Track",
-      "location": "Genova, Italia",
-      "startDate": "2020-09",
-      "endDate": "2023-07",
-      "status": "completed",
-      "grade": "110/110",
-      "description": "Specializzazione in Machine Learning, Deep Learning e Intelligenza Artificiale. Tesi magistrale su algoritmi di apprendimento automatico per l'analisi di dati complessi.",
-      "courses": [
-        "Advanced Machine Learning",
-        "Deep Learning and Neural Networks",
-        "Natural Language Processing",
-        "Computer Vision",
-        "Big Data Analytics",
-        "Advanced Algorithms",
-        "Software Engineering",
-        "Database Systems"
-      ],
-      "thesis": {
-        "title": "Machine Learning Algorithms for Complex Data Analysis",
-        "supervisor": "Prof. Marco Rossi",
-        "grade": "110/110 con Lode",
-        "description": "Ricerca sull'applicazione di algoritmi di machine learning per l'analisi di dataset complessi e multidimensionali."
-      },
-      "achievements": [
-        "Borsa di studio per merito accademico",
-        "Progetto vincitore al Google AI Challenge 2022",
-        "Pubblicazione paper su conference internazionale"
-      ],
-      "skills": ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy"],
-      "icon": "fas fa-graduation-cap",
-      "color": "#2563eb"
+      "id": "python-programmer-fire",
+      "type": "course",
+      "institution": "Ente F.IRE - Regione Liguria",
+      "degree": "Python Programmer & Developer",
+      "startDate": "2025-03",
+      "status": "in_progress",
+      "description": "Programma intensivo di 600 ore focalizzato su sviluppo Python avanzato, sistemi IoT e applicazioni AI per l'industria 4.0.",
+      "skills": ["Python", "IoT", "AI", "Industry 4.0"],
+      "icon": "fas fa-code",
+      "color": "#3b82f6"
     },
     {
-      "id": "bachelor-cs",
+      "id": "python-developer-udemy",
+      "type": "course",
+      "institution": "Udemy",
+      "degree": "Python Developer - Corso Completo",
+      "startDate": "2024-08",
+      "status": "active",
+      "description": "Formazione completa in sviluppo Python moderno, dai fondamenti alle applicazioni avanzate con focus su ingegneria del software e sviluppo web.",
+      "skills": ["Django", "Kivy", "Database", "Web Development"],
+      "icon": "fas fa-laptop-code",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "master-physics",
       "type": "degree",
       "institution": "Università di Genova",
-      "degree": "Laurea Triennale in Informatica",
-      "field": "Computer Science",
-      "location": "Genova, Italia",
-      "startDate": "2017-09",
-      "endDate": "2020-07",
+      "degree": "Master in Fisica Applicata",
+      "startDate": "2020-09",
+      "endDate": "2024-03",
       "status": "completed",
-      "grade": "108/110",
-      "description": "Formazione di base in informatica con focus su programmazione, algoritmi e strutture dati. Sviluppo di solide competenze in Python e sviluppo software.",
-      "courses": [
-        "Programmazione I & II (Python/Java)",
-        "Algoritmi e Strutture Dati",
-        "Basi di Dati",
-        "Sistemi Operativi",
-        "Reti di Calcolatori",
-        "Ingegneria del Software",
-        "Matematica Discreta",
-        "Calcolo e Statistica"
-      ],
-      "thesis": {
-        "title": "Sistema di Gestione Progetti con Python e Django",
-        "supervisor": "Prof. Anna Bianchi",
-        "grade": "110/110",
-        "description": "Sviluppo di un'applicazione web per la gestione di progetti utilizzando Python, Django e PostgreSQL."
-      },
-      "achievements": [
-        "Media voti superiore al 27/30",
-        "Miglior progetto di gruppo anno accademico 2019/2020",
-        "Tutor per studenti del primo anno"
-      ],
-      "skills": ["Python", "Java", "Django", "PostgreSQL", "Git", "Linux"],
-      "icon": "fas fa-university",
-      "color": "#059669"
+      "description": "Tesi: 'Relationship and Dimensionality Reduction in Heterogeneous Datasets' - Ricerca su tecniche di machine learning per l'analisi di dataset complessi.",
+      "skills": ["Machine Learning", "Data Analysis", "Research"],
+      "icon": "fas fa-graduation-cap",
+      "color": "#10b981"
+    },
+    {
+      "id": "bachelor-physics",
+      "type": "degree",
+      "institution": "Università di Yaoundé I",
+      "degree": "Laurea in Fisica",
+      "startDate": "2007-09",
+      "endDate": "2017-07",
+      "status": "completed",
+      "description": "Formazione in fisica teorica e sperimentale con basi matematiche avanzate. Focus su metodologia scientifica e problem-solving analitico.",
+      "skills": ["Physics", "Mathematics", "Research Methods"],
+      "icon": "fas fa-atom",
+      "color": "#8b5cf6"
     }
   ],
+
   "certifications": [
     {
-      "id": "aws-ml",
-      "name": "AWS Certified Machine Learning - Specialty",
-      "issuer": "Amazon Web Services",
-      "issueDate": "2023-09",
-      "expiryDate": "2026-09",
-      "credentialId": "AWS-MLS-2023-FGT-001",
-      "verificationUrl": "https://aws.amazon.com/verification",
-      "description": "Certificazione avanzata per l'implementazione e deployment di soluzioni ML su AWS.",
-      "skills": ["AWS", "SageMaker", "Machine Learning", "Cloud Computing"],
-      "icon": "fab fa-aws",
-      "color": "#ff9900"
-    },
-    {
-      "id": "python-institute",
-      "name": "PCPP-1 – Certified Professional in Python Programming",
-      "issuer": "Python Institute",
-      "issueDate": "2023-06",
-      "expiryDate": null,
-      "credentialId": "PCPP1-2023-FGT-789",
-      "verificationUrl": "https://pythoninstitute.org/verification",
-      "description": "Certificazione professionale avanzata in programmazione Python, covering advanced topics and best practices.",
-      "skills": ["Python", "Advanced Programming", "Software Architecture", "Testing"],
+      "id": "python-developer-udemy",
+      "name": "Développeur Python",
+      "issuer": "Udemy - Jonathan Roux",
+      "status": "in_progress",
+      "year": "2024",
       "icon": "fab fa-python",
       "color": "#3776ab"
     },
     {
-      "id": "tensorflow-developer",
-      "name": "TensorFlow Developer Certificate",
-      "issuer": "Google",
-      "issueDate": "2023-03",
-      "expiryDate": "2026-03",
-      "credentialId": "TF-DEV-2023-FGT-456",
-      "verificationUrl": "https://developers.google.com/certification/verify",
-      "description": "Certificazione per sviluppatori TensorFlow che dimostra competenze nella costruzione e training di modelli ML.",
-      "skills": ["TensorFlow", "Keras", "Deep Learning", "Neural Networks"],
-      "icon": "fas fa-brain",
-      "color": "#ff6f00"
+      "id": "tecnico-programmatore",
+      "name": "Tecnico Programmatore",
+      "issuer": "Ente F.IRE - Regione Liguria",
+      "status": "in_progress",
+      "year": "2025",
+      "icon": "fas fa-industry",
+      "color": "#059669"
     },
     {
-      "id": "docker-certified",
-      "name": "Docker Certified Associate",
-      "issuer": "Docker Inc.",
-      "issueDate": "2022-11",
-      "expiryDate": "2025-11",
-      "credentialId": "DCA-2022-FGT-123",
-      "verificationUrl": "https://docker.com/certification/verify",
-      "description": "Certificazione che dimostra competenze nell'uso di Docker per containerizzazione e deployment di applicazioni.",
-      "skills": ["Docker", "Containerization", "DevOps", "Kubernetes"],
-      "icon": "fab fa-docker",
-      "color": "#0db7ed"
-    }
-  ],
-  "courses": [
-    {
-      "id": "deeplearning-ai",
-      "name": "Deep Learning Specialization",
-      "provider": "deeplearning.ai (Coursera)",
-      "instructor": "Andrew Ng",
-      "completionDate": "2023-05",
-      "duration": "4 mesi",
-      "certificate": "https://coursera.org/verify/specialization/DEEPLEARN2023FGT",
-      "description": "Specializzazione completa in Deep Learning covering neural networks, CNN, RNN, and advanced topics.",
-      "modules": [
-        "Neural Networks and Deep Learning",
-        "Improving Deep Neural Networks",
-        "Structuring Machine Learning Projects",
-        "Convolutional Neural Networks",
-        "Sequence Models"
-      ],
-      "skills": ["Deep Learning", "TensorFlow", "Keras", "CNN", "RNN", "LSTM"],
-      "grade": "98.5%",
-      "icon": "fas fa-certificate",
-      "color": "#0056d3"
-    },
-    {
-      "id": "mlops-course",
-      "name": "Machine Learning Operations (MLOps)",
-      "provider": "Google Cloud Training",
-      "instructor": "Google Cloud Team",
-      "completionDate": "2023-08",
-      "duration": "6 settimane",
-      "certificate": "https://googlecloud.com/verify/MLOPS2023FGT",
-      "description": "Corso pratico su MLOps, deployment di modelli ML, monitoring e lifecycle management.",
-      "modules": [
-        "ML Pipelines with Google Cloud",
-        "Model Monitoring and Management",
-        "Continuous Integration for ML",
-        "Production ML Systems",
-        "ML Infrastructure Design"
-      ],
-      "skills": ["MLOps", "Google Cloud", "Kubeflow", "CI/CD", "Model Deployment"],
-      "grade": "95%",
-      "icon": "fas fa-cloud",
-      "color": "#4285f4"
-    },
-    {
-      "id": "django-advanced",
-      "name": "Advanced Django Development",
-      "provider": "Real Python",
-      "instructor": "Real Python Team",
-      "completionDate": "2022-12",
-      "duration": "8 settimane",
-      "certificate": "https://realpython.com/certificates/DJANGO2022FGT",
-      "description": "Corso avanzato su Django per lo sviluppo di applicazioni web scalabili e performanti.",
-      "modules": [
-        "Advanced Django Models",
-        "Django REST Framework",
-        "Performance Optimization",
-        "Security Best Practices",
-        "Testing and Deployment"
-      ],
-      "skills": ["Django", "Django REST Framework", "PostgreSQL", "Redis", "Celery"],
-      "grade": "97%",
-      "icon": "fas fa-code",
-      "color": "#092e20"
-    }
-  ],
-  "skills_timeline": [
-    {
-      "year": 2017,
-      "milestone": "Inizio studi universitari",
-      "skills": ["Python Basics", "Java", "HTML/CSS"]
-    },
-    {
-      "year": 2018,
-      "milestone": "Primo anno completato",
-      "skills": ["Data Structures", "Algorithms", "SQL", "Git"]
-    },
-    {
-      "year": 2019,
-      "milestone": "Specializzazione in sviluppo web",
-      "skills": ["Django", "JavaScript", "PostgreSQL", "Linux"]
-    },
-    {
-      "year": 2020,
-      "milestone": "Laurea Triennale conseguita",
-      "skills": ["Software Engineering", "Project Management", "Docker"]
-    },
-    {
-      "year": 2021,
-      "milestone": "Focus su Machine Learning",
-      "skills": ["Machine Learning", "Pandas", "NumPy", "Scikit-learn"]
-    },
-    {
-      "year": 2022,
-      "milestone": "Deep Learning mastery",
-      "skills": ["TensorFlow", "PyTorch", "Keras", "Computer Vision", "NLP"]
-    },
-    {
-      "year": 2023,
-      "milestone": "Laurea Magistrale e certificazioni",
-      "skills": ["MLOps", "AWS", "Advanced ML", "Production Systems"]
-    }
-  ],
-  "academic_projects": [
-    {
-      "id": "thesis-ml",
-      "title": "Advanced ML Algorithms for Healthcare Data",
-      "type": "Master's Thesis",
-      "year": 2023,
-      "description": "Ricerca e sviluppo di algoritmi di machine learning per l'analisi di dati sanitari, con focus su predizione di outcomes clinici.",
-      "technologies": ["Python", "TensorFlow", "Scikit-learn", "Pandas", "Matplotlib"],
-      "github": "https://github.com/FabriceGhislain7/master-thesis-ml",
-      "achievements": ["Pubblicazione su journal internazionale", "110/110 con Lode"]
-    },
-    {
-      "id": "nlp-sentiment",
-      "title": "Sentiment Analysis System for Social Media",
-      "type": "University Project",
-      "year": 2022,
-      "description": "Sistema di analisi del sentiment per social media utilizzando tecniche di NLP e deep learning.",
-      "technologies": ["Python", "NLTK", "spaCy", "BERT", "FastAPI"],
-      "github": "https://github.com/FabriceGhislain7/nlp-sentiment-analysis",
-      "achievements": ["Miglior progetto del corso", "Demo presentata alla conferenza studentesca"]
-    },
-    {
-      "id": "portfolio-manager",
-      "title": "Intelligent Portfolio Management System",
-      "type": "Bachelor's Thesis",
-      "year": 2020,
-      "description": "Sistema di gestione progetti con AI per ottimizzazione delle risorse e predizione dei tempi.",
-      "technologies": ["Python", "Django", "PostgreSQL", "Redis", "Celery"],
-      "github": "https://github.com/FabriceGhislain7/portfolio-manager",
-      "achievements": ["110/110", "Proposta di brevetto software"]
-    }
-  ],
-  "languages": [
-    {
-      "language": "Italiano",
-      "level": "Madrelingua",
-      "certification": null
-    },
-    {
-      "language": "Inglese",
-      "level": "C1 Advanced",
-      "certification": "Cambridge Certificate in Advanced English (2022)"
-    },
-    {
-      "language": "Francese",
-      "level": "B2 Intermediate",
-      "certification": "DELF B2 (2021)"
-    },
-    {
-      "language": "Spagnolo",
-      "level": "A2 Elementary",
-      "certification": null
-    }
-  ],
-  "honors_awards": [
-    {
-      "title": "Borsa di Studio per Merito Accademico",
+      "id": "master-physics-degree",
+      "name": "Master's Degree in Applied Physics",
       "issuer": "Università di Genova",
-      "year": 2021,
-      "description": "Riconoscimento per eccellenza accademica durante il corso di Laurea Magistrale."
-    },
-    {
-      "title": "Google AI Challenge Winner",
-      "issuer": "Google",
-      "year": 2022,
-      "description": "Primo posto nella competizione nazionale per progetti di AI/ML innovativi."
-    },
-    {
-      "title": "Best Student Paper Award",
-      "issuer": "International Conference on Machine Learning Applications",
-      "year": 2023,
-      "description": "Riconoscimento per il miglior paper studentesco sulla conferenza ICMLA 2023."
+      "status": "completed",
+      "year": "2024",
+      "icon": "fas fa-graduation-cap",
+      "color": "#2563eb"
     }
-  ],
-  "metadata": {
-    "lastUpdated": "2024-07-25",
-    "version": "1.0",
-    "totalDegrees": 2,
-    "totalCertifications": 4,
-    "totalCourses": 3,
-    "totalProjects": 3
-  }
+  ]
 }
