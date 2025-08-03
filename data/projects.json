@@ -27,8 +27,8 @@
       ],
       "links": {
         "github": "https://github.com/FabriceGhislain7/python-dev-portfolio/tree/main/pizzamama",
-        "live": "#",
-        "demo": "#"
+        "live": "coming-soon.html",
+        "demo": "coming-soon.html"
       },
       "date_created": "2024-07-01",
       "date_updated": "2024-07-23",
@@ -123,9 +123,9 @@
         "Documentazione scientifica completa"
       ],
       "links": {
-        "github": "#",
-        "paper": "#",
-        "presentation": "#"
+        "github": "coming-soon.html",
+        "paper": "coming-soon.html",
+        "presentation": "coming-soon.html"
       },
       "date_created": "2023-09-01",
       "date_updated": "2024-03-15",
