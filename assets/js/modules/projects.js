@@ -306,7 +306,7 @@ Carica e gestisce la sezione progetti
                         <div class="project-links-full">
                             ${project.links.github ? `
                                 <a href="${project.links.github}" class="btn btn-primary" target="_blank" rel="noopener">
-                                    <i class="fab fa-github"></i>
+                                    <i class="fa-brands fa-github"></i>
                                     Codice GitHub
                                 </a>
                             ` : ''}

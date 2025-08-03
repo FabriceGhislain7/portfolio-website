@@ -152,7 +152,7 @@
       "title": "Titanic Survival Prediction - Machine Learning Analysis",
       "description": "Analisi completa di Machine Learning per predire la sopravvivenza dei passeggeri del Titanic. Include data analysis esplorativa, feature engineering avanzato, multiple algoritmi ML, ensemble methods e dashboard interattiva con Streamlit.",
       "image": "assets/images/projects/Titanic_DA_ML3.jpg",
-      "category": "machine-learning",
+      "category": "data",
       "status": "completed",
       "featured": true,
       "technologies": [
