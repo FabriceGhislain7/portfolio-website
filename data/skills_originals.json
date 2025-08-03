@@ -6,7 +6,7 @@
       "category": "development",
       "icon": "fas fa-server",
       "description": "Sviluppo di applicazioni web scalabili e API RESTful con Python",
-      "tags": ["Python", "Django", "Flask", "Streamlit", "REST API"]
+      "tags": ["Python", "Django", "Flask", "FastAPI", "Streamlit", "REST API"]
     },
     {
       "id": "frontend",
@@ -38,7 +38,7 @@
       "category": "development",
       "icon": "fas fa-desktop",
       "description": "Sviluppo di interfacce grafiche desktop e mobile con Python",
-      "tags": ["Kivy", "Streamlit", "Desktop UI", "Mobile UI"]
+      "tags": ["Kivy", "Tkinter", "PyQt", "Streamlit", "Desktop UI", "Mobile UI"]
     },
     {
       "id": "database",
@@ -46,7 +46,7 @@
       "category": "data",
       "icon": "fas fa-database",
       "description": "Progettazione e interazione con database relazionali e NoSQL",
-      "tags": ["SQLite", "MySQL", "SQLAlchemy", "ORM"]
+      "tags": ["SQLite", "PostgreSQL", "MySQL", "MongoDB", "SQLAlchemy", "ORM"]
     },
     {
       "id": "iot-systems",
@@ -54,7 +54,7 @@
       "category": "development",
       "icon": "fas fa-microchip",
       "description": "Sviluppo di sistemi IoT con Raspberry Pi e sensori",
-      "tags": ["IoT", "Raspberry Pi", "Industry 4.0"]
+      "tags": ["IoT", "Raspberry Pi", "Arduino", "MQTT", "Sensors", "Industry 4.0"]
     },
     {
       "id": "development-tools",
@@ -62,7 +62,7 @@
       "category": "tools",
       "icon": "fas fa-tools",
       "description": "Strumenti di sviluppo e ambienti per una programmazione efficace",
-      "tags": ["Git", "VS Code", "PyCharm", "Jupyter", "Anaconda"]
+      "tags": ["Git", "VS Code", "PyCharm", "Jupyter", "Anaconda", "Docker"]
     },
     {
       "id": "scientific-tools",
@@ -78,10 +78,10 @@
       "category": "development",
       "icon": "fas fa-plug",
       "description": "Integrazione e sviluppo di API REST e servizi web",
-      "tags": ["REST", "JSON", "API Design", "Web Scraping"]
+      "tags": ["REST", "JSON", "API Design", "Web Scraping", "OAuth", "JWT"]
     }
   ],
-
+  
   "categories": [
     {
       "id": "all",

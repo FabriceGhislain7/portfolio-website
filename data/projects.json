@@ -7,7 +7,7 @@
       "description": "Applicazione web full-stack per la gestione di un ristorante pizzeria, sviluppata con Django framework. Include sistema di autenticazione utenti, gestione ordini, interfaccia admin e design responsive.",
       "image": "assets/images/projects/pizzamama-icone.jpg",
       "category": "web",
-      "status": "completed",
+      "status": "in_progress",
       "featured": true,
       "technologies": [
         "Django",
@@ -56,7 +56,7 @@
       "description": "Portfolio personale moderno e responsive sviluppato con HTML, CSS e JavaScript vanilla. Include sezioni dinamiche, tema scuro/chiaro, animazioni smooth e caricamento dati da JSON.",
       "image": "assets/images/projects/website_portfolio.jpg",
       "category": "web",
-      "status": "in_progress",
+      "status": "completed",
       "featured": true,
       "technologies": [
         "HTML5",
@@ -104,7 +104,7 @@
       "description": "Progetto di tesi magistrale focalizzato sull'applicazione di tecniche di machine learning per l'analisi delle relazioni e riduzione dimensionalità in dataset complessi ed eterogenei.",
       "image": "assets/images/projects/DA_ML_covid.jpg",
       "category": "data",
-      "status": "completed",
+      "status": "in_progress",
       "featured": true,
       "technologies": [
         "MATLAB",
@@ -153,7 +153,7 @@
       "description": "Analisi completa di Machine Learning per predire la sopravvivenza dei passeggeri del Titanic. Include data analysis esplorativa, feature engineering avanzato, multiple algoritmi ML, ensemble methods e dashboard interattiva con Streamlit.",
       "image": "assets/images/projects/Titanic_DA_ML3.jpg",
       "category": "data",
-      "status": "completed",
+      "status": "in_progress",
       "featured": true,
       "technologies": [
         "Python",
@@ -221,7 +221,7 @@
       "id": "python-learning-journey",
       "title": "Python Learning Journey",
       "description": "Raccolta completa di progetti e esercizi Python dal corso Udemy, evoluzione da v1.0 a v12.0. Include automazione, web scraping, GUI applications e API integration.",
-      "image": "assets/images/projects/demo-game.jpg",
+      "image": "assets/images/projects/python_scripts.jpg",
       "category": "python",
       "status": "ongoing",
       "featured": false,
@@ -262,53 +262,6 @@
       ],
       "tags": ["Python", "Learning", "Portfolio", "Automation", "GUI"],
       "priority": 5
-    },
-
-    {
-      "id": "data-visualization-dashboard",
-      "title": "Dashboard Visualizzazione Dati",
-      "description": "Dashboard interattiva per analisi e visualizzazione dati sviluppata con Python e Streamlit. Include grafici dinamici, filtri interattivi e export report automatici.",
-      "image": "assets/images/projects/demo-data.jpg",
-      "category": "data",
-      "status": "completed",
-      "featured": false,
-      "technologies": [
-        "Python",
-        "Streamlit",
-        "Plotly",
-        "Pandas",
-        "NumPy",
-        "Matplotlib"
-      ],
-      "features": [
-        "Grafici interattivi con Plotly",
-        "Filtri dinamici multi-criterio",
-        "Upload file CSV/Excel",
-        "Export PDF/Excel automatico",
-        "Statistiche descriptive automatiche",
-        "Interface user-friendly"
-      ],
-      "links": {
-        "github": "#",
-        "demo": "#"
-      },
-      "date_created": "2024-10-01",
-      "date_updated": "2024-11-15",
-      "duration": "6 settimane",
-      "team_size": 1,
-      "role": "Data Analyst",
-      "challenges": [
-        "Performance con dataset grandi",
-        "UI/UX intuitiva per non-tecnici",
-        "Gestione formati file diversi"
-      ],
-      "learnings": [
-        "Streamlit per web apps",
-        "Plotly per visualizzazioni avanzate",
-        "Data processing ottimizzato"
-      ],
-      "tags": ["Data Science", "Streamlit", "Visualization", "Python", "Analytics"],
-      "priority": 6
     }
   ],
 
@@ -316,7 +269,7 @@
     {
       "id": "all",
       "name": "Tutti i Progetti",
-      "count": 6,
+      "count": 5,
       "color": "#6b7280"
     },
 

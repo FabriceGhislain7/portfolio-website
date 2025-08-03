@@ -215,11 +215,6 @@ class FiltersModule {
                         ${tags.length > 6 ? `<span class="skill-tag">+${tags.length - 6}</span>` : ''}
                     </div>
                 ` : ''}
-                
-                <div class="skill-footer">
-                    <div class="skill-experience">${skill.years_experience || 0} anni</div>
-                    <div class="skill-projects">${(skill.projects || []).length} progetti</div>
-                </div>
             </div>
         `;
     }
