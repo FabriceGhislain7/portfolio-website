@@ -180,8 +180,9 @@
         "Performance metrics: 83.79% accuracy, 0.8567 ROC-AUC"
       ],
       "links": {
-        "github": "https://github.com/tuousername/titanic-ml-analysis",
-        "documentation": "https://github.com/tuousername/titanic-ml-analysis/blob/main/README.md"
+        "github": "https://github.com/FabriceGhislain7/titanic-streamlit-dashboard",
+        "documentation": "https://github.com/tuousername/titanic-ml-analysis/blob/main/README.md",
+        "live":"https://titanic-app-dashboard-ogxxezhe82g8tggobo5l2n.streamlit.app/"
       },
       "date_created": "2025-07-15",
       "date_updated": "2025-07-30",
