@@ -181,7 +181,7 @@
       ],
       "links": {
         "github": "https://github.com/FabriceGhislain7/titanic-streamlit-dashboard",
-        "documentation": "https://github.com/tuousername/titanic-ml-analysis/blob/main/README.md",
+        "documentation": "#",
         "live":"https://titanic-app-dashboard-ogxxezhe82g8tggobo5l2n.streamlit.app/"
       },
       "date_created": "2025-07-15",
@@ -214,6 +214,271 @@
         "Classification",
         "Python",
         "Scikit-learn"
+      ],
+      "priority": 5
+    },
+
+    {
+      "_comment": "PROGETTO GDR WEB APP - GIOCO DI RUOLO FANTASY MULTIPLAYER",
+      "id": "gdr-web-app",
+      "title": "GDR Web App - Fantasy Role Playing Game",
+      "description": "Gioco di ruolo fantasy multiplayer sviluppato durante il corso 'Programmatore e Sviluppatore Python'. Un'applicazione web completa che permette ai giocatori di creare personaggi, esplorare ambienti, combattere nemici e gestire inventari in un mondo fantasy immersivo.",
+      "image": "assets/images/projects/gdr_web_app.jpg",
+      "category": "web",
+      "status": "completed",
+      "featured": true,
+      "technologies": [
+        "Python 3",
+        "Flask",
+        "SQLAlchemy",
+        "Marshmallow",
+        "HTML5",
+        "Bootstrap 5", 
+        "JavaScript",
+        "SQLite",
+        "Git",
+        "GitHub"
+      ],
+      "features": [
+        "Sistema di autenticazione utenti completo",
+        "Creazione personaggi con 3 classi uniche (Guerriero, Mago, Ladro)",
+        "Sistema inventario dinamico con oggetti specializzati",
+        "3 ambienti di gioco con modificatori specifici (Foresta, Vulcano, Palude)",
+        "Sistema di combattimento strategico turn-based",
+        "Missioni procedurali con nemici e ricompense",
+        "Sistema di progressione personaggi con level-up",
+        "Dashboard statistiche avanzate per personaggi e inventari",
+        "Interfaccia responsive Bootstrap 5",
+        "Architettura modulare con Blueprint Flask",
+        "Validazione dati con Marshmallow schemas",
+        "Sistema logging completo per debug e monitoring",
+        "Gestione crediti virtuali per economia di gioco",
+        "API REST per statistiche e dashboard dinamiche"
+      ],
+      "links": {
+        "github": "https://github.com/FabriceGhislain7/gdr-web-app",
+        "live": "https://gdr-web-app-1.onrender.com",
+        "documentation": "#"
+      },
+      "date_created": "2025-05-01",
+      "date_updated": "2025-08-08",
+      "duration": "3 mesi",
+      "team_size": "8 collaboratori",
+      "role": "Full-Stack Developer in Trainig",
+      "challenges": [
+        "Implementazione sistema di combattimento bilanciato con modificatori ambientali",
+        "Gestione sessioni multiplayer e stato di gioco persistente",
+        "Architettura modulare scalabile con separazione logica business/presentazione",
+        "Bilanciamento gameplay tra le diverse classi di personaggi",
+        "Ottimizzazione performance per gestione simultanea di più giocatori",
+        "Refactoring da funzioni individuali a classi organizzate per maintainability"
+      ],
+      "learnings": [
+        "Sviluppo web full-stack con Flask e architettura MVC",
+        "Game design e bilanciamento meccaniche di gioco",
+        "Collaborative development con Git workflow e code review",
+        "Database modeling per applicazioni gaming complesse",
+        "UI/UX design per applicazioni web interattive",
+        "Clean code principles e design patterns",
+        "Testing e debugging di applicazioni web multi-utente",
+        "Code refactoring e organizational patterns"
+      ],
+      "game_mechanics": {
+        "classes": [
+          {
+            "name": "Guerriero",
+            "hp": 130,
+            "attack": "20-100",
+            "recovery": "30 HP fissi",
+            "bonus_environment": "Foresta (+5 attacco)"
+          },
+          {
+            "name": "Mago", 
+            "hp": 80,
+            "attack": "0-90",
+            "recovery": "20% HP",
+            "bonus_environment": "Vulcano (+10 attacco)"
+          },
+          {
+            "name": "Ladro",
+            "hp": 120,
+            "attack": "10-85", 
+            "recovery": "10-40 HP",
+            "bonus_environment": "Foresta (+5 cura/turno)"
+          }
+        ],
+        "environments": [
+          "Foresta (Ambiente Equilibrato)",
+          "Vulcano (Ambiente Estremo)", 
+          "Palude (Ambiente Ostile)"
+        ],
+        "objects": [
+          "Pozione Rossa (Recupera +30 HP)",
+          "Bomba Acida (30 danni + bonus Vulcano)",
+          "Medaglione (Buff permanente +10 attacco)"
+        ]
+      },
+      "technical_highlights": [
+        "~3000+ linee di codice Python/HTML/JS",
+        "100+ commit Git con collaborative workflow",
+        "Architettura modulare con 5+ Blueprint Flask",
+        "Sistema validazione dati robusto con Marshmallow",
+        "Dashboard real-time con API REST e AJAX",
+        "Responsive design mobile-first con Bootstrap 5"
+      ],
+      "course_context": {
+        "program": "Programmatore e Sviluppatore Python",
+        "organization": "Ente F.IRE",
+        "funding": "FSE+ Regione Liguria",
+        "type": "Corso formativo in presenza",
+        "focus_areas": ["Python Programming", "Web Development", "IoT Systems", "AI Applications"]
+      },
+      "tags": [
+        "Python",
+        "Flask", 
+        "Game Development",
+        "Full-Stack",
+        "Multiplayer",
+        "Role Playing Game",
+        "Web Application",
+        "Bootstrap",
+        "SQLAlchemy",
+        "Collaborative Project"
+      ],
+      "priority": 4
+    },
+
+    {
+      "_comment": "GALAXY RUNNER - GIOCO SPAZIALE 3D CON KIVY",
+      "id": "galaxy-runner-kivy",
+      "title": "Galaxy Runner - Gioco Tunnel Spaziale 3D",
+      "description": "Gioco runner spaziale 3D ad alta velocità costruito con Kivy. Caratteristiche: generazione procedurale dinamica del percorso, trasformazioni prospettiche realistiche matematiche personalizzate, e supporto input multipiattaforma per dispositivi desktop e mobile con effetto tunnel immersivo.",
+      "image": "assets/images/projects/galaxy_runner.jpg",
+      "category": "gaming",
+      "status": "completed",
+      "featured": true,
+      "technologies": [
+        "Python 3.10",
+        "Kivy 2.3.1",
+        "Matematica NumPy",
+        "Motore 3D Personalizzato",
+        "Multipiattaforma",
+        "OpenGL",
+        "Sistema Audio",
+        "Git",
+        "GitHub",
+        "VS Code",
+        "Buildozer"
+      ],
+      "features": [
+        "Motore prospettiva 3D personalizzato con matematica punto di fuga",
+        "Controlli multipiattaforma fluidi (tastiera desktop + touch mobile)",
+        "Generazione procedurale dinamica percorso con posizionamento ostacoli intelligente",
+        "Sistema audio completo con musica di sottofondo ed effetti sonori",
+        "Stati gioco integrati con schermata iniziale e funzionalità game over",
+        "Rilevamento collisioni preciso tra nave giocatore e ostacoli procedurali",
+        "Interfaccia utente responsiva con layout adattivo per diverse risoluzioni",
+        "Architettura modulare con separazione chiara delle responsabilità",
+        "Sistema punteggio basato su distanza con aggiornamenti tempo reale",
+        "Performance ottimizzate a 60 FPS con rendering efficiente",
+        "Documentazione completa con best practices e riferimento API",
+        "Versione localizzata italiana per scopi educativi",
+        "Tipografia personalizzata con font a tema spaziale",
+        "Sistema trasformazioni matematiche avanzate per effetto tunnel 3D"
+      ],
+      "links": {
+        "github": "https://github.com/FabriceGhislain7/kivy-game-galaxy",
+        "live": "coming-soon.html",
+        "documentation": "https://github.com/FabriceGhislain7/kivy-game-galaxy/blob/main/API_REFERENCE.md#core-architecture"
+      },
+      "date_created": "2025-02-03",
+      "date_updated": "2025-08-10",
+      "duration": "2 settimane",
+      "team_size": "1 sviluppatore",
+      "role": "Sviluppatore Giochi e Ingegnere Matematica 3D",
+      "challenges": [
+        "Implementazione algoritmi trasformazione prospettica 3D da zero con matematica personalizzata",
+        "Ottimizzazione performance per rendering 60 FPS con oggetti multipli simultanei",
+        "Creazione sistema input multipiattaforma unificato per desktop e mobile",
+        "Bilanciamento meccaniche gioco per difficoltà progressiva e coinvolgimento giocatore",
+        "Architettura modulare scalabile con separazione pulita delle responsabilità",
+        "Gestione sistemi coordinate multipli (mondo, schermo, prospettiva)",
+        "Implementazione rilevamento collisioni preciso con algoritmi basati su vertici",
+        "Documentazione tecnica completa per trasformazioni matematiche"
+      ],
+      "learnings": [
+        "Matematica 3D avanzata e algoritmi trasformazione prospettica",
+        "Padronanza framework Kivy per sviluppo giochi multipiattaforma", 
+        "Progettazione architettura motore gioco con componenti modulari",
+        "Tecniche ottimizzazione performance per rendering tempo reale",
+        "Gestione input multipiattaforma e pattern design responsivo",
+        "Scrittura documentazione professionale e progettazione API",
+        "Gestione workflow Git con branch funzionalità",
+        "Strategie localizzazione codice per scopi educativi",
+        "Integrazione sistema audio e gestione suoni basata su stati",
+        "Modellazione matematica per effetti prospettiva 3D realistici"
+      ],
+      "game_mechanics": {
+        "classes": [
+          {
+            "name": "Sistema Prospettiva 3D",
+            "hp": "Punto di fuga dinamico",
+            "attack": "Trasformazione matematica personalizzata",
+            "recovery": "Curva pow(fattore_y, 4)",
+            "bonus_environment": "Ottimizzazione uscita anticipata"
+          },
+          {
+            "name": "Controlli Giocatore", 
+            "hp": "Input multipiattaforma",
+            "attack": "Tastiera + Touch responsivo",
+            "recovery": "Controllo velocità continua",
+            "bonus_environment": "Stop immediato al rilascio"
+          },
+          {
+            "name": "Generazione Procedurale",
+            "hp": "Algoritmo percorso intelligente",
+            "attack": "Direzioni casuali bilanciate", 
+            "recovery": "Eliminazione tessere ottimizzata",
+            "bonus_environment": "Prevenzione confini automatica"
+          }
+        ],
+        "environments": [
+          "Tunnel Spaziale 3D (Prospettiva Realistica)",
+          "Sistema Coordinate Mondo (Spazio Logico)", 
+          "Schermo Rendering (Spazio Visivo)"
+        ],
+        "objects": [
+          "Nave Giocatore (Triangolo controllo preciso)",
+          "Tessere Ostacoli (Quad procedurali)",
+          "Griglia Tunnel (Linee prospettiche dinamiche)"
+        ]
+      },
+      "technical_highlights": [
+        "~2000+ righe di codice Python con documentazione completa",
+        "Algoritmi matematici 3D personalizzati per prospettiva realistica",
+        "Architettura modulare con 6 file specializzati",
+        "Performance 60 FPS costanti con rendering efficiente",
+        "Compatibilità multipiattaforma (Windows, macOS, Linux, Android, iOS)",
+        "Documentazione professionale con riferimento API completo"
+      ],
+      "course_context": {
+        "program": "Apprendimento Autonomo Kivy",
+        "organization": "Progetto Personale",
+        "funding": "Autofinanziato",
+        "type": "Sviluppo giochi Python",
+        "focus_areas": ["Programmazione Python", "Sviluppo Giochi", "Matematica 3D", "Architettura Software"]
+      },
+      "tags": [
+        "Python",
+        "Kivy",
+        "Sviluppo Giochi", 
+        "Matematica 3D",
+        "Multipiattaforma",
+        "Gioco Spaziale",
+        "Generazione Procedurale",
+        "Ottimizzazione Performance",
+        "Progetto Educativo",
+        "Documentazione Tecnica"
       ],
       "priority": 5
     },
