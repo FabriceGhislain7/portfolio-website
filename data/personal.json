@@ -1,7 +1,7 @@
 {
   "personal_info": {
     "full_name": "Fabrice Ghislain Tebou",
-    "display_name": "Fabrice Tebou",
+    "display_name": "Fabrice Ghislain Tebou",
     "title": "Python Developer | AI/ML Enthusiast",
     "tagline": "Codice elegante, soluzioni intelligenti",
     "location": {
@@ -47,13 +47,15 @@
   ],
 
   "work_preferences": {
-    "employment_type": ["full-time", "contract", "freelance"],
+    "employment_type": ["full-time", "contract"],
     "work_arrangement": ["remote", "hybrid", "on-site"],
     "industry_preferences": [
       "Technology/Software",
-      "AI/Machine Learning", 
-      "Data Science/Analytics"
-    ],
+      "AI/Machine Learning",
+      "Data Analysis",
+      "Web Development",
+      "Data Science"
+        ],
     "location_preferences": ["Genova", "Milano", "Remote"]
   },
 
@@ -63,8 +65,8 @@
       "username": "FabriceGhislain7"
     },
     "linkedin": {
-      "url": "#",
-      "username": "fabrice-tebou"
+      "url": "https://www.linkedin.com/in/fabrice-ghislain-tebou-72000b211/",
+      "username": "Fabrice Ghislain Tebou"
     }
   }
 }

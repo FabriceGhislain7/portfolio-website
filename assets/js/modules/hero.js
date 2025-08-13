@@ -186,8 +186,6 @@ class HeroModule {
             'Python Developer',
             'AI/ML Enthusiast', 
             'Full Stack Developer',
-            'Data Scientist',
-            'IoT Developer'
         ];
         
         this.currentTextIndex = 0;

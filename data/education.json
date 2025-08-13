@@ -15,10 +15,11 @@
     {
       "id": "python-developer-udemy",
       "type": "course",
-      "institution": "Udemy",
-      "degree": "Python Developer - Corso Completo",
+      "institution": "Udemy- Jonathan Roux |IA ChatGPT | Python",
+      "degree": "Développeur Python - Formation Complète",
       "startDate": "2024-08",
-      "status": "active",
+      "endDate": "2025-08",
+      "status": "completed",
       "description": "Formazione completa in sviluppo Python moderno, dai fondamenti alle applicazioni avanzate con focus su ingegneria del software e sviluppo web.",
       "skills": ["Django", "Kivy", "Database", "Web Development"],
       "icon": "fas fa-laptop-code",
@@ -41,8 +42,7 @@
       "id": "bachelor-physics",
       "type": "degree",
       "institution": "Università di Yaoundé I",
-      "degree": "Laurea in Fisica",
-      "startDate": "2007-09",
+      "degree": "Laurea Trienale in Fisica",
       "endDate": "2017-07",
       "status": "completed",
       "description": "Formazione in fisica teorica e sperimentale con basi matematiche avanzate. Focus su metodologia scientifica e problem-solving analitico.",
@@ -55,10 +55,10 @@
   "certifications": [
     {
       "id": "python-developer-udemy",
-      "name": "Développeur Python",
-      "issuer": "Udemy - Jonathan Roux",
-      "status": "in_progress",
-      "year": "2024",
+      "name": "Développeur Python| Formation Complète 2025",
+      "issuer": "Udemy - Jonathan Roux |IA ChatGPT | Python",
+      "status": "completed",
+      "year": "2025",
       "icon": "fab fa-python",
       "color": "#3776ab"
     },
@@ -73,7 +73,7 @@
     },
     {
       "id": "master-physics-degree",
-      "name": "Master's Degree in Applied Physics",
+      "name": "Laurea Magistrale in Fisica Applicata",
       "issuer": "Università di Genova",
       "status": "completed",
       "year": "2024",
