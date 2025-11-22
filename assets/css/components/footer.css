@@ -8,10 +8,10 @@ FOOTER CSS - Portfolio Minimalista
 /* FOOTER PRINCIPALE                */
 /* ================================ */
 .footer {
-    background: var(--color-bg-tertiary);
+    background-color: var(--color-bg-secondary);
     border-top: 1px solid var(--color-border-light);
     padding: 2rem 0;
-    margin-top: 4rem;
+    margin-top: 0;
 }
 
 /* ================================ */

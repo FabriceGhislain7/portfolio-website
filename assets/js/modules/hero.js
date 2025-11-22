@@ -3,18 +3,12 @@
 HERO MODULE - Portfolio
 ===========================================
 Modulo per la gestione della sezione hero con
-animazioni, effetti parallax e typing effects
+animazioni ed effetti parallax
 */
 
 class HeroModule {
     constructor() {
         this.heroSection = null;
-        this.typewriterConfig = {
-            speed: 80,
-            deleteSpeed: 50,
-            pauseTime: 2000,
-            loop: true
-        };
         this.parallaxEnabled = true;
         this.isVisible = false;
         this.animationFrameId = null;
@@ -35,7 +29,6 @@ class HeroModule {
 
         this.setupElements();
         this.bindEvents();
-        this.setupTypewriter();
         this.setupParallax();
         this.setupScrollIndicator();
         this.enhanceAccessibility();
@@ -115,11 +108,6 @@ class HeroModule {
             });
         });
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            this.handleKeyboardNavigation(e);
-        });
-
         // Window resize
         window.addEventListener('resize', () => {
             this.handleResize();
@@ -160,120 +148,9 @@ class HeroModule {
      * Avvia le animazioni della sezione hero
      */
     startHeroAnimations() {
-        // Le animazioni CSS si attivano automaticamente, qui gestiamo quelle JS
         this.animateAvatar();
         this.startParallax();
-        
-        // Avvia typewriter dopo un delay
-        setTimeout(() => {
-            this.startTypewriter();
-        }, 1500);
-
         console.log('🎬 Hero animations started');
-    }
-
-    /**
-     * Configura l'effetto typewriter per la professione
-     */
-    setupTypewriter() {
-        if (!this.elements.profession) return;
-
-        // Salva il testo originale
-        this.originalProfessionText = this.elements.profession.textContent;
-        
-        // Array di professioni da alternare
-        this.professionTexts = [
-            'Python Developer',
-            'AI/ML Enthusiast', 
-            'Full Stack Developer',
-        ];
-        
-        this.currentTextIndex = 0;
-        this.typewriterActive = false;
-    }
-
-    /**
-     * Avvia l'effetto typewriter
-     */
-    startTypewriter() {
-        if (!this.elements.profession || this.typewriterActive) return;
-        
-        this.typewriterActive = true;
-        this.typeCurrentText();
-    }
-
-    /**
-     * Scrive il testo corrente con effetto typewriter
-     */
-    async typeCurrentText() {
-        if (!this.typewriterActive) return;
-
-        const text = this.professionTexts[this.currentTextIndex];
-        const element = this.elements.profession;
-        
-        // Cancella il testo esistente
-        await this.deleteText(element);
-        
-        // Scrivi il nuovo testo
-        await this.typeText(element, text);
-        
-        // Attendi prima del prossimo ciclo
-        setTimeout(() => {
-            if (this.typewriterActive) {
-                this.currentTextIndex = (this.currentTextIndex + 1) % this.professionTexts.length;
-                this.typeCurrentText();
-            }
-        }, this.typewriterConfig.pauseTime);
-    }
-
-    /**
-     * Scrive il testo carattere per carattere
-     */
-    typeText(element, text) {
-        return new Promise(resolve => {
-            let i = 0;
-            const timer = setInterval(() => {
-                if (!this.typewriterActive) {
-                    clearInterval(timer);
-                    resolve();
-                    return;
-                }
-
-                element.textContent = text.slice(0, i + 1);
-                i++;
-                
-                if (i >= text.length) {
-                    clearInterval(timer);
-                    resolve();
-                }
-            }, this.typewriterConfig.speed);
-        });
-    }
-
-    /**
-     * Cancella il testo carattere per carattere
-     */
-    deleteText(element) {
-        return new Promise(resolve => {
-            const currentText = element.textContent;
-            let i = currentText.length;
-            
-            const timer = setInterval(() => {
-                if (!this.typewriterActive) {
-                    clearInterval(timer);
-                    resolve();
-                    return;
-                }
-
-                element.textContent = currentText.slice(0, i);
-                i--;
-                
-                if (i < 0) {
-                    clearInterval(timer);
-                    resolve();
-                }
-            }, this.typewriterConfig.deleteSpeed);
-        });
     }
 
     /**
@@ -307,7 +184,7 @@ class HeroModule {
 
         this.parallaxElements = Array.from(this.elements.shapes).map((shape, index) => ({
             element: shape,
-            speed: 0.5 + (index * 0.3), // Velocità differenti per ogni shape
+            speed: 0.5 + (index * 0.3),
             originalTransform: this.getTransformValues(shape)
         }));
     }
@@ -317,7 +194,6 @@ class HeroModule {
      */
     startParallax() {
         if (!this.parallaxEnabled || !this.parallaxElements) return;
-
         this.animationFrameId = requestAnimationFrame(() => this.updateParallax());
     }
 
@@ -394,7 +270,6 @@ class HeroModule {
     setupScrollIndicator() {
         if (!this.elements.scrollIndicator) return;
 
-        // Aggiorna l'indicatore basandosi sullo scroll
         window.addEventListener('scroll', () => {
             this.updateScrollIndicator();
         });
@@ -410,7 +285,6 @@ class HeroModule {
         const heroHeight = this.heroSection.offsetHeight;
         const scrollProgress = Math.min(scrollY / (heroHeight * 0.3), 1);
         
-        // Fai sparire l'indicatore quando si inizia a scrollare
         this.elements.scrollIndicator.style.opacity = 1 - scrollProgress;
     }
 
@@ -421,16 +295,13 @@ class HeroModule {
         const button = e.currentTarget;
         const href = button.getAttribute('href');
         
-        // Effetto visivo al click
         this.addClickEffect(button);
         
-        // Smooth scroll per link interni
         if (href && href.startsWith('#')) {
             e.preventDefault();
             this.smoothScrollToSection(href);
         }
         
-        // Tracking
         this.trackButtonClick(button);
     }
 
@@ -472,26 +343,9 @@ class HeroModule {
     }
 
     /**
-     * Gestisce la navigazione da tastiera
-     */
-    handleKeyboardNavigation(e) {
-        // Escape per fermare il typewriter
-        if (e.key === 'Escape' && this.typewriterActive) {
-            this.stopTypewriter();
-        }
-        
-        // Spazio per fermare/avviare animazioni
-        if (e.key === ' ' && e.ctrlKey) {
-            e.preventDefault();
-            this.toggleAnimations();
-        }
-    }
-
-    /**
      * Gestisce il resize della finestra
      */
     handleResize() {
-        // Disabilita parallax su mobile
         if (window.innerWidth <= 768 && this.parallaxEnabled) {
             this.parallaxEnabled = false;
             this.resetParallax();
@@ -506,7 +360,6 @@ class HeroModule {
             }
         }
         
-        // Riposiziona elementi se necessario
         this.updateLayout();
     }
 
@@ -525,8 +378,6 @@ class HeroModule {
      * Mette in pausa le animazioni
      */
     pauseAnimations() {
-        this.typewriterActive = false;
-        
         if (this.animationFrameId) {
             cancelAnimationFrame(this.animationFrameId);
             this.animationFrameId = null;
@@ -537,34 +388,8 @@ class HeroModule {
      * Riprende le animazioni
      */
     resumeAnimations() {
-        if (!this.typewriterActive && this.isVisible) {
-            this.typewriterActive = true;
-            this.typeCurrentText();
-        }
-        
         if (this.parallaxEnabled && this.isVisible) {
             this.startParallax();
-        }
-    }
-
-    /**
-     * Toggle delle animazioni
-     */
-    toggleAnimations() {
-        if (this.typewriterActive) {
-            this.pauseAnimations();
-        } else {
-            this.resumeAnimations();
-        }
-    }
-
-    /**
-     * Ferma l'effetto typewriter
-     */
-    stopTypewriter() {
-        this.typewriterActive = false;
-        if (this.elements.profession) {
-            this.elements.profession.textContent = this.originalProfessionText;
         }
     }
 
@@ -572,19 +397,14 @@ class HeroModule {
      * Migliora l'accessibilità
      */
     enhanceAccessibility() {
-        // Aggiungi ARIA labels
         if (this.elements.scrollIndicator) {
             this.elements.scrollIndicator.setAttribute('aria-label', 'Scorri alla sezione successiva');
         }
 
-        // Gestisci prefers-reduced-motion
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            this.typewriterConfig.speed = 0;
-            this.typewriterConfig.deleteSpeed = 0;
             this.parallaxEnabled = false;
         }
 
-        // Focus management
         this.setupFocusManagement();
     }
 
@@ -611,7 +431,6 @@ class HeroModule {
      * Aggiorna il layout dopo resize
      */
     updateLayout() {
-        // Ricalcola posizioni per parallax
         if (this.parallaxEnabled && this.parallaxElements) {
             this.parallaxElements.forEach(item => {
                 item.originalTransform = this.getTransformValues(item.element);
@@ -628,7 +447,6 @@ class HeroModule {
         
         console.log(`🔘 Hero button clicked: ${buttonText} -> ${href}`);
         
-        // Analytics tracking
         if (typeof gtag !== 'undefined') {
             gtag('event', 'hero_button_click', {
                 'button_text': buttonText,
@@ -646,7 +464,6 @@ class HeroModule {
         
         console.log(`📱 Social link clicked: ${platform}`);
         
-        // Analytics tracking
         if (typeof gtag !== 'undefined') {
             gtag('event', 'social_click', {
                 'platform': platform,
@@ -678,21 +495,6 @@ class HeroModule {
     /**
      * Metodi pubblici per controllo esterno
      */
-    startTypewriterEffect() {
-        if (!this.typewriterActive) {
-            this.startTypewriter();
-        }
-    }
-
-    stopTypewriterEffect() {
-        this.stopTypewriter();
-    }
-
-    setTypewriterTexts(texts) {
-        this.professionTexts = texts;
-        this.currentTextIndex = 0;
-    }
-
     enableParallax() {
         this.parallaxEnabled = true;
         this.setupParallax();
@@ -713,15 +515,12 @@ class HeroModule {
      * Cleanup
      */
     destroy() {
-        // Ferma tutte le animazioni
         this.pauseAnimations();
         
-        // Disconnetti observer
         if (this.observer) {
             this.observer.disconnect();
         }
         
-        // Cancella animation frame
         if (this.animationFrameId) {
             cancelAnimationFrame(this.animationFrameId);
         }

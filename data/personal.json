@@ -2,7 +2,7 @@
   "personal_info": {
     "full_name": "Fabrice Ghislain Tebou",
     "display_name": "Fabrice Ghislain Tebou",
-    "title": "Python Developer | AI/ML Enthusiast",
+    "title": "Full Stack Developer | AI/ML Enthusiast",
     "tagline": "Codice elegante, soluzioni intelligenti",
     "location": {
       "city": "Genova",
@@ -22,8 +22,8 @@
   },
 
   "professional_summary": {
-    "headline": "Python Developer specializzato in AI/ML con passione per l'innovazione tecnologica",
-    "bio": "Python Developer con formazione in Fisica Applicata e specializzazione in Machine Learning. Creo soluzioni innovative che combinano teoria scientifica e applicazioni pratiche, dall'analisi di dataset complessi allo sviluppo di applicazioni web full-stack.",
+    "headline": "Full Stack Developer specializzato in AI/ML con passione per l'innovazione tecnologica",
+    "bio": "Full Stack Developer con formazione in Fisica Applicata e specializzazione in Machine Learning. Creo soluzioni innovative che combinano teoria scientifica e applicazioni pratiche, dall'analisi di dataset complessi allo sviluppo di applicazioni web full-stack.",
     "mission": "Utilizzare la tecnologia per risolvere problemi reali attraverso soluzioni innovative e scalabili."
   },
 
