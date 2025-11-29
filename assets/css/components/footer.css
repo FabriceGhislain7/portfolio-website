@@ -1,6 +1,6 @@
 /*
 ===========================================
-FOOTER CSS - Portfolio Minimalista
+FOOTER CSS - Portfolio Minimalista (CORRETTO & CENTRATO)
 ===========================================
 */
 
@@ -15,14 +15,15 @@ FOOTER CSS - Portfolio Minimalista
 }
 
 /* ================================ */
-/* LAYOUT ORIZZONTALE              */
+/* LAYOUT CENTRATO                  */
 /* ================================ */
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;      /* tutto in colonna, pulito */
+    justify-content: center;
     align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    gap: 1.5rem;
+    text-align: center;          /* centra testo */
 }
 
 /* ================================ */
@@ -32,6 +33,7 @@ FOOTER CSS - Portfolio Minimalista
     color: var(--color-text-secondary);
     font-size: 0.9rem;
     line-height: 1.5;
+    text-align: center;          /* sicurezza */
 }
 
 /* ================================ */
@@ -41,6 +43,7 @@ FOOTER CSS - Portfolio Minimalista
     display: flex;
     gap: 1rem;
     align-items: center;
+    justify-content: center;     /* centra icone */
 }
 
 .footer-social-link {
@@ -110,12 +113,6 @@ FOOTER CSS - Portfolio Minimalista
 @media (max-width: 768px) {
     .footer {
         padding: 1.5rem 0;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
     }
 
     .footer-text {
