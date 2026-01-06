@@ -1,8 +1,9 @@
 /*
 ===========================================
-PROJECTS MODULE - OTTIMIZZATO
+PROJECTS MODULE - FIXED VERSION
 ===========================================
 Carica e gestisce la sezione progetti
+FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni filtro
 */
 
 (function() {
@@ -103,8 +104,9 @@ Carica e gestisce la sezione progetti
         const techTags = project.technologies.slice(0, 4); // Mostra prime 4 tecnologie
         const isFeatured = project.featured ? 'featured' : '';
 
+        // 🔧 FIX: Cambiato data-category in data-filter
         return `
-            <div class="project-card ${isFeatured}" data-category="${project.category}" data-status="${project.status}">
+            <div class="project-card ${isFeatured}" data-filter="${project.category}" data-status="${project.status}">
                 <div class="project-image">
                     <img src="${project.image}" alt="${project.title}" loading="lazy" onerror="this.src='assets/images/projects/placeholder.jpg'">
                     <div class="project-overlay">

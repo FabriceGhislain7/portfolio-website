@@ -448,7 +448,7 @@ class FiltersModule {
         const isFiltered = this.activeFilters[type] !== 'all';
         
         if (isFiltered) {
-            counter.textContent = `Showing ${count} di ${totalItems}`;
+            // counter.textContent = `Showing ${count} di ${totalItems}`;
             counter.style.opacity = '1';
         } else {
             counter.style.opacity = '0';

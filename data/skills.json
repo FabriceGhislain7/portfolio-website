@@ -5,7 +5,7 @@
       "name": "Backend Development",
       "category": "development",
       "icon": "fas fa-server",
-      "description": "Development of scalable web applications and RESTful APIs using Python",
+      "description": "Sviluppo di applicazioni web scalabili e API RESTful con Python",
       "tags": ["Python", "Django", "Flask", "Streamlit", "REST API"]
     },
     {
@@ -13,7 +13,7 @@
       "name": "Frontend Development",
       "category": "development",
       "icon": "fas fa-code",
-      "description": "Creation of responsive web interfaces using HTML, CSS, and JavaScript",
+      "description": "Creazione di interfacce web responsive con HTML, CSS e JavaScript",
       "tags": ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive Design"]
     },
     {
@@ -21,7 +21,7 @@
       "name": "Data Analysis",
       "category": "data",
       "icon": "fas fa-chart-line",
-      "description": "Data analysis, cleaning, and visualization using Python",
+      "description": "Analisi, pulizia e visualizzazione dati con Python",
       "tags": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn", "Excel"]
     },
     {
@@ -29,7 +29,7 @@
       "name": "Machine Learning",
       "category": "data",
       "icon": "fas fa-brain",
-      "description": "Implementation of ML models for predictive analysis and classification",
+      "description": "Implementazione di modelli ML per analisi predittiva e classificazione",
       "tags": ["ML", "Scikit-learn", "TensorFlow", "Random Forest", "Statistics"]
     },
     {
@@ -37,7 +37,7 @@
       "name": "GUI Development",
       "category": "development",
       "icon": "fas fa-desktop",
-      "description": "Development of desktop and mobile graphical interfaces using Python",
+      "description": "Sviluppo di interfacce grafiche desktop e mobile con Python",
       "tags": ["Kivy", "Streamlit", "Desktop UI", "Mobile UI"]
     },
     {
@@ -45,7 +45,7 @@
       "name": "Database Management",
       "category": "data",
       "icon": "fas fa-database",
-      "description": "Design and interaction with relational and NoSQL databases",
+      "description": "Progettazione e interazione con database relazionali e NoSQL",
       "tags": ["SQLite", "MySQL", "SQLAlchemy", "ORM"]
     },
     {
@@ -53,7 +53,7 @@
       "name": "IoT Systems",
       "category": "development",
       "icon": "fas fa-microchip",
-      "description": "Development of IoT systems using Raspberry Pi and sensors",
+      "description": "Sviluppo di sistemi IoT con Raspberry Pi e sensori",
       "tags": ["IoT", "Raspberry Pi", "Industry 4.0"]
     },
     {
@@ -61,7 +61,7 @@
       "name": "Development Tools",
       "category": "tools",
       "icon": "fas fa-tools",
-      "description": "Development tools and environments for effective programming",
+      "description": "Strumenti di sviluppo e ambienti per una programmazione efficace",
       "tags": ["Git", "VS Code", "PyCharm", "Jupyter", "Anaconda"]
     },
     {
@@ -69,7 +69,7 @@
       "name": "Scientific Tools",
       "category": "tools",
       "icon": "fas fa-flask",
-      "description": "Tools for scientific documentation and academic research",
+      "description": "Strumenti per documentazione scientifica e ricerca accademica",
       "tags": ["MATLAB", "LaTeX", "Sphinx", "Scientific Writing", "Research"]
     },
     {
@@ -77,7 +77,7 @@
       "name": "API Integration",
       "category": "development",
       "icon": "fas fa-plug",
-      "description": "Integration and development of REST APIs and web services",
+      "description": "Integrazione e sviluppo di API REST e servizi web",
       "tags": ["REST", "JSON", "API Design", "Web Scraping"]
     }
   ],
@@ -85,22 +85,22 @@
   "categories": [
     {
       "id": "all",
-      "name": "All Skills",
+      "name": "Tutte le Competenze",
       "color": "#6b7280"
     },
     {
       "id": "development",
-      "name": "Development",
+      "name": "Sviluppo",
       "color": "#3b82f6"
     },
     {
       "id": "data",
-      "name": "Data & AI",
+      "name": "Dati & AI",
       "color": "#f59e0b"
     },
     {
       "id": "tools",
-      "name": "Tools",
+      "name": "Strumenti",
       "color": "#10b981"
     }
   ]

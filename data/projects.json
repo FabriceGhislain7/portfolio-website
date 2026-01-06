@@ -97,614 +97,605 @@
       "priority": 2
     },
 
-{
-  "_comment": "THIRD PROJECT – MASTER’S THESIS: MACHINE LEARNING & DATA ANALYSIS ON HETEROGENEOUS COVID DATASET",
-  "id": "thesis-ml-project",
-  "title": "Relationship and Dimensionality Reduction in Heterogeneous Datasets",
-  "description": "Master’s thesis project focused on the application of machine learning techniques for relationship analysis and dimensionality reduction in complex and heterogeneous datasets.",
-  "image": "assets/images/projects/DA_ML_covid.jpg",
-  "category": "data",
-  "status": "in_progress",
-  "featured": true,
-  "technologies": [
-    "MATLAB",
-    "Machine Learning",
-    "Random Forest",
-    "Bootstrap",
-    "Statistical Analysis",
-    "Data Visualization"
-  ],
-  "features": [
-    "Custom Random Forest algorithms",
-    "Bootstrap methods for validation",
-    "Advanced statistical analysis (p-values, hypothesis testing)",
-    "Interactive data visualizations",
-    "PCA-based dimensionality reduction",
-    "Complete scientific documentation"
-  ],
-  "links": {
-    "github": "coming-soon.html",
-    "paper": "coming-soon.html",
-    "presentation": "coming-soon.html"
-  },
-  "date_created": "2023-09-01",
-  "date_updated": "2024-03-15",
-  "duration": "6 months",
-  "team_size": 1,
-  "role": "Researcher & Data Scientist",
-  "challenges": [
-    "Handling complex and heterogeneous datasets",
-    "Implementing machine learning algorithms from scratch",
-    "Rigorous statistical validation"
-  ],
-  "learnings": [
-    "Theoretical and applied machine learning",
-    "Scientific research methodologies",
-    "Advanced statistical analysis"
-  ],
-  "tags": ["Machine Learning", "Research", "MATLAB", "Statistics", "Data Science"],
-  "priority": 3
-},
-
-
-{
-  "_comment": "FOURTH PROJECT: MACHINE LEARNING & DATA ANALYSIS ON THE TITANIC DATASET",
-  "id": "titanic-ml-analysis",
-  "title": "Titanic Survival Prediction – Machine Learning Analysis",
-  "description": "Comprehensive machine learning analysis to predict Titanic passenger survival. It includes exploratory data analysis, advanced feature engineering, multiple ML algorithms, ensemble methods, and an interactive Streamlit dashboard.",
-  "image": "assets/images/projects/Titanic_DA_ML3.jpg",
-  "category": "data",
-  "status": "ongoing",
-  "featured": true,
-  "technologies": [
-    "Python",
-    "Pandas",
-    "Scikit-learn",
-    "Streamlit",
-    "Matplotlib",
-    "Seaborn",
-    "Jupyter Notebook",
-    "NumPy"
-  ],
-  "features": [
-    "Complete exploratory data analysis",
-    "Advanced feature engineering with title extraction",
-    "Multiple ML algorithms (Random Forest, SVM, Logistic Regression)",
-    "Hyperparameter tuning with GridSearchCV",
-    "Ensemble methods and Voting Classifier",
-    "Multi-page interactive Streamlit dashboard",
-    "Stratified 10-fold cross-validation",
-    "Model interpretation and feature importance analysis",
-    "Learning curves and bias–variance analysis",
-    "Automated EDA with Sweetviz and Pandas Profiling",
-    "Direct links to Google Colab notebooks",
-    "Performance metrics: 83.79% accuracy, 0.8567 ROC-AUC"
-  ],
-  "links": {
-    "github": "https://github.com/FabriceGhislain7/titanic-streamlit-dashboard",
-    "documentation": "#",
-    "live": "https://titanic-app-dashboard-ogxxezhe82g8tggobo5l2n.streamlit.app/"
-  },
-  "date_created": "2025-07-15",
-  "date_updated": "2025-07-30",
-  "duration": "2 weeks",
-  "team_size": 1,
-  "role": "Data Scientist / ML Engineer",
-  "challenges": [
-    "Strategic handling of missing values to avoid data leakage",
-    "Creative feature engineering based on historical domain knowledge",
-    "Bias–variance trade-off optimization for robust generalization",
-    "Seamless integration between exploratory and predictive analysis",
-    "Ensemble method optimization for improved performance"
-  ],
-  "learnings": [
-    "Advanced feature engineering techniques",
-    "Ensemble methods and model stacking",
-    "Cross-validation strategies for small datasets",
-    "Model interpretation and explainable AI",
-    "End-to-end ML pipeline development",
-    "Professional data science workflow",
-    "Multi-page Streamlit applications"
-  ],
-  "tags": [
-    "Machine Learning",
-    "Data Science",
-    "Feature Engineering",
-    "Ensemble Methods",
-    "Streamlit",
-    "Classification",
-    "Python",
-    "Scikit-learn"
-  ],
-  "priority": 5
-},
-
-
-{
-  "_comment": "GDR WEB APP PROJECT – MULTIPLAYER FANTASY ROLE-PLAYING GAME",
-  "id": "gdr-web-app",
-  "title": "GDR Web App – Fantasy Role Playing Game",
-  "description": "Multiplayer fantasy role-playing game developed during the 'Python Programmer and Developer' training course. A complete web application that allows players to create characters, explore environments, fight enemies, and manage inventories in an immersive fantasy world.",
-  "image": "assets/images/projects/gdr_flask.jpg",
-  "category": "web",
-  "status": "ongoing",
-  "featured": true,
-  "technologies": [
-    "Python 3",
-    "Flask",
-    "SQLAlchemy",
-    "Marshmallow",
-    "HTML5",
-    "Bootstrap 5",
-    "JavaScript",
-    "SQLite",
-    "Git",
-    "GitHub"
-  ],
-  "features": [
-    "Complete user authentication system",
-    "Character creation with 3 unique classes (Warrior, Mage, Rogue)",
-    "Dynamic inventory system with specialized items",
-    "3 game environments with specific modifiers (Forest, Volcano, Swamp)",
-    "Turn-based strategic combat system",
-    "Procedural missions with enemies and rewards",
-    "Character progression system with level-up mechanics",
-    "Advanced statistics dashboards for characters and inventories",
-    "Responsive Bootstrap 5 interface",
-    "Modular architecture using Flask Blueprints",
-    "Data validation with Marshmallow schemas",
-    "Complete logging system for debugging and monitoring",
-    "Virtual credits management for in-game economy",
-    "REST API for statistics and dynamic dashboards"
-  ],
-  "links": {
-    "github": "https://github.com/FabriceGhislain7/gdr-web-app",
-    "live": "https://gdr-web-app.onrender.com",
-    "documentation": "#"
-  },
-  "date_created": "2025-05-01",
-  "date_updated": "2025-08-08",
-  "duration": "3 months",
-  "team_size": "8 collaborators",
-  "role": "Full-Stack Developer in Training",
-  "challenges": [
-    "Implementation of a balanced combat system with environmental modifiers",
-    "Management of multiplayer sessions and persistent game state",
-    "Scalable modular architecture with clear separation between business logic and presentation",
-    "Gameplay balancing across different character classes",
-    "Performance optimization for simultaneous multi-player handling",
-    "Refactoring from individual functions to class-based organization for maintainability"
-  ],
-  "learnings": [
-    "Full-stack web development with Flask and MVC architecture",
-    "Game design and gameplay mechanics balancing",
-    "Collaborative development using Git workflows and code reviews",
-    "Database modeling for complex gaming applications",
-    "UI/UX design for interactive web applications",
-    "Clean code principles and design patterns",
-    "Testing and debugging multi-user web applications",
-    "Code refactoring and organizational patterns"
-  ],
-  "game_mechanics": {
-    "classes": [
-      {
-        "name": "Warrior",
-        "hp": 130,
-        "attack": "20-100",
-        "recovery": "30 fixed HP",
-        "bonus_environment": "Forest (+5 attack)"
+    {
+      "_comment": "THIRD PROJECT – MASTER'S THESIS: MACHINE LEARNING & DATA ANALYSIS ON HETEROGENEOUS COVID DATASET",
+      "id": "thesis-ml-project",
+      "title": "Relationship and Dimensionality Reduction in Heterogeneous Datasets",
+      "description": "Master's thesis project focused on the application of machine learning techniques for relationship analysis and dimensionality reduction in complex and heterogeneous datasets.",
+      "image": "assets/images/projects/DA_ML_covid.jpg",
+      "category": "data",
+      "status": "in_progress",
+      "featured": true,
+      "technologies": [
+        "MATLAB",
+        "Machine Learning",
+        "Random Forest",
+        "Bootstrap",
+        "Statistical Analysis",
+        "Data Visualization"
+      ],
+      "features": [
+        "Custom Random Forest algorithms",
+        "Bootstrap methods for validation",
+        "Advanced statistical analysis (p-values, hypothesis testing)",
+        "Interactive data visualizations",
+        "PCA-based dimensionality reduction",
+        "Complete scientific documentation"
+      ],
+      "links": {
+        "github": "coming-soon.html",
+        "paper": "coming-soon.html",
+        "presentation": "coming-soon.html"
       },
-      {
-        "name": "Mage",
-        "hp": 80,
-        "attack": "0-90",
-        "recovery": "20% HP",
-        "bonus_environment": "Volcano (+10 attack)"
-      },
-      {
-        "name": "Rogue",
-        "hp": 120,
-        "attack": "10-85",
-        "recovery": "10-40 HP",
-        "bonus_environment": "Forest (+5 healing per turn)"
-      }
-    ],
-    "environments": [
-      "Forest (Balanced Environment)",
-      "Volcano (Extreme Environment)",
-      "Swamp (Hostile Environment)"
-    ],
-    "objects": [
-      "Red Potion (Restores +30 HP)",
-      "Acid Bomb (30 damage + Volcano bonus)",
-      "Medallion (Permanent +10 attack buff)"
-    ]
-  },
-  "technical_highlights": [
-    "~3000+ lines of Python/HTML/JS code",
-    "100+ Git commits with collaborative workflow",
-    "Modular architecture with 5+ Flask Blueprints",
-    "Robust data validation system using Marshmallow",
-    "Real-time dashboards with REST APIs and AJAX",
-    "Mobile-first responsive design with Bootstrap 5"
-  ],
-  "course_context": {
-    "program": "Python Programmer and Developer",
-    "organization": "Ente F.IRE",
-    "funding": "FSE+ Liguria Region",
-    "type": "On-site training course",
-    "focus_areas": ["Python Programming", "Web Development", "IoT Systems", "AI Applications"]
-  },
-  "tags": [
-    "Python",
-    "Flask",
-    "Game Development",
-    "Full-Stack",
-    "Multiplayer",
-    "Role Playing Game",
-    "Web Application",
-    "Bootstrap",
-    "SQLAlchemy",
-    "Collaborative Project"
-  ],
-  "priority": 4
-},
-
-
-{
-  "_comment": "GALAXY RUNNER – 3D SPACE GAME BUILT WITH KIVY",
-  "id": "galaxy-runner-kivy",
-  "title": "Galaxy Runner – 3D Space Tunnel Game",
-  "description": "High-speed 3D space runner game built with Kivy. Features include dynamic procedural track generation, custom mathematical perspective transformations for realistic visuals, and multi-platform input support for desktop and mobile devices, delivering an immersive tunnel effect.",
-  "image": "assets/images/projects/galaxy_runner.png",
-  "category": "gaming",
-  "status": "completed",
-  "featured": true,
-  "technologies": [
-    "Python 3.10",
-    "Kivy 2.3.1",
-    "NumPy Mathematics",
-    "Custom 3D Engine",
-    "Cross-platform",
-    "OpenGL",
-    "Audio System",
-    "Git",
-    "GitHub",
-    "VS Code",
-    "Buildozer"
-  ],
-  "features": [
-    "Custom 3D perspective engine based on vanishing point mathematics",
-    "Smooth cross-platform controls (desktop keyboard + mobile touch)",
-    "Dynamic procedural track generation with intelligent obstacle placement",
-    "Complete audio system with background music and sound effects",
-    "Integrated game states with start screen and game over functionality",
-    "Accurate collision detection between player ship and procedural obstacles",
-    "Responsive user interface with adaptive layout for different resolutions",
-    "Modular architecture with clear separation of responsibilities",
-    "Distance-based scoring system with real-time updates",
-    "Optimized performance at 60 FPS with efficient rendering",
-    "Complete documentation with best practices and API reference",
-    "Italian localized version for educational purposes",
-    "Custom typography with space-themed fonts",
-    "Advanced mathematical transformation system for 3D tunnel effect"
-  ],
-  "links": {
-    "github": "https://github.com/FabriceGhislain7/kivy-game-galaxy",
-    "live": "coming-soon.html",
-    "documentation": "https://github.com/FabriceGhislain7/kivy-game-galaxy/blob/main/API_REFERENCE.md#core-architecture"
-  },
-  "date_created": "2025-02-03",
-  "date_updated": "2025-08-10",
-  "duration": "2 weeks",
-  "team_size": "1 developer",
-  "role": "Game Developer and 3D Mathematics Engineer",
-  "challenges": [
-    "Implementing 3D perspective transformation algorithms from scratch using custom mathematics",
-    "Performance optimization to achieve 60 FPS rendering with multiple simultaneous objects",
-    "Designing a unified cross-platform input system for desktop and mobile",
-    "Balancing gameplay mechanics for progressive difficulty and player engagement",
-    "Scalable modular architecture with clean separation of responsibilities",
-    "Managing multiple coordinate systems (world, screen, perspective)",
-    "Implementing precise collision detection using vertex-based algorithms",
-    "Writing complete technical documentation for mathematical transformations"
-  ],
-  "learnings": [
-    "Advanced 3D mathematics and perspective transformation algorithms",
-    "Mastery of the Kivy framework for cross-platform game development",
-    "Game engine architecture design with modular components",
-    "Performance optimization techniques for real-time rendering",
-    "Cross-platform input handling and responsive design patterns",
-    "Professional documentation writing and API design",
-    "Git workflow management with feature branches",
-    "Code localization strategies for educational purposes",
-    "Audio system integration and state-based sound management",
-    "Mathematical modeling for realistic 3D perspective effects"
-  ],
-  "game_mechanics": {
-    "classes": [
-      {
-        "name": "3D Perspective System",
-        "hp": "Dynamic vanishing point",
-        "attack": "Custom mathematical transformation",
-        "recovery": "pow(y_factor, 4) curve",
-        "bonus_environment": "Early exit optimization"
-      },
-      {
-        "name": "Player Controls",
-        "hp": "Cross-platform input",
-        "attack": "Responsive keyboard + touch",
-        "recovery": "Continuous speed control",
-        "bonus_environment": "Immediate stop on release"
-      },
-      {
-        "name": "Procedural Generation",
-        "hp": "Intelligent track algorithm",
-        "attack": "Balanced random directions",
-        "recovery": "Optimized tile removal",
-        "bonus_environment": "Automatic boundary prevention"
-      }
-    ],
-    "environments": [
-      "3D Space Tunnel (Realistic Perspective)",
-      "World Coordinate System (Logical Space)",
-      "Rendering Screen (Visual Space)"
-    ],
-    "objects": [
-      "Player Ship (Precise control triangle)",
-      "Obstacle Tiles (Procedural quads)",
-      "Tunnel Grid (Dynamic perspective lines)"
-    ]
-  },
-  "technical_highlights": [
-    "~2000+ lines of Python code with complete documentation",
-    "Custom 3D mathematical algorithms for realistic perspective",
-    "Modular architecture with 6 specialized files",
-    "Consistent 60 FPS performance with efficient rendering",
-    "Cross-platform compatibility (Windows, macOS, Linux, Android, iOS)",
-    "Professional documentation with full API reference"
-  ],
-  "course_context": {
-    "program": "Self-Taught Kivy Learning",
-    "organization": "Personal Project",
-    "funding": "Self-funded",
-    "type": "Python Game Development",
-    "focus_areas": ["Python Programming", "Game Development", "3D Mathematics", "Software Architecture"]
-  },
-  "tags": [
-    "Python",
-    "Kivy",
-    "Game Development",
-    "3D Mathematics",
-    "Cross-platform",
-    "Space Game",
-    "Procedural Generation",
-    "Performance Optimization",
-    "Educational Project",
-    "Technical Documentation"
-  ],
-  "priority": 5
-},
-
-{
-  "_comment": "MRBEAT – PROFESSIONAL DRUM MACHINE BUILT WITH KIVY",
-  "id": "mrbeat-drum-machine",
-  "title": "MrBeat – Professional Drum Machine and Beat Sequencer",
-  "description": "Professional drum machine for music production built with Kivy and pygame. Features include 16-step multi-track sequencing, a real-time audio engine with safe threading, a professional drum machine interface, and support for extensible sound kits with high-quality 16-bit audio processing.",
-  "image": "assets/images/projects/mrbeat.png",
-  "category": "music-production",
-  "status": "completed",
-  "featured": true,
-  "technologies": [
-    "Python 3.10",
-    "Kivy 2.3.1",
-    "Pygame Audio Engine",
-    "NumPy Audio Processing",
-    "Safe Threading",
-    "16-bit WAV Audio",
-    "Real-time Processing",
-    "Git",
-    "GitHub",
-    "VS Code",
-    "Professional Documentation"
-  ],
-  "features": [
-    "Professional pygame audio engine with 44.1kHz 16-bit processing",
-    "Synchronized multi-track sequencing with sample-accurate timing",
-    "Real-time BPM control (80–160) with seamless updates during playback",
-    "Extensible sound kit system with 8 professional drum tracks",
-    "Safe threading for real-time audio processing without glitches or interruptions",
-    "Professional drum machine interface with synchronized visual feedback",
-    "16-step pattern programming with real-time edits during playback",
-    "One-shot audio system for immediate triggering and live performance",
-    "Modular architecture with clear separation between audio engine and UI",
-    "Complete technical documentation with professional API reference",
-    "Cross-platform compatibility (Windows, macOS, Linux)",
-    "Professional code quality with type hints and robust error handling",
-    "Visual step indicator synchronized with the audio sequencer",
-    "Multi-track mixing system with overflow protection"
-  ],
-  "links": {
-    "github": "https://github.com/FabriceGhislain7/kivy-mrbeat",
-    "live": "coming-soon.html",
-    "documentation": "https://github.com/yourusername/mrbeat-drum-machine/blob/main/README.md"
-  },
-  "date_created": "2025-08-13",
-  "date_updated": "2025-08-13",
-  "duration": "1 intensive week",
-  "team_size": "1 developer",
-  "role": "Audio Software Engineer and Music Technology Developer",
-  "challenges": [
-    "Complete migration from deprecated audiostream to modern pygame while maintaining compatibility",
-    "Implementing safe threading for real-time audio without race conditions",
-    "Optimizing audio latency below 10ms for professional music performance",
-    "Designing a scalable modular architecture for custom sound kits",
-    "Achieving sample-accurate synchronization between UI visual feedback and audio sequencer",
-    "Efficient memory management for multiple audio samples",
-    "Implementing real-time pattern programming without audio interruptions",
-    "Producing complete professional documentation with detailed flowcharts"
-  ],
-  "learnings": [
-    "Advanced audio programming with pygame mixer and real-time processing",
-    "Safe threading and concurrency patterns for critical audio applications",
-    "Modular software architecture for scalable audio engines",
-    "Performance optimization for low-latency audio processing",
-    "Kivy framework mastery for professional music interfaces",
-    "WAV audio format handling and automatic sample rate conversion",
-    "Professional technical documentation and API design best practices",
-    "Music technology development and drum machine workflow understanding",
-    "Cross-platform audio development challenges and solutions",
-    "Professional code organization and separation of concerns patterns"
-  ],
-  "audio_architecture": {
-    "components": [
-      {
-        "name": "AudioEngine Core",
-        "capability": "Full audio system coordination",
-        "technology": "Pygame mixer with professional configuration",
-        "performance": "44.1kHz, 16-bit, latency <10ms",
-        "scalability": "Unlimited sound kit support"
-      },
-      {
-        "name": "Multi-Track Sequencer",
-        "capability": "Synchronized 8-track sequencing",
-        "technology": "Safe threading with sample-accurate timing",
-        "performance": "Real-time pattern updates",
-        "scalability": "Extensible up to 32 tracks"
-      },
-      {
-        "name": "Professional UI System",
-        "capability": "Complete drum machine interface",
-        "technology": "Kivy responsive design with visual feedback",
-        "performance": "60 FPS smooth rendering",
-        "scalability": "Adaptive layout for multiple screen sizes"
-      }
-    ],
-    "sound_formats": [
-      "WAV PCM 16-bit (primary format)",
-      "Automatic sample rate conversion (transparent)",
-      "Mono/Stereo support with optimized processing"
-    ],
-    "performance_specs": [
-      "Audio latency: <10ms on modern hardware",
-      "CPU usage: <5% during normal operation",
-      "Memory: ~50MB base + 10MB per sound kit",
-      "Timing accuracy: sample-perfect sequencing"
-    ]
-  },
-  "technical_highlights": [
-    "~1500+ lines of Python code with complete professional documentation",
-    "Safe threading implemented for glitch-free real-time audio",
-    "Modular architecture with 10+ specialized files for separation of concerns",
-    "Audio performance optimized for professional music production",
-    "Cross-platform compatibility tested on Windows, macOS, and Linux",
-    "Professional documentation with detailed flowcharts and API reference"
-  ],
-  "course_context": {
-    "program": "Audio Software Development",
-    "organization": "Professional Personal Project",
-    "funding": "Self-funded",
-    "type": "Music Technology Development",
-    "focus_areas": ["Audio Programming", "Music Production Tools", "Real-time Systems", "Professional Software Architecture"]
-  },
-  "tags": [
-    "Python",
-    "Kivy",
-    "Audio Programming",
-    "Music Production",
-    "Drum Machine",
-    "Real-time Audio",
-    "Threading",
-    "Professional Software",
-    "Music Technology",
-    "Cross-platform"
-  ],
-  "priority": 4
-},
-
+      "date_created": "2023-09-01",
+      "date_updated": "2024-03-15",
+      "duration": "6 months",
+      "team_size": 1,
+      "role": "Researcher & Data Scientist",
+      "challenges": [
+        "Handling complex and heterogeneous datasets",
+        "Implementing machine learning algorithms from scratch",
+        "Rigorous statistical validation"
+      ],
+      "learnings": [
+        "Theoretical and applied machine learning",
+        "Scientific research methodologies",
+        "Advanced statistical analysis"
+      ],
+      "tags": ["Machine Learning", "Research", "MATLAB", "Statistics", "Data Science"],
+      "priority": 3
+    },
 
     {
-  "id": "python-learning-journey",
-  "title": "Python Learning Journey",
-  "description": "Comprehensive collection of Python projects and exercises from the Udemy course, evolving from v1.0 to v12.0. Includes automation, web scraping, GUI applications, and API integration.",
-  "image": "assets/images/projects/python_scripts.jpg",
-  "category": "python",
-  "status": "ongoing",
-  "featured": false,
-  "technologies": [
-    "Python",
-    "Tkinter",
-    "Kivy",
-    "Requests",
-    "BeautifulSoup",
-    "Pandas"
-  ],
-  "features": [
-    "12+ progressive project versions",
-    "Automation of repetitive tasks",
-    "Web scraping applications",
-    "Desktop GUIs with Tkinter/Kivy",
-    "External API integration",
-    "Detailed documentation of the learning evolution"
-  ],
-  "links": {
-    "github": "https://github.com/FabriceGhislain7/python-dev-portfolio",
-    "course": "#"
-  },
-  "date_created": "2024-08-01",
-  "date_updated": "2025-01-24",
-  "duration": "6+ months",
-  "team_size": 1,
-  "role": "Python Developer",
-  "challenges": [
-    "Maintaining consistency across versions",
-    "Documenting the learning process",
-    "Progressively implementing best practices"
-  ],
-  "learnings": [
-    "Python from beginner to intermediate level",
-    "Version control with Git",
-    "Clean code principles"
-  ],
-  "tags": ["Python", "Learning", "Portfolio", "Automation", "GUI"],
-  "priority": 5
-}
+      "_comment": "FOURTH PROJECT: MACHINE LEARNING & DATA ANALYSIS ON THE TITANIC DATASET",
+      "id": "titanic-ml-analysis",
+      "title": "Titanic Survival Prediction – Machine Learning Analysis",
+      "description": "Comprehensive machine learning analysis to predict Titanic passenger survival. It includes exploratory data analysis, advanced feature engineering, multiple ML algorithms, ensemble methods, and an interactive Streamlit dashboard.",
+      "image": "assets/images/projects/Titanic_DA_ML3.jpg",
+      "category": "data",
+      "status": "ongoing",
+      "featured": true,
+      "technologies": [
+        "Python",
+        "Pandas",
+        "Scikit-learn",
+        "Streamlit",
+        "Matplotlib",
+        "Seaborn",
+        "Jupyter Notebook",
+        "NumPy"
+      ],
+      "features": [
+        "Complete exploratory data analysis",
+        "Advanced feature engineering with title extraction",
+        "Multiple ML algorithms (Random Forest, SVM, Logistic Regression)",
+        "Hyperparameter tuning with GridSearchCV",
+        "Ensemble methods and Voting Classifier",
+        "Multi-page interactive Streamlit dashboard",
+        "Stratified 10-fold cross-validation",
+        "Model interpretation and feature importance analysis",
+        "Learning curves and bias–variance analysis",
+        "Automated EDA with Sweetviz and Pandas Profiling",
+        "Direct links to Google Colab notebooks",
+        "Performance metrics: 83.79% accuracy, 0.8567 ROC-AUC"
+      ],
+      "links": {
+        "github": "https://github.com/FabriceGhislain7/titanic-streamlit-dashboard",
+        "documentation": "#",
+        "live": "https://titanic-app-dashboard-ogxxezhe82g8tggobo5l2n.streamlit.app/"
+      },
+      "date_created": "2025-07-15",
+      "date_updated": "2025-07-30",
+      "duration": "2 weeks",
+      "team_size": 1,
+      "role": "Data Scientist / ML Engineer",
+      "challenges": [
+        "Strategic handling of missing values to avoid data leakage",
+        "Creative feature engineering based on historical domain knowledge",
+        "Bias–variance trade-off optimization for robust generalization",
+        "Seamless integration between exploratory and predictive analysis",
+        "Ensemble method optimization for improved performance"
+      ],
+      "learnings": [
+        "Advanced feature engineering techniques",
+        "Ensemble methods and model stacking",
+        "Cross-validation strategies for small datasets",
+        "Model interpretation and explainable AI",
+        "End-to-end ML pipeline development",
+        "Professional data science workflow",
+        "Multi-page Streamlit applications"
+      ],
+      "tags": [
+        "Machine Learning",
+        "Data Science",
+        "Feature Engineering",
+        "Ensemble Methods",
+        "Streamlit",
+        "Classification",
+        "Python",
+        "Scikit-learn"
+      ],
+      "priority": 5
+    },
 
+    {
+      "_comment": "GDR WEB APP PROJECT – MULTIPLAYER FANTASY ROLE-PLAYING GAME",
+      "id": "gdr-web-app",
+      "title": "GDR Web App – Fantasy Role Playing Game",
+      "description": "Multiplayer fantasy role-playing game developed during the 'Python Programmer and Developer' training course. A complete web application that allows players to create characters, explore environments, fight enemies, and manage inventories in an immersive fantasy world.",
+      "image": "assets/images/projects/gdr_flask.jpg",
+      "category": "web",
+      "status": "ongoing",
+      "featured": true,
+      "technologies": [
+        "Python 3",
+        "Flask",
+        "SQLAlchemy",
+        "Marshmallow",
+        "HTML5",
+        "Bootstrap 5",
+        "JavaScript",
+        "SQLite",
+        "Git",
+        "GitHub"
+      ],
+      "features": [
+        "Complete user authentication system",
+        "Character creation with 3 unique classes (Warrior, Mage, Rogue)",
+        "Dynamic inventory system with specialized items",
+        "3 game environments with specific modifiers (Forest, Volcano, Swamp)",
+        "Turn-based strategic combat system",
+        "Procedural missions with enemies and rewards",
+        "Character progression system with level-up mechanics",
+        "Advanced statistics dashboards for characters and inventories",
+        "Responsive Bootstrap 5 interface",
+        "Modular architecture using Flask Blueprints",
+        "Data validation with Marshmallow schemas",
+        "Complete logging system for debugging and monitoring",
+        "Virtual credits management for in-game economy",
+        "REST API for statistics and dynamic dashboards"
+      ],
+      "links": {
+        "github": "https://github.com/FabriceGhislain7/gdr-web-app",
+        "live": "https://gdr-web-app.onrender.com",
+        "documentation": "#"
+      },
+      "date_created": "2025-05-01",
+      "date_updated": "2025-08-08",
+      "duration": "3 months",
+      "team_size": "8 collaborators",
+      "role": "Full-Stack Developer in Training",
+      "challenges": [
+        "Implementation of a balanced combat system with environmental modifiers",
+        "Management of multiplayer sessions and persistent game state",
+        "Scalable modular architecture with clear separation between business logic and presentation",
+        "Gameplay balancing across different character classes",
+        "Performance optimization for simultaneous multi-player handling",
+        "Refactoring from individual functions to class-based organization for maintainability"
+      ],
+      "learnings": [
+        "Full-stack web development with Flask and MVC architecture",
+        "Game design and gameplay mechanics balancing",
+        "Collaborative development using Git workflows and code reviews",
+        "Database modeling for complex gaming applications",
+        "UI/UX design for interactive web applications",
+        "Clean code principles and design patterns",
+        "Testing and debugging multi-user web applications",
+        "Code refactoring and organizational patterns"
+      ],
+      "game_mechanics": {
+        "classes": [
+          {
+            "name": "Warrior",
+            "hp": 130,
+            "attack": "20-100",
+            "recovery": "30 fixed HP",
+            "bonus_environment": "Forest (+5 attack)"
+          },
+          {
+            "name": "Mage",
+            "hp": 80,
+            "attack": "0-90",
+            "recovery": "20% HP",
+            "bonus_environment": "Volcano (+10 attack)"
+          },
+          {
+            "name": "Rogue",
+            "hp": 120,
+            "attack": "10-85",
+            "recovery": "10-40 HP",
+            "bonus_environment": "Forest (+5 healing per turn)"
+          }
+        ],
+        "environments": [
+          "Forest (Balanced Environment)",
+          "Volcano (Extreme Environment)",
+          "Swamp (Hostile Environment)"
+        ],
+        "objects": [
+          "Red Potion (Restores +30 HP)",
+          "Acid Bomb (30 damage + Volcano bonus)",
+          "Medallion (Permanent +10 attack buff)"
+        ]
+      },
+      "technical_highlights": [
+        "~3000+ lines of Python/HTML/JS code",
+        "100+ Git commits with collaborative workflow",
+        "Modular architecture with 5+ Flask Blueprints",
+        "Robust data validation system using Marshmallow",
+        "Real-time dashboards with REST APIs and AJAX",
+        "Mobile-first responsive design with Bootstrap 5"
+      ],
+      "course_context": {
+        "program": "Python Programmer and Developer",
+        "organization": "Ente F.IRE",
+        "funding": "FSE+ Liguria Region",
+        "type": "On-site training course",
+        "focus_areas": ["Python Programming", "Web Development", "IoT Systems", "AI Applications"]
+      },
+      "tags": [
+        "Python",
+        "Flask",
+        "Game Development",
+        "Full-Stack",
+        "Multiplayer",
+        "Role Playing Game",
+        "Web Application",
+        "Bootstrap",
+        "SQLAlchemy",
+        "Collaborative Project"
+      ],
+      "priority": 4
+    },
+
+    {
+      "_comment": "GALAXY RUNNER – 3D SPACE GAME BUILT WITH KIVY",
+      "id": "galaxy-runner-kivy",
+      "title": "Galaxy Runner – 3D Space Tunnel Game",
+      "description": "High-speed 3D space runner game built with Kivy. Features include dynamic procedural track generation, custom mathematical perspective transformations for realistic visuals, and multi-platform input support for desktop and mobile devices, delivering an immersive tunnel effect.",
+      "image": "assets/images/projects/galaxy_runner.png",
+      "category": "python",
+      "status": "completed",
+      "featured": true,
+      "technologies": [
+        "Python 3.10",
+        "Kivy 2.3.1",
+        "NumPy Mathematics",
+        "Custom 3D Engine",
+        "Cross-platform",
+        "OpenGL",
+        "Audio System",
+        "Git",
+        "GitHub",
+        "VS Code",
+        "Buildozer"
+      ],
+      "features": [
+        "Custom 3D perspective engine based on vanishing point mathematics",
+        "Smooth cross-platform controls (desktop keyboard + mobile touch)",
+        "Dynamic procedural track generation with intelligent obstacle placement",
+        "Complete audio system with background music and sound effects",
+        "Integrated game states with start screen and game over functionality",
+        "Accurate collision detection between player ship and procedural obstacles",
+        "Responsive user interface with adaptive layout for different resolutions",
+        "Modular architecture with clear separation of responsibilities",
+        "Distance-based scoring system with real-time updates",
+        "Optimized performance at 60 FPS with efficient rendering",
+        "Complete documentation with best practices and API reference",
+        "Italian localized version for educational purposes",
+        "Custom typography with space-themed fonts",
+        "Advanced mathematical transformation system for 3D tunnel effect"
+      ],
+      "links": {
+        "github": "https://github.com/FabriceGhislain7/kivy-game-galaxy",
+        "live": "coming-soon.html",
+        "documentation": "https://github.com/FabriceGhislain7/kivy-game-galaxy/blob/main/API_REFERENCE.md#core-architecture"
+      },
+      "date_created": "2025-02-03",
+      "date_updated": "2025-08-10",
+      "duration": "2 weeks",
+      "team_size": "1 developer",
+      "role": "Game Developer and 3D Mathematics Engineer",
+      "challenges": [
+        "Implementing 3D perspective transformation algorithms from scratch using custom mathematics",
+        "Performance optimization to achieve 60 FPS rendering with multiple simultaneous objects",
+        "Designing a unified cross-platform input system for desktop and mobile",
+        "Balancing gameplay mechanics for progressive difficulty and player engagement",
+        "Scalable modular architecture with clean separation of responsibilities",
+        "Managing multiple coordinate systems (world, screen, perspective)",
+        "Implementing precise collision detection using vertex-based algorithms",
+        "Writing complete technical documentation for mathematical transformations"
+      ],
+      "learnings": [
+        "Advanced 3D mathematics and perspective transformation algorithms",
+        "Mastery of the Kivy framework for cross-platform game development",
+        "Game engine architecture design with modular components",
+        "Performance optimization techniques for real-time rendering",
+        "Cross-platform input handling and responsive design patterns",
+        "Professional documentation writing and API design",
+        "Git workflow management with feature branches",
+        "Code localization strategies for educational purposes",
+        "Audio system integration and state-based sound management",
+        "Mathematical modeling for realistic 3D perspective effects"
+      ],
+      "game_mechanics": {
+        "classes": [
+          {
+            "name": "3D Perspective System",
+            "hp": "Dynamic vanishing point",
+            "attack": "Custom mathematical transformation",
+            "recovery": "pow(y_factor, 4) curve",
+            "bonus_environment": "Early exit optimization"
+          },
+          {
+            "name": "Player Controls",
+            "hp": "Cross-platform input",
+            "attack": "Responsive keyboard + touch",
+            "recovery": "Continuous speed control",
+            "bonus_environment": "Immediate stop on release"
+          },
+          {
+            "name": "Procedural Generation",
+            "hp": "Intelligent track algorithm",
+            "attack": "Balanced random directions",
+            "recovery": "Optimized tile removal",
+            "bonus_environment": "Automatic boundary prevention"
+          }
+        ],
+        "environments": [
+          "3D Space Tunnel (Realistic Perspective)",
+          "World Coordinate System (Logical Space)",
+          "Rendering Screen (Visual Space)"
+        ],
+        "objects": [
+          "Player Ship (Precise control triangle)",
+          "Obstacle Tiles (Procedural quads)",
+          "Tunnel Grid (Dynamic perspective lines)"
+        ]
+      },
+      "technical_highlights": [
+        "~2000+ lines of Python code with complete documentation",
+        "Custom 3D mathematical algorithms for realistic perspective",
+        "Modular architecture with 6 specialized files",
+        "Consistent 60 FPS performance with efficient rendering",
+        "Cross-platform compatibility (Windows, macOS, Linux, Android, iOS)",
+        "Professional documentation with full API reference"
+      ],
+      "course_context": {
+        "program": "Self-Taught Kivy Learning",
+        "organization": "Personal Project",
+        "funding": "Self-funded",
+        "type": "Python Game Development",
+        "focus_areas": ["Python Programming", "Game Development", "3D Mathematics", "Software Architecture"]
+      },
+      "tags": [
+        "Python",
+        "Kivy",
+        "Game Development",
+        "3D Mathematics",
+        "Cross-platform",
+        "Space Game",
+        "Procedural Generation",
+        "Performance Optimization",
+        "Educational Project",
+        "Technical Documentation"
+      ],
+      "priority": 5
+    },
+
+    {
+      "_comment": "MRBEAT – PROFESSIONAL DRUM MACHINE BUILT WITH KIVY",
+      "id": "mrbeat-drum-machine",
+      "title": "MrBeat – Professional Drum Machine and Beat Sequencer",
+      "description": "Professional drum machine for music production built with Kivy and pygame. Features include 16-step multi-track sequencing, a real-time audio engine with safe threading, a professional drum machine interface, and support for extensible sound kits with high-quality 16-bit audio processing.",
+      "image": "assets/images/projects/mrbeat.png",
+      "category": "python",
+      "status": "completed",
+      "featured": true,
+      "technologies": [
+        "Python 3.10",
+        "Kivy 2.3.1",
+        "Pygame Audio Engine",
+        "NumPy Audio Processing",
+        "Safe Threading",
+        "16-bit WAV Audio",
+        "Real-time Processing",
+        "Git",
+        "GitHub",
+        "VS Code",
+        "Professional Documentation"
+      ],
+      "features": [
+        "Professional pygame audio engine with 44.1kHz 16-bit processing",
+        "Synchronized multi-track sequencing with sample-accurate timing",
+        "Real-time BPM control (80–160) with seamless updates during playback",
+        "Extensible sound kit system with 8 professional drum tracks",
+        "Safe threading for real-time audio processing without glitches or interruptions",
+        "Professional drum machine interface with synchronized visual feedback",
+        "16-step pattern programming with real-time edits during playback",
+        "One-shot audio system for immediate triggering and live performance",
+        "Modular architecture with clear separation between audio engine and UI",
+        "Complete technical documentation with professional API reference",
+        "Cross-platform compatibility (Windows, macOS, Linux)",
+        "Professional code quality with type hints and robust error handling",
+        "Visual step indicator synchronized with the audio sequencer",
+        "Multi-track mixing system with overflow protection"
+      ],
+      "links": {
+        "github": "https://github.com/FabriceGhislain7/kivy-mrbeat",
+        "live": "coming-soon.html",
+        "documentation": "https://github.com/yourusername/mrbeat-drum-machine/blob/main/README.md"
+      },
+      "date_created": "2025-08-13",
+      "date_updated": "2025-08-13",
+      "duration": "1 intensive week",
+      "team_size": "1 developer",
+      "role": "Audio Software Engineer and Music Technology Developer",
+      "challenges": [
+        "Complete migration from deprecated audiostream to modern pygame while maintaining compatibility",
+        "Implementing safe threading for real-time audio without race conditions",
+        "Optimizing audio latency below 10ms for professional music performance",
+        "Designing a scalable modular architecture for custom sound kits",
+        "Achieving sample-accurate synchronization between UI visual feedback and audio sequencer",
+        "Efficient memory management for multiple audio samples",
+        "Implementing real-time pattern programming without audio interruptions",
+        "Producing complete professional documentation with detailed flowcharts"
+      ],
+      "learnings": [
+        "Advanced audio programming with pygame mixer and real-time processing",
+        "Safe threading and concurrency patterns for critical audio applications",
+        "Modular software architecture for scalable audio engines",
+        "Performance optimization for low-latency audio processing",
+        "Kivy framework mastery for professional music interfaces",
+        "WAV audio format handling and automatic sample rate conversion",
+        "Professional technical documentation and API design best practices",
+        "Music technology development and drum machine workflow understanding",
+        "Cross-platform audio development challenges and solutions",
+        "Professional code organization and separation of concerns patterns"
+      ],
+      "audio_architecture": {
+        "components": [
+          {
+            "name": "AudioEngine Core",
+            "capability": "Full audio system coordination",
+            "technology": "Pygame mixer with professional configuration",
+            "performance": "44.1kHz, 16-bit, latency <10ms",
+            "scalability": "Unlimited sound kit support"
+          },
+          {
+            "name": "Multi-Track Sequencer",
+            "capability": "Synchronized 8-track sequencing",
+            "technology": "Safe threading with sample-accurate timing",
+            "performance": "Real-time pattern updates",
+            "scalability": "Extensible up to 32 tracks"
+          },
+          {
+            "name": "Professional UI System",
+            "capability": "Complete drum machine interface",
+            "technology": "Kivy responsive design with visual feedback",
+            "performance": "60 FPS smooth rendering",
+            "scalability": "Adaptive layout for multiple screen sizes"
+          }
+        ],
+        "sound_formats": [
+          "WAV PCM 16-bit (primary format)",
+          "Automatic sample rate conversion (transparent)",
+          "Mono/Stereo support with optimized processing"
+        ],
+        "performance_specs": [
+          "Audio latency: <10ms on modern hardware",
+          "CPU usage: <5% during normal operation",
+          "Memory: ~50MB base + 10MB per sound kit",
+          "Timing accuracy: sample-perfect sequencing"
+        ]
+      },
+      "technical_highlights": [
+        "~1500+ lines of Python code with complete professional documentation",
+        "Safe threading implemented for glitch-free real-time audio",
+        "Modular architecture with 10+ specialized files for separation of concerns",
+        "Audio performance optimized for professional music production",
+        "Cross-platform compatibility tested on Windows, macOS, and Linux",
+        "Professional documentation with detailed flowcharts and API reference"
+      ],
+      "course_context": {
+        "program": "Audio Software Development",
+        "organization": "Professional Personal Project",
+        "funding": "Self-funded",
+        "type": "Music Technology Development",
+        "focus_areas": ["Audio Programming", "Music Production Tools", "Real-time Systems", "Professional Software Architecture"]
+      },
+      "tags": [
+        "Python",
+        "Kivy",
+        "Audio Programming",
+        "Music Production",
+        "Drum Machine",
+        "Real-time Audio",
+        "Threading",
+        "Professional Software",
+        "Music Technology",
+        "Cross-platform"
+      ],
+      "priority": 4
+    },
+
+    {
+      "id": "python-learning-journey",
+      "title": "Python Learning Journey",
+      "description": "Comprehensive collection of Python projects and exercises from the Udemy course, evolving from v1.0 to v12.0. Includes automation, web scraping, GUI applications, and API integration.",
+      "image": "assets/images/projects/python_scripts.jpg",
+      "category": "python",
+      "status": "ongoing",
+      "featured": false,
+      "technologies": [
+        "Python",
+        "Tkinter",
+        "Kivy",
+        "Requests",
+        "BeautifulSoup",
+        "Pandas"
+      ],
+      "features": [
+        "12+ progressive project versions",
+        "Automation of repetitive tasks",
+        "Web scraping applications",
+        "Desktop GUIs with Tkinter/Kivy",
+        "External API integration",
+        "Detailed documentation of the learning evolution"
+      ],
+      "links": {
+        "github": "https://github.com/FabriceGhislain7/python-dev-portfolio",
+        "course": "#"
+      },
+      "date_created": "2024-08-01",
+      "date_updated": "2025-01-24",
+      "duration": "6+ months",
+      "team_size": 1,
+      "role": "Python Developer",
+      "challenges": [
+        "Maintaining consistency across versions",
+        "Documenting the learning process",
+        "Progressively implementing best practices"
+      ],
+      "learnings": [
+        "Python from beginner to intermediate level",
+        "Version control with Git",
+        "Clean code principles"
+      ],
+      "tags": ["Python", "Learning", "Portfolio", "Automation", "GUI"],
+      "priority": 5
+    }
   ],
 
   "categories": [
     {
       "id": "all",
       "name": "All",
-      "count": 5,
+      "count": 8,
       "color": "#6b7280"
     },
-
     {
       "id": "web",
       "name": "Web Development",
-      "count": 2,
+      "count": 3,
       "color": "#3b82f6"
     },
-
+    {
+      "id": "python",
+      "name": "Python",
+      "count": 3,
+      "color": "#10b981"
+    },
     {
       "id": "data",
-      "name": "Data & AI",
+      "name": "Data Analysis & ML",
       "count": 2,
       "color": "#f59e0b"
     },
-
-    {
-      "id": "python",
-      "name": "Python Projects",
-      "count": 1,
-      "color": "#10b981"
-    },
-
     {
       "id": "iot",
       "name": "IoT",
-      "count": 1,
+      "count": 0,
       "color": "#8b5cf6"
     }
   ],
@@ -755,12 +746,12 @@
   ],
 
   "meta": {
-    "last_updated": "2025-01-24",
-    "total_projects": 6,
+    "last_updated": "2025-01-06",
+    "total_projects": 8,
     "completed_projects": 3,
     "in_progress_projects": 2,
-    "ongoing_projects": 1,
+    "ongoing_projects": 3,
     "total_technologies": 13,
-    "version": "1.0"
+    "version": "1.1"
   }
 }
