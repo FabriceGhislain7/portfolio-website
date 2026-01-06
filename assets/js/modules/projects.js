@@ -124,7 +124,7 @@ FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni fi
                         </div>
                         <button class="project-details-btn" onclick="window.ProjectsModule.showDetails('${project.id}')">
                             <i class="fas fa-info-circle"></i>
-                            Dettagli
+                            Details
                         </button>
                     </div>
 
@@ -267,33 +267,33 @@ FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni fi
                     
                     <div class="project-detail-info">
                         <div class="project-description-full">
-                            <h3>Descrizione</h3>
+                            <h3>Description</h3>
                             <p>${project.description}</p>
                         </div>
                         
                         <div class="project-features">
-                            <h3>Caratteristiche Principali</h3>
+                            <h3>Key Features</h3>
                             <ul>
                                 ${project.features.map(feature => `<li>${feature}</li>`).join('')}
                             </ul>
                         </div>
                         
                         <div class="project-technologies-full">
-                            <h3>Tecnologie Utilizzate</h3>
+                            <h3>Technologies Used</h3>
                             <div class="tech-tags">
                                 ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                             </div>
                         </div>
                         
                         <div class="project-challenges">
-                            <h3>Sfide Affrontate</h3>
+                            <h3>Challenges Faced</h3>
                             <ul>
                                 ${project.challenges.map(challenge => `<li>${challenge}</li>`).join('')}
                             </ul>
                         </div>
                         
                         <div class="project-learnings">
-                            <h3>Competenze Acquisite</h3>
+                            <h3>Skills Developed</h3>
                             <ul>
                                 ${project.learnings.map(learning => `<li>${learning}</li>`).join('')}
                             </ul>
@@ -301,7 +301,7 @@ FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni fi
                         
                         <div class="project-meta-full">
                             <div class="meta-item">
-                                <strong>Durata:</strong> ${project.duration}
+                                <strong>Duration:</strong> ${project.duration}
                             </div>
                         </div>
                         
