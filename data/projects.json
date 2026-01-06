@@ -165,20 +165,15 @@
         "Jupyter Notebook",
         "NumPy"
       ],
+
       "features": [
-        "Complete exploratory data analysis",
-        "Advanced feature engineering with title extraction",
-        "Multiple ML algorithms (Random Forest, SVM, Logistic Regression)",
-        "Hyperparameter tuning with GridSearchCV",
-        "Ensemble methods and Voting Classifier",
-        "Multi-page interactive Streamlit dashboard",
-        "Stratified 10-fold cross-validation",
-        "Model interpretation and feature importance analysis",
-        "Learning curves and bias–variance analysis",
-        "Automated EDA with Sweetviz and Pandas Profiling",
-        "Direct links to Google Colab notebooks",
-        "Performance metrics: 83.79% accuracy, 0.8567 ROC-AUC"
+        "Exploratory data analysis and feature engineering",
+        "Multiple ML models with ensemble methods",
+        "Hyperparameter tuning with cross-validation",
+        "Interactive Streamlit dashboard",
+        "Model interpretation and performance evaluation"
       ],
+
       "links": {
         "github": "https://github.com/FabriceGhislain7/titanic-streamlit-dashboard",
         "documentation": "#",
@@ -190,21 +185,20 @@
       "team_size": 1,
       "role": "Data Scientist / ML Engineer",
       "challenges": [
-        "Strategic handling of missing values to avoid data leakage",
-        "Creative feature engineering based on historical domain knowledge",
-        "Bias–variance trade-off optimization for robust generalization",
-        "Seamless integration between exploratory and predictive analysis",
-        "Ensemble method optimization for improved performance"
+        "Handling missing data while preventing data leakage",
+        "Feature engineering using historical domain knowledge",
+        "Bias–variance trade-off optimization",
+        "Integration of exploratory and predictive pipelines",
+        "Ensemble model performance optimization"
       ],
+
       "learnings": [
-        "Advanced feature engineering techniques",
+        "Advanced feature engineering",
         "Ensemble methods and model stacking",
-        "Cross-validation strategies for small datasets",
-        "Model interpretation and explainable AI",
-        "End-to-end ML pipeline development",
-        "Professional data science workflow",
-        "Multi-page Streamlit applications"
+        "Robust cross-validation strategies",
+        "Model interpretability and explainable AI"
       ],
+
       "tags": [
         "Machine Learning",
         "Data Science",
@@ -241,20 +235,15 @@
       ],
       "features": [
         "Complete user authentication system",
-        "Character creation with 3 unique classes (Warrior, Mage, Rogue)",
-        "Dynamic inventory system with specialized items",
-        "3 game environments with specific modifiers (Forest, Volcano, Swamp)",
-        "Turn-based strategic combat system",
-        "Procedural missions with enemies and rewards",
-        "Character progression system with level-up mechanics",
-        "Advanced statistics dashboards for characters and inventories",
-        "Responsive Bootstrap 5 interface",
-        "Modular architecture using Flask Blueprints",
-        "Data validation with Marshmallow schemas",
-        "Complete logging system for debugging and monitoring",
-        "Virtual credits management for in-game economy",
-        "REST API for statistics and dynamic dashboards"
+        "Character creation with multiple playable classes",
+        "Dynamic inventory and item management system",
+        "Turn-based combat system with game logic rules",
+        "Procedural missions and progression system",
+        "Modular backend architecture using Flask Blueprints",
+        "REST API for game statistics and dashboards",
+        "Responsive web interface with Bootstrap 5"
       ],
+
       "links": {
         "github": "https://github.com/FabriceGhislain7/gdr-web-app",
         "live": "https://gdr-web-app.onrender.com",
@@ -266,23 +255,20 @@
       "team_size": "8 collaborators",
       "role": "Full-Stack Developer in Training",
       "challenges": [
-        "Implementation of a balanced combat system with environmental modifiers",
-        "Management of multiplayer sessions and persistent game state",
-        "Scalable modular architecture with clear separation between business logic and presentation",
-        "Gameplay balancing across different character classes",
-        "Performance optimization for simultaneous multi-player handling",
-        "Refactoring from individual functions to class-based organization for maintainability"
+        "Designing scalable Flask architecture with Blueprints",
+        "Managing persistent multiplayer game state",
+        "Balancing gameplay logic with performance constraints"
       ],
+
       "learnings": [
         "Full-stack web development with Flask and MVC architecture",
-        "Game design and gameplay mechanics balancing",
+        "Backend state management and multi-user application logic",
         "Collaborative development using Git workflows and code reviews",
-        "Database modeling for complex gaming applications",
-        "UI/UX design for interactive web applications",
-        "Clean code principles and design patterns",
-        "Testing and debugging multi-user web applications",
-        "Code refactoring and organizational patterns"
+        "Database modeling and ORM usage for complex applications",
+        "Clean code principles and modular software design",
+        "Testing and debugging of multi-user web applications"
       ],
+
       "game_mechanics": {
         "classes": [
           {
@@ -372,20 +358,15 @@
       ],
       "features": [
         "Custom 3D perspective engine based on vanishing point mathematics",
-        "Smooth cross-platform controls (desktop keyboard + mobile touch)",
         "Dynamic procedural track generation with intelligent obstacle placement",
-        "Complete audio system with background music and sound effects",
-        "Integrated game states with start screen and game over functionality",
-        "Accurate collision detection between player ship and procedural obstacles",
-        "Responsive user interface with adaptive layout for different resolutions",
+        "Smooth cross-platform input handling (desktop and mobile)",
+        "Accurate collision detection with procedural obstacles",
         "Modular architecture with clear separation of responsibilities",
+        "Optimized real-time rendering at stable 60 FPS",
         "Distance-based scoring system with real-time updates",
-        "Optimized performance at 60 FPS with efficient rendering",
-        "Complete documentation with best practices and API reference",
-        "Italian localized version for educational purposes",
-        "Custom typography with space-themed fonts",
-        "Advanced mathematical transformation system for 3D tunnel effect"
+        "Complete technical documentation with API reference"
       ],
+
       "links": {
         "github": "https://github.com/FabriceGhislain7/kivy-game-galaxy",
         "live": "coming-soon.html",
@@ -397,26 +378,17 @@
       "team_size": "1 developer",
       "role": "Game Developer and 3D Mathematics Engineer",
       "challenges": [
-        "Implementing 3D perspective transformation algorithms from scratch using custom mathematics",
-        "Performance optimization to achieve 60 FPS rendering with multiple simultaneous objects",
-        "Designing a unified cross-platform input system for desktop and mobile",
-        "Balancing gameplay mechanics for progressive difficulty and player engagement",
-        "Scalable modular architecture with clean separation of responsibilities",
+        "Implementing custom 3D perspective transformation algorithms from scratch",
+        "Optimizing rendering performance to achieve stable 60 FPS",
+        "Designing a unified cross-platform input system",
         "Managing multiple coordinate systems (world, screen, perspective)",
-        "Implementing precise collision detection using vertex-based algorithms",
-        "Writing complete technical documentation for mathematical transformations"
+        "Implementing precise collision detection with procedural geometry",
+        "Designing a scalable modular architecture for maintainability"
       ],
       "learnings": [
-        "Advanced 3D mathematics and perspective transformation algorithms",
-        "Mastery of the Kivy framework for cross-platform game development",
-        "Game engine architecture design with modular components",
-        "Performance optimization techniques for real-time rendering",
-        "Cross-platform input handling and responsive design patterns",
-        "Professional documentation writing and API design",
-        "Git workflow management with feature branches",
-        "Code localization strategies for educational purposes",
-        "Audio system integration and state-based sound management",
-        "Mathematical modeling for realistic 3D perspective effects"
+        "Advanced 3D mathematical modeling",
+        "Performance optimization for real-time systems",
+        "Cross-platform application architecture"
       ],
       "game_mechanics": {
         "classes": [
@@ -506,21 +478,16 @@
         "Professional Documentation"
       ],
       "features": [
-        "Professional pygame audio engine with 44.1kHz 16-bit processing",
-        "Synchronized multi-track sequencing with sample-accurate timing",
-        "Real-time BPM control (80–160) with seamless updates during playback",
-        "Extensible sound kit system with 8 professional drum tracks",
-        "Safe threading for real-time audio processing without glitches or interruptions",
-        "Professional drum machine interface with synchronized visual feedback",
-        "16-step pattern programming with real-time edits during playback",
-        "One-shot audio system for immediate triggering and live performance",
-        "Modular architecture with clear separation between audio engine and UI",
-        "Complete technical documentation with professional API reference",
+        "Real-time audio engine built with pygame (44.1kHz, 16-bit)",
+        "Sample-accurate multi-track sequencing with precise timing",
+        "Low-latency BPM control with real-time updates during playback",
+        "Safe multithreading for glitch-free real-time audio processing",
+        "Extensible sound kit system with modular track management",
+        "Modular architecture separating audio engine and UI layers",
         "Cross-platform compatibility (Windows, macOS, Linux)",
-        "Professional code quality with type hints and robust error handling",
-        "Visual step indicator synchronized with the audio sequencer",
-        "Multi-track mixing system with overflow protection"
+        "Complete technical documentation with API reference"
       ],
+
       "links": {
         "github": "https://github.com/FabriceGhislain7/kivy-mrbeat",
         "live": "coming-soon.html",
@@ -532,26 +499,21 @@
       "team_size": "1 developer",
       "role": "Audio Software Engineer and Music Technology Developer",
       "challenges": [
-        "Complete migration from deprecated audiostream to modern pygame while maintaining compatibility",
-        "Implementing safe threading for real-time audio without race conditions",
-        "Optimizing audio latency below 10ms for professional music performance",
-        "Designing a scalable modular architecture for custom sound kits",
-        "Achieving sample-accurate synchronization between UI visual feedback and audio sequencer",
-        "Efficient memory management for multiple audio samples",
-        "Implementing real-time pattern programming without audio interruptions",
-        "Producing complete professional documentation with detailed flowcharts"
+        "Migrating from deprecated audio streaming to modern pygame while preserving compatibility",
+        "Implementing safe multithreading for real-time audio without race conditions",
+        "Reducing audio latency below 10ms for professional music performance",
+        "Achieving sample-accurate synchronization between audio engine and UI",
+        "Designing a scalable modular architecture for extensible sound kits",
+        "Managing memory efficiently for multiple concurrent audio samples"
       ],
+
       "learnings": [
-        "Advanced audio programming with pygame mixer and real-time processing",
-        "Safe threading and concurrency patterns for critical audio applications",
-        "Modular software architecture for scalable audio engines",
-        "Performance optimization for low-latency audio processing",
-        "Kivy framework mastery for professional music interfaces",
-        "WAV audio format handling and automatic sample rate conversion",
-        "Professional technical documentation and API design best practices",
-        "Music technology development and drum machine workflow understanding",
-        "Cross-platform audio development challenges and solutions",
-        "Professional code organization and separation of concerns patterns"
+        "Advanced real-time audio programming with pygame",
+        "Concurrency and safe threading patterns for time-critical systems",
+        "Design of modular and scalable audio software architectures",
+        "Low-latency performance optimization techniques",
+        "Cross-platform audio application development",
+        "Professional technical documentation and API design"
       ],
       "audio_architecture": {
         "components": [
