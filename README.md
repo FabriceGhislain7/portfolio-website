@@ -1,83 +1,90 @@
 # Portfolio – Fabrice Ghislain Tebou
 
-**Software Developer (Python) | AI & Machine Learning-oriented Profile**
+**Software Developer — Data & Intelligent Systems**
 
-Modern, responsive personal portfolio showcasing my work as a **Software Developer**, with a strong focus on **Python**, **software engineering best practices**, and **data-driven problem solving**.
-
-This portfolio highlights real projects spanning **web development**, **data analysis**, and **machine learning foundations**, reflecting both practical engineering skills and a research-oriented mindset.
+Modern, responsive portfolio showcasing my work in **software development**, **data-driven systems**, and **intelligent applications**.  
+This portfolio highlights production-oriented projects combining **backend engineering**, **analytics**, and **applied machine learning**.
 
 ---
 
 ## Professional Profile
 
-I am a **Software Developer** with a background in **Applied Physics**, currently working with **Python-based technologies** and modern development tools.
-My profile bridges **software engineering** and **analytical reasoning**, with growing specialization in **machine learning and data analysis**.
+I am a **Software Developer** with a background in **Applied Physics**, focused on building **reliable, data-driven software systems**.  
+My work sits at the intersection of **software engineering**, **analytical modeling**, and **intelligent decision-making**.
 
-Alongside professional software development, I maintain a strong interest in:
-
-* Machine Learning Engineering
-* Statistical modeling and data interpretation
-* Research-driven problem solving, with a long-term **PhD trajectory**
+I design and implement applications where:
+- business logic and data models are treated as first-class components  
+- systems are built to be **maintainable, testable, and scalable**  
+- data and machine learning are used to support **real-world decision processes**
 
 ---
 
 ## Core Skills
 
-* **Backend Development**: Python, Django, Flask, REST APIs
-* **Frontend Development**: HTML5, CSS3, JavaScript, responsive design
-* **Data & ML Foundations**: data analysis, feature engineering, classical ML models
-* **Scientific & Analytical Skills**: statistics, model evaluation, interpretability
-* **Software Engineering**: clean code, modular architecture, version control (Git)
+**Software Engineering**
+- Modular backend architectures  
+- RESTful APIs  
+- Clean, testable codebases  
+- Version control and collaborative workflows (Git)
+
+**Backend & Platforms**
+- Python, Flask, Django  
+- SQL-based data models and ORM design  
+
+**Data & Intelligent Systems**
+- Data analysis and feature engineering  
+- Classical machine learning models  
+- Model evaluation and interpretability  
+
+**Frontend & Interfaces**
+- HTML5, CSS3, JavaScript  
+- Responsive and user-focused interfaces  
 
 ---
 
-## Project Highlights
+## Project Focus
 
-The portfolio includes selected projects covering:
+The projects presented in this portfolio are selected to demonstrate:
 
-* Full-stack web applications
-* Machine learning and data analysis pipelines
-* Interactive dashboards and visualization tools
-* Algorithmic and simulation-driven applications
+- **Business-oriented backend systems**  
+- **Data pipelines and analytics dashboards**  
+- **Decision engines and simulation-driven applications**  
+- **Applied machine learning workflows**
 
-Each project is presented with a concise overview and links to dedicated repositories containing full technical details.
+Each project is documented with its **architecture, domain model, and technical trade-offs**.
 
 ---
 
 ## Technology Stack
 
 **Languages & Frameworks**
-
-* Python, JavaScript
-* Django, Flask, Streamlit
+- Python, JavaScript  
+- Flask, Django, Streamlit  
 
 **Data & Machine Learning**
-
-* Pandas, NumPy, Scikit-learn
-* Statistical analysis and dimensionality reduction concepts
+- Pandas, NumPy, Scikit-learn  
+- Statistical analysis and dimensionality-reduction techniques  
 
 **Tools**
-
-* Git, GitHub
-* VS Code, Jupyter Notebook
+- Git & GitHub  
+- VS Code, Jupyter Notebook  
 
 ---
 
-## Development Philosophy
+## Engineering Approach
 
-I approach software development with a **problem-oriented and research-aware mindset**:
+I approach development with a **system-level and data-aware mindset**:
 
-* understanding the problem before implementing solutions
-* validating assumptions through data and testing
-* prioritizing clarity, maintainability, and scalability
+- problems are modeled before they are coded  
+- assumptions are validated through data and testing  
+- architectures are designed for **clarity, evolution, and reliability**
 
-This portfolio represents both my current role as a **Software Developer** and my ongoing progression toward **Machine Learning Engineering** and **research-focused roles**.
+This portfolio reflects my role as a **Software Developer** working on **data-driven and intelligent systems**, with a strong foundation for continued growth in **machine learning and advanced analytics**.
 
 ---
 
 ## Contact
 
-📍 Genoa, Italy
-📧 [ghislaintebou@gmail.com](mailto:ghislaintebou@gmail.com)
+📍 Genoa, Italy  
+📧 [ghislaintebou@gmail.com](mailto:ghislaintebou@gmail.com)  
 🔗 GitHub & LinkedIn available via the portfolio
-
