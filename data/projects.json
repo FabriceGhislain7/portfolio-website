@@ -50,54 +50,6 @@
     },
 
     {
-      "_comment":"SECOND PROJECT: WEBSITE-PORTFOLIO",
-      "id": "portfolio-website",
-      "title": "Portfolio Website",
-      "description": "Modern and responsive personal portfolio developed with vanilla HTML, CSS and JavaScript. Includes dynamic sections, dark/light theme, smooth animations and JSON data loading.",
-      "image": "assets/images/projects/website_portfolio.jpg",
-      "category": "web",
-      "status": "completed",
-      "featured": true,
-      "technologies": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "JSON",
-        "Git"
-      ],
-      "features": [
-        "Modern and responsive design",
-        "Dark/light theme switch",
-        "CSS and JavaScript animations",
-        "Dynamic content loading",
-        "Smooth scroll navigation",
-        "SEO optimized"
-      ],
-      "links": {
-        "github": "https://github.com/FabriceGhislain7/portfolio-website",
-        "live": "https://fabriceghislain7.github.io/portfolio-website/",
-        "demo": "#"
-      },
-      "date_created": "2025-01-15",
-      "date_updated": "2025-01-24",
-      "duration": "2 weeks",
-      "team_size": 1,
-      "role": "Frontend Developer",
-      "challenges": [
-        "Modular CSS architecture",
-        "Vanilla JavaScript without frameworks",
-        "Performance optimization"
-      ],
-      "learnings": [
-        "Advanced CSS Grid and Flexbox",
-        "Modern JavaScript ES6+",
-        "Web performance optimization"
-      ],
-      "tags": ["Frontend", "Portfolio", "Responsive", "JavaScript", "CSS"],
-      "priority": 2
-    },
-
-    {
       "_comment": "THIRD PROJECT – MASTER'S THESIS: MACHINE LEARNING & DATA ANALYSIS ON HETEROGENEOUS COVID DATASET",
       "id": "thesis-ml-project",
       "title": "Relationship and Dimensionality Reduction in Heterogeneous Datasets",
