@@ -3,49 +3,63 @@
     {
       "_comment": "FIRST PROJECT: PIZZAMAMA DJANGO",
       "id": "pizzamama-django",
-      "title": "PizzaMama Django",
-      "description": "Full-stack web application for managing a restaurant and pizzeria, developed using the Django framework. It includes user authentication, order management, an admin interface, and a responsive design.",
+      "title": "PizzaMama Django (API-First Backend)",
+      "description": "API-first backend architecture for a restaurant and pizzeria platform built with Django and Django REST Framework. The project features a modular domain structure, versioned REST APIs, token-based authentication, OpenAPI documentation, and a fully modeled e-commerce order workflow.",
       "image": "assets/images/projects/pizzamama-icone.jpg",
       "category": "web",
       "status": "in_progress",
       "featured": true,
       "technologies": [
-        "Django",
         "Python",
-        "HTML5",
-        "CSS3",
+        "Django 5",
+        "Django REST Framework",
         "SQLite",
-        "JavaScript"
+        "OpenAPI (drf-spectacular)",
+        "JavaScript",
+        "HTML5",
+        "CSS3"
       ],
       "features": [
-        "Complete authentication system",
-        "Order and menu management",
-        "Admin interface for content management",
-        "Responsive and mobile-friendly design",
-        "SQLite database integration",
-        "Form validation system"
+        "Custom user model with profile and multi-address support",
+        "Versioned REST API architecture (/api/v1/)",
+        "Token and session authentication system",
+        "Modular domain separation (accounts, products, orders)",
+        "Hierarchical product catalog with ingredient management",
+        "Order workflow with UUID primary keys and status tracking",
+        "Order item snapshot system for historical consistency",
+        "Automatic OpenAPI 3 documentation with Swagger UI",
+        "Centralized router and scalable API structure"
       ],
       "links": {
-        "github": "https://github.com/FabriceGhislain7/python-dev-portfolio/tree/main/pizzamama",
+        "github": "https://github.com/FabriceGhislain7/pizzamama-market",
         "live": "coming-soon.html",
         "demo": "coming-soon.html"
       },
-      "date_created": "2024-07-01",
-      "date_updated": "2024-07-23",
-      "duration": "3 weeks",
+      "date_created": "2026-02-10",
+      "date_updated": "2026-02-25",
+      "duration": "2 weeks (ongoing)",
       "team_size": 1,
-      "role": "Full Stack Developer",
+      "role": "Backend Developer",
       "challenges": [
-        "Django authentication system implementation",
-        "Responsive design for all devices",
-        "Database performance optimization"
+        "Designing a scalable API-first architecture",
+        "Implementing secure user-scoped data access",
+        "Modeling a full e-commerce domain structure",
+        "Maintaining strict separation between domain and API layer"
       ],
       "learnings": [
-        "Deep dive into Django framework",
-        "Web development best practices",
-        "Web application state management"
+        "Advanced Django architecture patterns",
+        "Django REST Framework router mechanics",
+        "OpenAPI schema generation and documentation",
+        "Clean domain modeling before API exposure"
       ],
-      "tags": ["Web Development", "Full Stack", "Django", "Python", "Responsive Design"],
+      "tags": [
+        "Backend",
+        "API-First",
+        "Django",
+        "Django REST Framework",
+        "Python",
+        "E-Commerce"
+      ],
       "priority": 1
     },
 
