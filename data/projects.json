@@ -32,8 +32,8 @@
       ],
       "links": {
         "github": "https://github.com/FabriceGhislain7/pizzamama-market",
-        "live": "coming-soon.html",
-        "demo": "coming-soon.html"
+        "live": "https://pizzamama-market-backend.onrender.com/api/v1/docs/",
+        "demo": "https://pizzamama-market-backend.onrender.com/api/v1/"
       },
       "date_created": "2026-02-10",
       "date_updated": "2026-02-25",
