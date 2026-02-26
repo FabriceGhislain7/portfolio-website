@@ -7,39 +7,31 @@ Gestisce il form di contatto con validazione e invio
 
 (function() {
     'use strict';
-
-    // Variabili del modulo
     let contactForm = null;
     let formInputs = {};
     let formErrors = {};
     let isSubmitting = false;
     let validationRules = {};
+    let isInitialized = false;
 
     /* ================================ */
     /* INIZIALIZZAZIONE                 */
     /* ================================ */
     function init() {
-        // Ottieni riferimenti elementi DOM
+        if (isInitialized) return;
         contactForm = document.getElementById('contact-form');
 
         if (!contactForm) {
             console.warn('Contact form not found');
             return;
         }
-
-        // Ottieni tutti gli input del form
         getFormElements();
-
-        // Setup regole di validazione
         setupValidationRules();
-
-        // Setup event listeners
         setupFormListeners();
-
-        // Setup animazioni label floating
         setupFloatingLabels();
 
         window.PortfolioConfig.utils.log('debug', 'Contact module initialized');
+        isInitialized = true;
     }
 
     /* ================================ */
@@ -59,8 +51,6 @@ Gestisce il form di contatto con validazione e invio
             subject: contactForm.querySelector('#subject').parentNode.querySelector('.form-error'),
             message: contactForm.querySelector('#message').parentNode.querySelector('.form-error')
         };
-
-        // Verifica che tutti gli elementi esistano
         Object.keys(formInputs).forEach(key => {
             if (!formInputs[key]) {
                 console.warn(`Form input '${key}' not found`);
@@ -122,20 +112,14 @@ Gestisce il form di contatto con validazione e invio
     /* EVENT LISTENERS                  */
     /* ================================ */
     function setupFormListeners() {
-        // Submit form
         contactForm.addEventListener('submit', handleFormSubmit);
-
-        // Validazione in tempo reale per ogni input
         Object.keys(formInputs).forEach(fieldName => {
             const input = formInputs[fieldName];
             
             if (input) {
-                // Validazione on blur
                 if (window.PortfolioConfig.components.contact.validateOnBlur) {
                     input.addEventListener('blur', () => validateField(fieldName));
                 }
-
-                // Validazione on input (mentre digita)
                 if (window.PortfolioConfig.components.contact.validateOnType) {
                     input.addEventListener('input', window.PortfolioConfig.utils.debounce(() => {
                         if (input.value.length > 0) {
@@ -143,22 +127,16 @@ Gestisce il form di contatto con validazione e invio
                         }
                     }, 300));
                 }
-
-                // Rimuovi errore quando inizia a digitare
                 input.addEventListener('input', () => {
                     if (formErrors[fieldName]) {
                         clearFieldError(fieldName);
                     }
                 });
-
-                // Character counter per textarea
                 if (fieldName === 'message') {
                     setupCharacterCounter(input);
                 }
             }
         });
-
-        // Previeni invio accidentale con Enter
         Object.values(formInputs).forEach(input => {
             if (input && input.type !== 'textarea') {
                 input.addEventListener('keydown', (e) => {
@@ -197,8 +175,6 @@ Gestisce il form di contatto con validazione e invio
             input.addEventListener('focus', updateLabel);
             input.addEventListener('blur', updateLabel);
             input.addEventListener('input', updateLabel);
-
-            // Inizializza stato
             updateLabel();
         });
     }
@@ -208,23 +184,15 @@ Gestisce il form di contatto con validazione e invio
     /* ================================ */
     function setupCharacterCounter(textarea) {
         const maxLength = validationRules.message.maxLength;
-        
-        // Crea counter element
         const counter = document.createElement('div');
         counter.className = 'character-counter';
         counter.innerHTML = `<span class="counter-current">0</span>/<span class="counter-max">${maxLength}</span>`;
-        
-        // Inserisci dopo il textarea
         textarea.parentNode.appendChild(counter);
-
-        // Update counter
         const updateCounter = () => {
             const currentLength = textarea.value.length;
             const currentSpan = counter.querySelector('.counter-current');
             
             currentSpan.textContent = currentLength;
-            
-            // Cambia colore in base alla lunghezza
             counter.classList.remove('counter-warning', 'counter-danger');
             
             if (currentLength > maxLength * 0.9) {
@@ -251,14 +219,10 @@ Gestisce il form di contatto con validazione e invio
         const value = input.value.trim();
         let isValid = true;
         let errorMessage = '';
-
-        // Required validation
         if (rules.required && value.length === 0) {
             isValid = false;
             errorMessage = rules.messages.required;
         }
-
-        // Length validations
         if (isValid && rules.minLength && value.length < rules.minLength) {
             isValid = false;
             errorMessage = rules.messages.minLength;
@@ -268,14 +232,10 @@ Gestisce il form di contatto con validazione e invio
             isValid = false;
             errorMessage = rules.messages.maxLength;
         }
-
-        // Pattern validation
         if (isValid && rules.pattern && !rules.pattern.test(value)) {
             isValid = false;
             errorMessage = rules.messages.pattern;
         }
-
-        // Mostra/nascondi errore
         if (isValid) {
             clearFieldError(fieldName);
         } else {
@@ -332,14 +292,10 @@ Gestisce il form di contatto con validazione e invio
         e.preventDefault();
         
         if (isSubmitting) return;
-
-        // Valida form
         if (!validateForm()) {
             showFormMessage('Correggi gli errori evidenziati', 'error');
             return;
         }
-
-        // Simula invio (in un'app reale, qui invieresti i dati)
         submitForm();
     }
 
@@ -350,23 +306,15 @@ Gestisce il form di contatto con validazione e invio
         const originalText = submitButton.innerHTML;
         
         try {
-            // Mostra loading state
             setSubmitButtonLoading(submitButton, true);
-            
-            // Raccoglie dati form
             const formData = collectFormData();
-            
-            // Simula invio (sostituisci con vera API call)
             await simulateFormSubmission(formData);
-            
-            // Successo
             showFormMessage(window.PortfolioConfig.components.contact.successMessage, 'success');
             resetForm();
             
             window.PortfolioConfig.utils.log('info', 'Contact form submitted successfully');
             
         } catch (error) {
-            // Errore
             showFormMessage(window.PortfolioConfig.components.contact.errorMessage, 'error');
             console.error('Form submission error:', error);
             
@@ -385,8 +333,6 @@ Gestisce il form di contatto con validazione e invio
                 data[fieldName] = input.value.trim();
             }
         });
-
-        // Aggiungi timestamp e metadata
         data.timestamp = new Date().toISOString();
         data.userAgent = navigator.userAgent;
         data.referrer = document.referrer;
@@ -395,10 +341,8 @@ Gestisce il form di contatto con validazione e invio
     }
 
     async function simulateFormSubmission(formData) {
-        // Simula una chiamata API
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                // Simula successo al 90%
                 if (Math.random() > 0.1) {
                     resolve({ success: true, data: formData });
                 } else {
@@ -430,13 +374,10 @@ Gestisce il form di contatto con validazione e invio
     }
 
     function showFormMessage(message, type = 'info') {
-        // Rimuovi messaggi esistenti
         const existingMessage = contactForm.querySelector('.form-message');
         if (existingMessage) {
             existingMessage.remove();
         }
-
-        // Crea nuovo messaggio
         const messageElement = document.createElement('div');
         messageElement.className = `form-message form-message-${type}`;
         messageElement.innerHTML = `
@@ -445,17 +386,11 @@ Gestisce il form di contatto con validazione e invio
                 <span>${message}</span>
             </div>
         `;
-
-        // Inserisci prima del bottone submit
         const submitButton = contactForm.querySelector('button[type="submit"]');
         contactForm.insertBefore(messageElement, submitButton);
-
-        // Anima entrata
         setTimeout(() => {
             messageElement.classList.add('form-message-visible');
         }, 10);
-
-        // Rimuovi automaticamente dopo 5 secondi
         setTimeout(() => {
             messageElement.classList.remove('form-message-visible');
             setTimeout(() => {
@@ -479,8 +414,6 @@ Gestisce il form di contatto con validazione e invio
     function resetForm() {
         contactForm.reset();
         clearAllErrors();
-        
-        // Reset floating labels
         Object.values(formInputs).forEach(input => {
             if (input) {
                 const formGroup = input.parentNode;
@@ -490,8 +423,6 @@ Gestisce il form di contatto con validazione e invio
                 if (label) label.classList.remove('form-label-focused');
             }
         });
-
-        // Reset character counter
         const counter = contactForm.querySelector('.character-counter .counter-current');
         if (counter) {
             counter.textContent = '0';

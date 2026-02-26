@@ -4,8 +4,6 @@ PORTFOLIO CONFIGURATION
 ===========================================
 Configurazioni globali per il portfolio di Fabrice Ghislain Tebou
 */
-
-// Configurazione globale del portfolio
 window.PortfolioConfig = {
     
     /* ================================ */
@@ -42,34 +40,25 @@ window.PortfolioConfig = {
     /* CONFIGURAZIONI UI                */
     /* ================================ */
     ui: {
-        // Theme settings
         theme: {
             default: "light",
             storageKey: "portfolio-theme",
             transitions: true
         },
-
-        // Navigation settings
         navigation: {
             offset: 80, // Offset per scroll smooth
             highlightOffset: 100,
             mobileBreakpoint: 768
         },
-
-        // Scroll settings
         scroll: {
             smoothDuration: 800,
             backToTopOffset: 300,
             progressBarEnabled: true
         },
-
-        // Loading screen
         loading: {
             minDuration: 1000, // Durata minima loading screen
             fadeOutDuration: 500
         },
-
-        // Animations
         animations: {
             observerThreshold: 0.1,
             observerRootMargin: "50px",
@@ -82,22 +71,17 @@ window.PortfolioConfig = {
     /* CONFIGURAZIONI COMPONENTI        */
     /* ================================ */
     components: {
-        // Skills section
         skills: {
             animateCounters: true,
             counterDuration: 2000,
             loadDelay: 200
         },
-
-        // Projects section
         projects: {
             defaultFilter: "all",
             animationDelay: 100,
             loadImagesLazy: true,
             githubIconClass: "fab fa-github"
         },
-
-        // Contact form
         contact: {
             validateOnType: false,
             validateOnBlur: true,
@@ -105,8 +89,6 @@ window.PortfolioConfig = {
             errorMessage: "Errore nell'invio del messaggio. Riprova.",
             emailService: null // Da configurare se serve invio email
         },
-
-        // Hero section
         hero: {
             typewriterEffect: true,
             typewriterSpeed: 100,
@@ -187,20 +169,13 @@ window.PortfolioConfig = {
     /* UTILITY FUNCTIONS                */
     /* ================================ */
     utils: {
-        // Verifica se siamo in modalità mobile
         isMobile: () => window.innerWidth < window.PortfolioConfig.breakpoints.md,
-        
-        // Verifica se siamo in modalità tablet
         isTablet: () => {
             const width = window.innerWidth;
             return width >= window.PortfolioConfig.breakpoints.md && 
                    width < window.PortfolioConfig.breakpoints.lg;
         },
-        
-        // Verifica se siamo in modalità desktop
         isDesktop: () => window.innerWidth >= window.PortfolioConfig.breakpoints.lg,
-        
-        // Log con controllo livello
         log: (level, message, data = null) => {
             const config = window.PortfolioConfig.dev;
             const levels = ["debug", "info", "warn", "error"];
@@ -215,8 +190,6 @@ window.PortfolioConfig = {
                 }
             }
         },
-
-        // Debounce utility
         debounce: (func, wait) => {
             let timeout;
             return function executedFunction(...args) {
@@ -228,8 +201,6 @@ window.PortfolioConfig = {
                 timeout = setTimeout(later, wait);
             };
         },
-
-        // Throttle utility
         throttle: (func, limit) => {
             let inThrottle;
             return function() {
@@ -242,8 +213,6 @@ window.PortfolioConfig = {
                 }
             }
         },
-
-        // Smooth scroll to element
         scrollTo: (element, offset = 80) => {
             const targetElement = typeof element === 'string' ? document.querySelector(element) : element;
             if (targetElement) {
@@ -256,8 +225,6 @@ window.PortfolioConfig = {
                 });
             }
         },
-
-        // Get current section in viewport
         getCurrentSection: () => {
             const sections = document.querySelectorAll('section[id]');
             let currentSection = '';
@@ -274,8 +241,6 @@ window.PortfolioConfig = {
             
             return currentSection;
         },
-
-        // Animation observer
         createObserver: (callback, options = {}) => {
             const defaultOptions = {
                 threshold: window.PortfolioConfig.ui.animations.observerThreshold,
@@ -284,8 +249,6 @@ window.PortfolioConfig = {
             
             return new IntersectionObserver(callback, { ...defaultOptions, ...options });
         },
-
-        // Local storage helpers
         storage: {
             set: (key, value) => {
                 try {
@@ -318,10 +281,7 @@ window.PortfolioConfig = {
 /* INIZIALIZZAZIONE CONFIG          */
 /* ================================ */
 document.addEventListener('DOMContentLoaded', () => {
-    // Log configurazione caricata
     window.PortfolioConfig.utils.log('info', 'Portfolio configuration loaded');
-    
-    // Verifica se siamo in modalità sviluppo
     if (window.location.hostname === 'localhost' || 
         window.location.hostname === '127.0.0.1' || 
         window.location.protocol === 'file:') {
@@ -329,8 +289,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.PortfolioConfig.dev.logLevel = 'debug';
         window.PortfolioConfig.utils.log('debug', 'Development mode enabled');
     }
-    
-    // Imposta il tema iniziale
     const savedTheme = window.PortfolioConfig.utils.storage.get(
         window.PortfolioConfig.ui.theme.storageKey, 
         window.PortfolioConfig.ui.theme.default
@@ -340,8 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.setAttribute('data-theme', savedTheme);
         window.PortfolioConfig.utils.log('debug', `Theme set to: ${savedTheme}`);
     }
-
-    // Inizializza scroll progress bar se abilitata
     if (window.PortfolioConfig.ui.scroll.progressBarEnabled) {
         const progressBar = document.getElementById('scroll-progress');
         if (progressBar) {
@@ -353,8 +309,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 10));
         }
     }
-
-    // Nascondi loading screen dopo il tempo minimo
     setTimeout(() => {
         const loadingScreen = document.getElementById('loading-screen');
         if (loadingScreen) {
@@ -363,8 +317,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, window.PortfolioConfig.ui.loading.minDuration);
 });
-
-// Esporta la configurazione globalmente
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = window.PortfolioConfig;
 }

@@ -7,58 +7,48 @@ Gestisce il sistema di tema scuro/chiaro
 
 (function() {
     'use strict';
-
-    // Variabili del modulo
     let themeToggleBtn = null;
     let currentTheme = 'light';
     let isTransitioning = false;
+    let isInitialized = false;
 
     /* ================================ */
     /* INIZIALIZZAZIONE                 */
     /* ================================ */
     function init() {
-        // Ottieni riferimenti elementi DOM
+        if (isInitialized) return;
         themeToggleBtn = document.getElementById('theme-toggle');
 
         if (!themeToggleBtn) {
             console.warn('Theme toggle button not found');
             return;
         }
-
-        // Carica tema salvato o rileva preferenza sistema
         loadTheme();
-
-        // Setup event listeners
         setupThemeToggle();
         setupSystemThemeDetection();
 
         window.PortfolioConfig.utils.log('debug', 'Theme module initialized');
+        isInitialized = true;
     }
 
     /* ================================ */
     /* CARICAMENTO TEMA                 */
     /* ================================ */
     function loadTheme() {
-        // Ottieni tema salvato
         const savedTheme = window.PortfolioConfig.utils.storage.get(
             window.PortfolioConfig.ui.theme.storageKey
         );
-
-        // Se non c'è tema salvato, rileva preferenza sistema
         if (!savedTheme) {
             currentTheme = detectSystemTheme();
         } else {
             currentTheme = savedTheme;
         }
-
-        // Applica tema
         applyTheme(currentTheme, false);
 
         window.PortfolioConfig.utils.log('debug', `Theme loaded: ${currentTheme}`);
     }
 
     function detectSystemTheme() {
-        // Verifica se il browser supporta prefers-color-scheme
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             return 'dark';
         }
@@ -73,25 +63,15 @@ Gestisce il sistema di tema scuro/chiaro
         
         isTransitioning = true;
         currentTheme = theme;
-
-        // Aggiungi classe di transizione se richiesta
         if (withAnimation && window.PortfolioConfig.ui.theme.transitions) {
             document.documentElement.classList.add('theme-transitioning');
         }
-
-        // Applica attributo data-theme
         document.documentElement.setAttribute('data-theme', theme);
-
-        // Aggiorna icona del bottone
         updateThemeToggleIcon(theme);
-
-        // Salva tema nel localStorage
         window.PortfolioConfig.utils.storage.set(
             window.PortfolioConfig.ui.theme.storageKey,
             theme
         );
-
-        // Rimuovi classe di transizione dopo animazione
         if (withAnimation) {
             setTimeout(() => {
                 document.documentElement.classList.remove('theme-transitioning');
@@ -100,8 +80,6 @@ Gestisce il sistema di tema scuro/chiaro
         } else {
             isTransitioning = false;
         }
-
-        // Dispatch evento custom per altri moduli
         dispatchThemeChangeEvent(theme);
 
         window.PortfolioConfig.utils.log('debug', `Theme applied: ${theme}`);
@@ -112,11 +90,7 @@ Gestisce il sistema di tema scuro/chiaro
 
         const icon = themeToggleBtn.querySelector('i');
         if (!icon) return;
-
-        // Rimuovi classi esistenti
         icon.classList.remove('fa-moon', 'fa-sun');
-
-        // Aggiungi icona appropriata
         if (theme === 'dark') {
             icon.classList.add('fa-sun');
             themeToggleBtn.setAttribute('aria-label', 'Passa al tema chiaro');
@@ -135,8 +109,6 @@ Gestisce il sistema di tema scuro/chiaro
         if (!themeToggleBtn) return;
 
         themeToggleBtn.addEventListener('click', toggleTheme);
-
-        // Supporto keyboard
         themeToggleBtn.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -149,11 +121,7 @@ Gestisce il sistema di tema scuro/chiaro
         if (isTransitioning) return;
 
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-        // Aggiungi effetto visual al bottone
         addToggleEffect();
-        
-        // Applica nuovo tema
         setTimeout(() => {
             applyTheme(newTheme, true);
         }, 150);
@@ -163,11 +131,7 @@ Gestisce il sistema di tema scuro/chiaro
 
     function addToggleEffect() {
         if (!themeToggleBtn) return;
-
-        // Aggiungi classe per animazione
         themeToggleBtn.classList.add('theme-toggle-active');
-
-        // Rimuovi dopo animazione
         setTimeout(() => {
             themeToggleBtn.classList.remove('theme-toggle-active');
         }, 300);
@@ -177,12 +141,10 @@ Gestisce il sistema di tema scuro/chiaro
     /* RILEVAMENTO SISTEMA              */
     /* ================================ */
     function setupSystemThemeDetection() {
-        // Ascolta cambiamenti preferenze sistema
         if (window.matchMedia) {
             const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
             
             mediaQuery.addEventListener('change', (e) => {
-                // Solo se non c'è tema salvato esplicitamente
                 const savedTheme = window.PortfolioConfig.utils.storage.get(
                     window.PortfolioConfig.ui.theme.storageKey
                 );
@@ -215,7 +177,6 @@ Gestisce il sistema di tema scuro/chiaro
     /* ANIMAZIONI SPECIALI              */
     /* ================================ */
     function createThemeTransitionEffect() {
-        // Crea overlay per transizione smooth
         const overlay = document.createElement('div');
         overlay.className = 'theme-transition-overlay';
         overlay.style.cssText = `
@@ -232,8 +193,6 @@ Gestisce il sistema di tema scuro/chiaro
         `;
         
         document.body.appendChild(overlay);
-        
-        // Anima overlay
         requestAnimationFrame(() => {
             overlay.style.opacity = '0.1';
             
@@ -270,7 +229,6 @@ Gestisce il sistema di tema scuro/chiaro
     }
 
     function updateMetaThemeColor(theme) {
-        // Aggiorna meta theme-color per mobile
         let metaThemeColor = document.querySelector('meta[name="theme-color"]');
         
         if (!metaThemeColor) {
@@ -287,7 +245,6 @@ Gestisce il sistema di tema scuro/chiaro
     /* PERSISTENZA AVANZATA             */
     /* ================================ */
     function syncThemeAcrossTabs() {
-        // Ascolta cambiamenti localStorage da altre tab
         window.addEventListener('storage', (e) => {
             if (e.key === window.PortfolioConfig.ui.theme.storageKey && e.newValue) {
                 const newTheme = e.newValue.replace(/"/g, ''); // Rimuovi quotes JSON
@@ -303,7 +260,6 @@ Gestisce il sistema di tema scuro/chiaro
     /* ACCESSIBILITY                    */
     /* ================================ */
     function setupAccessibility() {
-        // Rispetta prefers-reduced-motion
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         
         if (prefersReducedMotion) {
@@ -312,10 +268,7 @@ Gestisce il sistema di tema scuro/chiaro
             document.documentElement.style.setProperty('--transition-fast', '0ms');
             document.documentElement.style.setProperty('--transition-slow', '0ms');
         }
-
-        // Shortcut keyboard per toggle tema
         document.addEventListener('keydown', (e) => {
-            // Ctrl/Cmd + Shift + T per toggle tema
             if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'T') {
                 e.preventDefault();
                 toggleTheme();

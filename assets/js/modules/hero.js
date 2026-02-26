@@ -40,7 +40,6 @@ class HeroModule {
      * Configura gli elementi della sezione hero
      */
     setupElements() {
-        // Trova elementi principali
         this.elements = {
             greeting: this.heroSection.querySelector('.hero-greeting'),
             name: this.heroSection.querySelector('.hero-name'),
@@ -52,8 +51,6 @@ class HeroModule {
             scrollIndicator: this.heroSection.querySelector('.hero-scroll'),
             shapes: this.heroSection.querySelectorAll('.hero-shape')
         };
-
-        // Verifica che gli elementi essenziali esistano
         this.validateElements();
     }
 
@@ -73,10 +70,7 @@ class HeroModule {
      * Imposta gli event listeners
      */
     bindEvents() {
-        // Intersection Observer per attivare animazioni
         this.setupIntersectionObserver();
-        
-        // Mouse movement per effetti parallax
         if (this.parallaxEnabled) {
             this.heroSection.addEventListener('mousemove', (e) => {
                 this.handleMouseMove(e);
@@ -86,34 +80,24 @@ class HeroModule {
                 this.resetParallax();
             });
         }
-
-        // Click sui bottoni hero
         this.elements.buttons.forEach(button => {
             button.addEventListener('click', (e) => {
                 this.handleButtonClick(e);
             });
         });
-
-        // Scroll indicator click
         if (this.elements.scrollIndicator) {
             this.elements.scrollIndicator.addEventListener('click', (e) => {
                 this.handleScrollClick(e);
             });
         }
-
-        // Social links tracking
         this.elements.socialLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 this.trackSocialClick(e);
             });
         });
-
-        // Window resize
         window.addEventListener('resize', () => {
             this.handleResize();
         });
-
-        // Visibility change per pausare/riprendere animazioni
         document.addEventListener('visibilitychange', () => {
             this.handleVisibilityChange();
         });
@@ -161,11 +145,7 @@ class HeroModule {
 
         const img = this.elements.avatar.querySelector('img');
         if (!img) return;
-
-        // Aggiungi classe per animazioni CSS personalizzate
         this.elements.avatar.classList.add('hero-avatar-animated');
-        
-        // Effetto pulse periodico
         setInterval(() => {
             if (this.isVisible && !document.hidden) {
                 img.style.transform = 'scale(1.02)';
@@ -528,13 +508,9 @@ class HeroModule {
         console.log('🗑️ Hero Module: Destroyed');
     }
 }
-
-// Export per uso modulare
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = HeroModule;
 }
-
-// Inizializzazione automatica quando il DOM è pronto
 if (typeof window !== 'undefined') {
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {

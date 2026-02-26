@@ -38,13 +38,10 @@ class FiltersModule {
      */
     async loadData() {
         try {
-            // Carica skills data
             const skillsResponse = await fetch('data/skills.json');
             if (skillsResponse.ok) {
                 this.skillsData = await skillsResponse.json();
             }
-
-            // Carica projects data (se esiste)
             try {
                 const projectsResponse = await fetch('data/projects.json');
                 if (projectsResponse.ok) {
@@ -65,21 +62,16 @@ class FiltersModule {
      * Imposta gli event listeners
      */
     bindEvents() {
-        // Event delegation per i bottoni filtro
         document.addEventListener('click', (e) => {
             if (e.target.classList.contains('filter-btn')) {
                 this.handleFilterClick(e);
             }
         });
-
-        // Keyboard navigation per accessibilità
         document.addEventListener('keydown', (e) => {
             if (e.target.classList.contains('filter-btn')) {
                 this.handleFilterKeyboard(e);
             }
         });
-
-        // Reset filtri su resize (mobile)
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
@@ -128,8 +120,6 @@ class FiltersModule {
             if (this.projectsData && this.projectsData.categories) {
                 this.updateFilterButtons(filterContainer, this.projectsData.categories, 'projects');
             }
-            
-            // Se non ci sono dati progetti, mostra messaggio di caricamento
             if (!this.projectsData) {
                 this.showProjectsPlaceholder(gridContainer);
             }
@@ -229,26 +219,14 @@ class FiltersModule {
         const section = this.getFilterSection(button);
         
         if (!section) return;
-
-        // Rimuovi classe active da tutti i bottoni della sezione
         const allButtons = section.querySelectorAll('.filter-btn');
         allButtons.forEach(btn => btn.classList.remove('active'));
-        
-        // Aggiungi classe active al bottone cliccato
         button.classList.add('active');
-        
-        // Determina il tipo di filtro
         const isSkillsFilter = section.closest('#skills');
         const filterType = isSkillsFilter ? 'skills' : 'projects';
         const filterValue = button.getAttribute(isSkillsFilter ? 'data-category' : 'data-filter');
-        
-        // Aggiorna filtro attivo
         this.activeFilters[filterType] = filterValue;
-        
-        // Applica il filtro
         this.applyFilter(filterType, filterValue);
-        
-        // Analytics (se disponibile)
         this.trackFilterUsage(filterType, filterValue);
     }
 
@@ -261,10 +239,7 @@ class FiltersModule {
 
         const grid = section.querySelector(`.${type === 'skills' ? 'skills' : 'projects'}-grid`);
         const items = grid.querySelectorAll(type === 'skills' ? '.skill-card' : '.project-card');
-
-        // Anima l'uscita degli elementi
         this.animateFilterOut(items, () => {
-            // Filtra gli elementi
             items.forEach(item => {
                 const shouldShow = this.shouldShowItem(item, type, value);
                 item.style.display = shouldShow ? '' : 'none';
@@ -275,12 +250,8 @@ class FiltersModule {
                     item.classList.remove('filter-match');
                 }
             });
-
-            // Anima l'entrata degli elementi visibili
             const visibleItems = Array.from(items).filter(item => item.style.display !== 'none');
             this.animateFilterIn(visibleItems);
-
-            // Aggiorna conteggi
             this.updateResultsCount(type, visibleItems.length);
         });
     }
@@ -295,8 +266,6 @@ class FiltersModule {
         const itemCategories = item.getAttribute(attribute);
         
         if (!itemCategories) return false;
-
-        // Supporta multiple categorie separate da virgola
         const categories = itemCategories.split(',').map(cat => cat.trim());
         return categories.includes(filterValue);
     }
@@ -332,7 +301,6 @@ class FiltersModule {
      */
     animateFilterIn(items) {
         items.forEach((item, index) => {
-            // Reset immediato
             item.style.transform = 'translateY(20px)';
             item.style.opacity = '0';
             
@@ -340,8 +308,6 @@ class FiltersModule {
                 item.style.transition = `all ${this.animationConfig.duration}ms ${this.animationConfig.easing}`;
                 item.style.transform = 'translateY(0)';
                 item.style.opacity = '1';
-                
-                // Anima anche le barre di progresso se presenti
                 setTimeout(() => {
                     this.animateProgressBars(item);
                 }, this.animationConfig.duration / 2);
@@ -379,8 +345,6 @@ class FiltersModule {
                 item.style.transition = `all ${this.animationConfig.duration}ms ${this.animationConfig.easing}`;
                 item.style.opacity = '1';
                 item.style.transform = 'translateY(0)';
-                
-                // Anima le barre di progresso
                 setTimeout(() => {
                     this.animateProgressBars(item);
                 }, this.animationConfig.duration);
@@ -448,7 +412,6 @@ class FiltersModule {
         const isFiltered = this.activeFilters[type] !== 'all';
         
         if (isFiltered) {
-            // counter.textContent = `Showing ${count} di ${totalItems}`;
             counter.style.opacity = '1';
         } else {
             counter.style.opacity = '0';
@@ -472,7 +435,6 @@ class FiltersModule {
      * Aggiorna i conteggi sui filtri
      */
     updateFilterCounts() {
-        // Aggiorna conteggi skills
         if (this.skillsData && this.skillsData.categories) {
             this.skillsData.categories.forEach(category => {
                 if (category.id === 'all') {
@@ -484,8 +446,6 @@ class FiltersModule {
                 }
             });
         }
-
-        // Aggiorna conteggi projects (se disponibili)
         if (this.projectsData && this.projectsData.categories && this.projectsData.projects) {
             this.projectsData.categories.forEach(category => {
                 if (category.id === 'all') {
@@ -571,8 +531,6 @@ class FiltersModule {
      */
     handleDataError() {
         console.error('❌ Impossibile caricare i dati per i filtri');
-        
-        // Disabilita i filtri se i dati non sono disponibili
         const filterButtons = document.querySelectorAll('.filter-btn');
         filterButtons.forEach(button => {
             if (button.getAttribute('data-category') !== 'all' && 
@@ -587,13 +545,10 @@ class FiltersModule {
      * Gestisce il resize della finestra
      */
     handleResize() {
-        // Riapplica animazioni se necessario
         if (window.innerWidth <= 768) {
-            // Mobile: riduce durata animazioni
             this.animationConfig.duration = 200;
             this.animationConfig.stagger = 30;
         } else {
-            // Desktop: ripristina durata normale
             this.animationConfig.duration = 300;
             this.animationConfig.stagger = 50;
         }
@@ -603,10 +558,7 @@ class FiltersModule {
      * Traccia l'utilizzo dei filtri (analytics)
      */
     trackFilterUsage(type, value) {
-        // Implementa tracking analytics se necessario
         console.log(`📊 Filter used: ${type} -> ${value}`);
-        
-        // Esempio: Google Analytics
         if (typeof gtag !== 'undefined') {
             gtag('event', 'filter_used', {
                 'section': type,
@@ -641,17 +593,12 @@ class FiltersModule {
      * Cleanup
      */
     destroy() {
-        // Rimuovi event listeners se necessario
         console.log('🗑️ Filters Module: Destroyed');
     }
 }
-
-// Export per uso modulare
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = FiltersModule;
 }
-
-// Inizializzazione automatica quando il DOM è pronto
 if (typeof window !== 'undefined') {
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {

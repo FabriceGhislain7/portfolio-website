@@ -1,27 +1,26 @@
 /*
 ===========================================
-PROJECTS MODULE - FIXED VERSION
+PROJECTS MODULE
 ===========================================
 Carica e gestisce la sezione progetti
-FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni filtro
+
 */
 
 (function() {
     'use strict';
-
-    // Variabili del modulo
     let projectsData = null;
     let projectsGrid = null;
     let filterButtons = null;
     let currentFilter = 'all';
     let projectsLoaded = false;
     let isAnimating = false;
+    let isInitialized = false;
 
     /* ================================ */
     /* INIZIALIZZAZIONE                 */
     /* ================================ */
     function init() {
-        // Ottieni riferimenti elementi DOM
+        if (isInitialized) return;
         projectsGrid = document.getElementById('projects-grid');
         filterButtons = document.querySelectorAll('.projects-filter .filter-btn');
 
@@ -29,14 +28,11 @@ FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni fi
             console.warn('Projects grid not found');
             return;
         }
-
-        // Setup filtri
         setupFilters();
-
-        // Carica dati progetti
         loadProjectsData();
 
         window.PortfolioConfig.utils.log('debug', 'Projects module initialized');
+        isInitialized = true;
     }
 
     /* ================================ */
@@ -53,16 +49,10 @@ FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni fi
             }
 
             projectsData = await response.json();
-            
-            // Valida dati
             if (!projectsData || !projectsData.projects || !Array.isArray(projectsData.projects)) {
                 throw new Error('Invalid projects data format');
             }
-
-            // Ordina progetti per priorità
             projectsData.projects.sort((a, b) => a.priority - b.priority);
-
-            // Renderizza progetti
             renderProjects();
             setupProjectsAnimations();
             
@@ -80,22 +70,14 @@ FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni fi
     /* ================================ */
     function renderProjects() {
         if (!projectsData || !projectsGrid) return;
-
-        // Filtra progetti in base al filtro corrente
         const filteredProjects = filterProjects(projectsData.projects, currentFilter);
 
         if (filteredProjects.length === 0) {
             showEmptyState();
             return;
         }
-
-        // Genera HTML
         const projectsHTML = filteredProjects.map(project => createProjectCard(project)).join('');
-
-        // Aggiorna grid
         projectsGrid.innerHTML = projectsHTML;
-
-        // Avvia animazioni
         animateProjectCards();
     }
 
@@ -103,12 +85,10 @@ FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni fi
         const statusInfo = getProjectStatus(project.status);
         const techTags = project.technologies.slice(0, 4); // Mostra prime 4 tecnologie
         const isFeatured = project.featured ? 'featured' : '';
-
-        // 🔧 FIX: Cambiato data-category in data-filter
         return `
             <div class="project-card ${isFeatured}" data-filter="${project.category}" data-status="${project.status}">
                 <div class="project-image">
-                    <img src="${project.image}" alt="${project.title}" loading="lazy" onerror="this.src='assets/images/projects/placeholder.jpg'">
+                    <img src="${project.image}" alt="${project.title}" loading="lazy" onerror="this.src='assets/images/projects/small_logo.png'">
                     <div class="project-overlay">
                         <div class="project-links">
                             ${project.links.github ? `
@@ -180,14 +160,10 @@ FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni fi
         
         currentFilter = newFilter;
         isAnimating = true;
-
-        // Aggiorna UI filtri
         filterButtons.forEach(button => {
             const category = button.getAttribute('data-filter');
             button.classList.toggle('active', category === currentFilter);
         });
-
-        // Anima uscita progetti correnti
         const currentCards = projectsGrid.querySelectorAll('.project-card');
         
         Promise.all(Array.from(currentCards).map((card, index) => {
@@ -200,7 +176,6 @@ FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni fi
                 }, index * 50);
             });
         })).then(() => {
-            // Re-renderizza progetti dopo animazione uscita
             setTimeout(() => {
                 if (projectsLoaded) {
                     renderProjects();
@@ -225,17 +200,11 @@ FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni fi
     function showProjectDetails(projectId) {
         const project = projectsData.projects.find(p => p.id === projectId);
         if (!project) return;
-
-        // Crea e mostra modal con dettagli completi
         const modal = createProjectModal(project);
         document.body.appendChild(modal);
-        
-        // Mostra modal con animazione
         setTimeout(() => {
             modal.classList.add('active');
         }, 10);
-
-        // Gestisci chiusura modal
         setupModalClosing(modal);
 
         window.PortfolioConfig.utils.log('debug', `Showing details for project: ${projectId}`);
@@ -340,8 +309,6 @@ FIXED: Cambiato data-category in data-filter per compatibilità con i bottoni fi
         
         closeBtn.addEventListener('click', closeModal);
         backdrop.addEventListener('click', closeModal);
-        
-        // Chiudi con ESC
         const handleKeydown = (e) => {
             if (e.key === 'Escape') {
                 closeModal();

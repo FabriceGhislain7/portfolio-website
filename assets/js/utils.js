@@ -5,10 +5,6 @@ UTILS MODULE - Portfolio
 Funzioni utility riutilizzabili per tutto il portfolio
 */
 
-// ================================
-// DOM UTILITIES
-// ================================
-
 /**
  * Selettore DOM migliorato con error handling
  */
@@ -94,10 +90,6 @@ const getElementPosition = (element) => {
         height: rect.height
     };
 };
-
-// ================================
-// ANIMATION UTILITIES
-// ================================
 
 /**
  * Easing functions per animazioni
@@ -246,10 +238,6 @@ const slideDown = (element, duration = 300, callback = () => {}) => {
     });
 };
 
-// ================================
-// UTILITY FUNCTIONS
-// ================================
-
 /**
  * Debounce function per limitare chiamate frequenti
  */
@@ -347,10 +335,6 @@ const isValidUrl = (url) => {
     }
 };
 
-// ================================
-// STORAGE UTILITIES
-// ================================
-
 /**
  * Gestione sicura del localStorage
  */
@@ -396,10 +380,6 @@ const storage = {
     }
 };
 
-// ================================
-// DEVICE DETECTION
-// ================================
-
 /**
  * Rileva il tipo di dispositivo
  */
@@ -433,10 +413,6 @@ const device = {
         return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
     }
 };
-
-// ================================
-// FETCH UTILITIES
-// ================================
 
 /**
  * Fetch wrapper con timeout e error handling
@@ -479,10 +455,6 @@ const loadJSON = async (url, timeout = 10000) => {
     }
 };
 
-// ================================
-// MATH UTILITIES
-// ================================
-
 /**
  * Clamp di un valore tra min e max
  */
@@ -518,10 +490,6 @@ const roundTo = (number, decimals = 2) => {
     return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
 };
 
-// ================================
-// COLOR UTILITIES
-// ================================
-
 /**
  * Converte HEX a RGB
  */
@@ -540,10 +508,6 @@ const hexToRgb = (hex) => {
 const rgbToHex = (r, g, b) => {
     return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 };
-
-// ================================
-// EVENT UTILITIES
-// ================================
 
 /**
  * Event emitter semplice
@@ -573,10 +537,6 @@ class EventEmitter {
     }
 }
 
-// ================================
-// PERFORMANCE UTILITIES
-// ================================
-
 /**
  * Misura le performance di una funzione
  */
@@ -605,55 +565,24 @@ const preloadImages = (urls) => {
         })
     );
 };
-
-// ================================
-// EXPORTS
-// ================================
-
-// Esporta tutte le utility
 const Utils = {
-    // DOM
     $, $$, createElement, isElementInViewport, getElementPosition,
-    
-    // Animations
     Easing, animate, fadeIn, fadeOut, slideUp, slideDown,
-    
-    // General utilities
     debounce, throttle, generateUniqueId, formatNumber, formatDate,
     capitalize, slugify, isValidEmail, isValidUrl,
-    
-    // Storage
     storage,
-    
-    // Device
     device,
-    
-    // Fetch
     fetchWithTimeout, loadJSON,
-    
-    // Math
     clamp, mapRange, lerp, random, roundTo,
-    
-    // Color
     hexToRgb, rgbToHex,
-    
-    // Events
     EventEmitter,
-    
-    // Performance
     measurePerformance, preloadImages
 };
-
-// Export per moduli
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = Utils;
 }
-
-// Rendi disponibile globalmente
 if (typeof window !== 'undefined') {
     window.Utils = Utils;
-    
-    // Shortcut globali per le funzioni più usate
     window.$ = $;
     window.$$ = $$;
     

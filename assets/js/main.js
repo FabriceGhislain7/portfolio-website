@@ -4,8 +4,6 @@ MAIN APPLICATION SCRIPT
 ===========================================
 Coordinatore principale di tutti i moduli del portfolio
 */
-
-// Hide loading screen when page is fully loaded
 window.addEventListener('load', () => {
     const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen) {
@@ -20,8 +18,6 @@ window.addEventListener('load', () => {
 
 (function() {
     'use strict';
-
-    // Stato globale dell'applicazione
     const AppState = {
         isLoaded: false,
         modules: [],
@@ -42,22 +38,11 @@ window.addEventListener('load', () => {
         window.PortfolioConfig.utils.log('info', 'Initializing Portfolio Application');
 
         try {
-            // Inizializza moduli in ordine di priorità
             initializeModules();
-
-            // Setup global event listeners
             setupGlobalEventListeners();
-
-            // Setup performance monitoring
             setupPerformanceMonitoring();
-
-            // Setup error handling
             setupGlobalErrorHandling();
-
-            // Setup accessibility features
             setupAccessibilityFeatures();
-
-            // Finalize initialization
             finalizeInitialization();
 
         } catch (error) {
@@ -70,7 +55,6 @@ window.addEventListener('load', () => {
     /* ================================ */
     function initializeModules() {
         const modules = [
-            // Moduli core (sempre necessari)
             {
                 name: 'Theme',
                 instance: window.ThemeModule,
@@ -83,7 +67,6 @@ window.addEventListener('load', () => {
                 required: true,
                 priority: 2
             },
-            // Moduli di contenuto
             {
                 name: 'Skills',
                 instance: window.SkillsModule,
@@ -109,11 +92,7 @@ window.addEventListener('load', () => {
                 priority: 6
             }
         ];
-
-        // Ordina per priorità
         modules.sort((a, b) => a.priority - b.priority);
-
-        // Inizializza ogni modulo
         modules.forEach(module => {
             try {
                 if (module.instance && typeof module.instance.init === 'function') {
@@ -144,7 +123,6 @@ window.addEventListener('load', () => {
     /* EVENT LISTENERS GLOBALI          */
     /* ================================ */
     function setupGlobalEventListeners() {
-        // Window resize handler
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
@@ -152,27 +130,15 @@ window.addEventListener('load', () => {
                 handleWindowResize();
             }, 250);
         });
-
-        // Window focus/blur handlers
         window.addEventListener('focus', handleWindowFocus);
         window.addEventListener('blur', handleWindowBlur);
-
-        // Page visibility API
         if (typeof document.visibilityState !== 'undefined') {
             document.addEventListener('visibilitychange', handleVisibilityChange);
         }
-
-        // Online/offline handlers
         window.addEventListener('online', handleOnlineStatus);
         window.addEventListener('offline', handleOfflineStatus);
-
-        // Before unload (per cleanup)
         window.addEventListener('beforeunload', handleBeforeUnload);
-
-        // Global keyboard shortcuts
         document.addEventListener('keydown', handleGlobalKeyboard);
-
-        // Global click handler (per analytics futuri)
         document.addEventListener('click', handleGlobalClick);
 
         window.PortfolioConfig.utils.log('debug', 'Global event listeners setup completed');
@@ -184,8 +150,6 @@ window.addEventListener('load', () => {
     function handleWindowResize() {
         const newWidth = window.innerWidth;
         const newHeight = window.innerHeight;
-        
-        // Notifica moduli del resize
         const event = new CustomEvent('portfolioResize', {
             detail: { width: newWidth, height: newHeight }
         });
@@ -227,7 +191,6 @@ window.addEventListener('load', () => {
     }
 
     function handleBeforeUnload() {
-        // Cleanup operations
         AppState.modules.forEach(moduleName => {
             const moduleInstance = window[`${moduleName}Module`];
             if (moduleInstance && typeof moduleInstance.cleanup === 'function') {
@@ -241,7 +204,6 @@ window.addEventListener('load', () => {
     }
 
     function handleGlobalKeyboard(e) {
-        // Global keyboard shortcuts
         if (e.ctrlKey || e.metaKey) {
             switch (e.key) {
                 case '/':
@@ -254,20 +216,15 @@ window.addEventListener('load', () => {
                     break;
             }
         }
-
-        // Escape key global handler
         if (e.key === 'Escape') {
             closeAllModals();
         }
     }
 
     function handleGlobalClick(e) {
-        // Track clicks for future analytics
         const target = e.target;
         const tagName = target.tagName.toLowerCase();
         const className = target.className;
-        
-        // Log important interactions
         if (tagName === 'a' || tagName === 'button' || target.closest('.clickable')) {
             window.PortfolioConfig.utils.log('debug', 'User interaction', {
                 element: tagName,
@@ -281,25 +238,18 @@ window.addEventListener('load', () => {
     /* PERFORMANCE MONITORING           */
     /* ================================ */
     function setupPerformanceMonitoring() {
-        // Misura Core Web Vitals
         if ('web-vital' in window) {
             measureWebVitals();
         }
-
-        // Monitor loading performance
         window.addEventListener('load', () => {
             AppState.performance.loadTime = performance.now();
             
             const loadDuration = AppState.performance.loadTime - AppState.performance.startTime;
             window.PortfolioConfig.utils.log('info', `Page loaded in ${loadDuration.toFixed(2)}ms`);
-            
-            // Report performance metrics
             if (window.PortfolioConfig.dev.showPerformanceMetrics) {
                 showPerformanceMetrics();
             }
         });
-
-        // Monitor long tasks
         if ('PerformanceObserver' in window) {
             try {
                 const observer = new PerformanceObserver((list) => {
@@ -311,15 +261,12 @@ window.addEventListener('load', () => {
                 });
                 observer.observe({ entryTypes: ['longtask'] });
             } catch (error) {
-                // PerformanceObserver not supported or failed
                 console.warn('Performance monitoring not available');
             }
         }
     }
 
     function measureWebVitals() {
-        // Placeholder per future Web Vitals integration
-        // In un'app reale, useresti una libreria come web-vitals
         window.PortfolioConfig.utils.log('debug', 'Web Vitals monitoring setup');
     }
 
@@ -338,7 +285,6 @@ window.addEventListener('load', () => {
     /* ERROR HANDLING                   */
     /* ================================ */
     function setupGlobalErrorHandling() {
-        // Global error handler
         window.addEventListener('error', (e) => {
             const error = {
                 message: e.message,
@@ -350,14 +296,9 @@ window.addEventListener('load', () => {
             
             AppState.errors.push(error);
             window.PortfolioConfig.utils.log('error', 'Global error caught', error);
-            
-            // In produzione, potresti inviare errori a un servizio di monitoring
             if (!window.PortfolioConfig.dev.debug) {
-                // sendErrorToService(error);
             }
         });
-
-        // Unhandled promise rejections
         window.addEventListener('unhandledrejection', (e) => {
             const error = {
                 reason: e.reason,
@@ -366,22 +307,14 @@ window.addEventListener('load', () => {
             
             AppState.errors.push(error);
             window.PortfolioConfig.utils.log('error', 'Unhandled promise rejection', error);
-            
-            // Previeni il log di default nel browser
             e.preventDefault();
         });
     }
 
     function handleInitializationError(error) {
         console.error('Portfolio initialization failed:', error);
-        
-        // Mostra error message user-friendly
         showErrorMessage('Si è verificato un errore durante il caricamento del portfolio. Ricarica la pagina.');
-        
-        // Try graceful degradation
         document.body.classList.add('app-error');
-        
-        // Hide loading screen
         const loadingScreen = document.getElementById('loading-screen');
         if (loadingScreen) {
             loadingScreen.style.display = 'none';
@@ -392,7 +325,6 @@ window.addEventListener('load', () => {
     /* ACCESSIBILITY                    */
     /* ================================ */
     function setupAccessibilityFeatures() {
-        // Skip link functionality
         const skipLink = document.querySelector('.skip-link');
         if (skipLink) {
             skipLink.addEventListener('click', (e) => {
@@ -404,8 +336,6 @@ window.addEventListener('load', () => {
                 }
             });
         }
-
-        // Keyboard navigation enhancement
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Tab') {
                 document.body.classList.add('keyboard-navigation');
@@ -415,8 +345,6 @@ window.addEventListener('load', () => {
         document.addEventListener('mousedown', () => {
             document.body.classList.remove('keyboard-navigation');
         });
-
-        // ARIA live region for announcements
         createAriaLiveRegion();
 
         window.PortfolioConfig.utils.log('debug', 'Accessibility features setup completed');
@@ -525,17 +453,14 @@ window.addEventListener('load', () => {
     }
 
     function showKeyboardShortcuts() {
-        // Future implementation for keyboard shortcuts help
         window.PortfolioConfig.utils.log('info', 'Keyboard shortcuts: Ctrl+Shift+T (theme), Ctrl+/ (help)');
     }
 
     function focusSearch() {
-        // Future implementation for search functionality
         window.PortfolioConfig.utils.log('info', 'Search functionality not implemented yet');
     }
 
     function closeAllModals() {
-        // Chiudi tutti i modal aperti
         const modals = document.querySelectorAll('.project-modal.active');
         modals.forEach(modal => {
             modal.classList.remove('active');
@@ -547,19 +472,13 @@ window.addEventListener('load', () => {
     /* ================================ */
     function finalizeInitialization() {
         AppState.isLoaded = true;
-        
-        // Nascondi loading screen
         const loadingScreen = document.getElementById('loading-screen');
         if (loadingScreen) {
             setTimeout(() => {
                 loadingScreen.classList.add('hidden');
             }, window.PortfolioConfig.ui.loading.minDuration);
         }
-
-        // Aggiungi classe loaded al body
         document.body.classList.add('app-loaded');
-        
-        // Dispatch evento di inizializzazione completata
         const event = new CustomEvent('portfolioLoaded', {
             detail: {
                 modules: AppState.modules,
@@ -570,8 +489,6 @@ window.addEventListener('load', () => {
         document.dispatchEvent(event);
 
         window.PortfolioConfig.utils.log('info', 'Portfolio initialization completed successfully');
-        
-        // Log finale stato applicazione
         if (window.PortfolioConfig.dev.debug) {
             console.log('Portfolio State:', AppState);
         }

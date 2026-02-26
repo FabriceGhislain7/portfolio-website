@@ -7,19 +7,18 @@ Carica e gestisce la sezione competenze
 
 (function() {
     'use strict';
-
-    // Variabili del modulo
     let skillsData = null;
     let skillsGrid = null;
     let filterButtons = null;
     let currentFilter = 'all';
     let skillsLoaded = false;
+    let isInitialized = false;
 
     /* ================================ */
     /* INIZIALIZZAZIONE                 */
     /* ================================ */
     function init() {
-        // Ottieni riferimenti elementi DOM
+        if (isInitialized) return;
         skillsGrid = document.getElementById('skills-grid');
         filterButtons = document.querySelectorAll('.skills-filter .filter-btn');
 
@@ -27,14 +26,11 @@ Carica e gestisce la sezione competenze
             console.warn('Skills grid not found');
             return;
         }
-
-        // Setup filtri
         setupFilters();
-
-        // Carica dati skills
         loadSkillsData();
 
         window.PortfolioConfig.utils.log('debug', 'Skills module initialized');
+        isInitialized = true;
     }
 
     /* ================================ */
@@ -49,13 +45,9 @@ Carica e gestisce la sezione competenze
             }
 
             skillsData = await response.json();
-            
-            // Valida dati
             if (!skillsData || !skillsData.skills || !Array.isArray(skillsData.skills)) {
                 throw new Error('Invalid skills data format');
             }
-
-            // Renderizza skills
             renderSkills();
             setupSkillsAnimations();
             
@@ -73,17 +65,9 @@ Carica e gestisce la sezione competenze
     /* ================================ */
     function renderSkills() {
         if (!skillsData || !skillsGrid) return;
-
-        // Filtra skills in base al filtro corrente
         const filteredSkills = filterSkills(skillsData.skills, currentFilter);
-
-        // Genera HTML
         const skillsHTML = filteredSkills.map(skill => createSkillCard(skill)).join('');
-
-        // Aggiorna grid
         skillsGrid.innerHTML = skillsHTML;
-
-        // Avvia animazioni
         animateSkillCards();
     }
 
@@ -130,14 +114,10 @@ Carica e gestisce la sezione competenze
 
     function updateFilter(newFilter) {
         currentFilter = newFilter;
-
-        // Aggiorna UI filtri
         filterButtons.forEach(button => {
             const category = button.getAttribute('data-category');
             button.classList.toggle('active', category === currentFilter);
         });
-
-        // Re-renderizza skills
         if (skillsLoaded) {
             renderSkills();
         }
@@ -164,8 +144,6 @@ Carica e gestisce la sezione competenze
                 }
             });
         });
-
-        // Osserva la sezione skills
         const skillsSection = document.getElementById('skills');
         if (skillsSection) {
             observer.observe(skillsSection);
@@ -176,7 +154,6 @@ Carica e gestisce la sezione competenze
         const skillCards = skillsGrid.querySelectorAll('.skill-card');
         
         skillCards.forEach((card, index) => {
-            // Animazione di entrata scaglionata
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             

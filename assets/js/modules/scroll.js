@@ -44,29 +44,13 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
 
             try {
                 window.PortfolioConfig.utils.log('info', 'Initializing Scroll module');
-                
-                // Setup elementi DOM
                 this.setupDOMElements();
-                
-                // Setup scroll progress bar
                 this.setupProgressBar();
-                
-                // Setup back to top button
                 this.setupBackToTop();
-                
-                // Setup smooth scroll
                 this.setupSmoothScroll();
-                
-                // Setup scroll spy
                 this.setupScrollSpy();
-                
-                // Setup scroll animations
                 this.setupScrollAnimations();
-                
-                // Setup event listeners
                 this.setupEventListeners();
-                
-                // Initial setup
                 this.updateScrollState();
                 
                 ScrollState.isInitialized = true;
@@ -82,19 +66,12 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
         /* SETUP DOM ELEMENTS               */
         /* ================================ */
         setupDOMElements() {
-            // Trova tutti i section con ID
             ScrollState.sections = Array.from(document.querySelectorAll('section[id]'));
-            
-            // Trova tutti i link di navigazione
             ScrollState.navLinks = Array.from(document.querySelectorAll('a[href^="#"]')).filter(link => {
                 const href = link.getAttribute('href');
                 return href !== '#' && document.querySelector(href);
             });
-            
-            // Progress bar
             ScrollState.progressBar = document.getElementById('scroll-progress') || this.createProgressBar();
-            
-            // Back to top button
             ScrollState.backToTopButton = document.getElementById('back-to-top') || this.createBackToTop();
             
             window.PortfolioConfig.utils.log('debug', `Found ${ScrollState.sections.length} sections and ${ScrollState.navLinks.length} nav links`);
@@ -112,8 +89,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
             progressBar.id = 'scroll-progress';
             progressBar.className = 'scroll-progress';
             progressBar.innerHTML = '<div class="scroll-progress-bar"></div>';
-            
-            // Stili inline se non definiti nel CSS
             progressBar.style.cssText = `
                 position: fixed;
                 top: 0;
@@ -147,8 +122,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
             button.innerHTML = '<i class="fas fa-chevron-up"></i>';
             button.setAttribute('aria-label', 'Torna all\'inizio');
             button.setAttribute('title', 'Torna all\'inizio');
-            
-            // Stili inline se non definiti nel CSS
             button.style.cssText = `
                 position: fixed;
                 bottom: 30px;
@@ -192,8 +165,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
                 e.preventDefault();
                 this.scrollToTop();
             });
-            
-            // Setup visibility
             this.updateBackToTopVisibility();
         },
 
@@ -210,13 +181,9 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
                     
                     if (targetElement) {
                         this.scrollToElement(targetElement);
-                        
-                        // Update URL without triggering scroll
                         if (history.pushState) {
                             history.pushState(null, null, `#${targetId}`);
                         }
-                        
-                        // Update active nav
                         this.updateActiveNavigation(targetId);
                         
                         window.PortfolioConfig.utils.log('debug', `Smooth scroll to: ${targetId}`);
@@ -229,7 +196,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
         /* SETUP SCROLL SPY                 */
         /* ================================ */
         setupScrollSpy() {
-            // Intersection Observer per le sezioni
             const observerOptions = {
                 rootMargin: `-${window.PortfolioConfig.ui.navigation.highlightOffset}px 0px -50% 0px`,
                 threshold: 0
@@ -242,8 +208,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
                         if (sectionId !== ScrollState.currentSection) {
                             ScrollState.currentSection = sectionId;
                             this.updateActiveNavigation(sectionId);
-                            
-                            // Dispatch evento
                             document.dispatchEvent(new CustomEvent('sectionChanged', {
                                 detail: { sectionId, element: entry.target }
                             }));
@@ -251,8 +215,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
                     }
                 });
             }, observerOptions);
-            
-            // Osserva tutte le sezioni
             ScrollState.sections.forEach(section => {
                 sectionObserver.observe(section);
             });
@@ -264,7 +226,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
         /* SETUP SCROLL ANIMATIONS          */
         /* ================================ */
         setupScrollAnimations() {
-            // Observer per elementi con animazioni scroll-based
             const animationElements = document.querySelectorAll('[data-scroll-animation]');
             
             if (animationElements.length === 0) return;
@@ -296,30 +257,19 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
         /* SETUP EVENT LISTENERS            */
         /* ================================ */
         setupEventListeners() {
-            // Main scroll handler
             const throttledScrollHandler = window.PortfolioConfig.utils.throttle(
                 this.handleScroll.bind(this), 
                 10
             );
             
             window.addEventListener('scroll', throttledScrollHandler, { passive: true });
-            
-            // Resize handler
             window.addEventListener('resize', window.PortfolioConfig.utils.debounce(
                 this.handleResize.bind(this), 
                 250
             ));
-            
-            // Keyboard navigation
             document.addEventListener('keydown', this.handleKeyboard.bind(this));
-            
-            // Hash change
             window.addEventListener('hashchange', this.handleHashChange.bind(this));
-            
-            // Page visibility
             document.addEventListener('visibilitychange', this.handleVisibilityChange.bind(this));
-            
-            // Portfolio resize event
             document.addEventListener('portfolioResize', this.handlePortfolioResize.bind(this));
         },
 
@@ -328,27 +278,19 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
         /* ================================ */
         handleScroll() {
             ScrollState.scrollPosition = window.pageYOffset;
-            
-            // Determina direzione scroll
             if (ScrollState.scrollPosition > ScrollState.lastScrollTop) {
                 ScrollState.scrollDirection = 'down';
             } else if (ScrollState.scrollPosition < ScrollState.lastScrollTop) {
                 ScrollState.scrollDirection = 'up';
             }
             ScrollState.lastScrollTop = ScrollState.scrollPosition;
-            
-            // Update UI elements
             this.updateScrollState();
-            
-            // Set scrolling state
             ScrollState.isScrolling = true;
             clearTimeout(ScrollState.scrollTimeout);
             ScrollState.scrollTimeout = setTimeout(() => {
                 ScrollState.isScrolling = false;
                 document.dispatchEvent(new CustomEvent('scrollEnd'));
             }, 150);
-            
-            // Dispatch scroll event
             document.dispatchEvent(new CustomEvent('portfolioScroll', {
                 detail: {
                     position: ScrollState.scrollPosition,
@@ -359,13 +301,11 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
         },
 
         handleResize() {
-            // Re-calcola posizioni dopo resize
             this.updateScrollState();
             window.PortfolioConfig.utils.log('debug', 'Scroll positions recalculated after resize');
         },
 
         handleKeyboard(e) {
-            // Keyboard navigation
             switch (e.key) {
                 case 'Home':
                     if (e.ctrlKey) {
@@ -411,13 +351,11 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
 
         handleVisibilityChange() {
             if (document.visibilityState === 'visible') {
-                // Re-sync scroll state quando la pagina diventa visibile
                 this.updateScrollState();
             }
         },
 
         handlePortfolioResize(e) {
-            // Gestisce il resize event personalizzato del portfolio
             this.updateScrollState();
         },
 
@@ -467,7 +405,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
         /* AGGIORNAMENTO NAVIGAZIONE         */
         /* ================================ */
         updateNavigationState() {
-            // Aggiungi/rimuovi classe per navbar quando si scrolla
             const navbar = document.querySelector('.navbar') || document.querySelector('header');
             if (navbar) {
                 if (ScrollState.scrollPosition > 100) {
@@ -475,8 +412,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
                 } else {
                     navbar.classList.remove('scrolled');
                 }
-                
-                // Nascondi/mostra navbar basato sulla direzione dello scroll
                 if (ScrollState.scrollPosition > 200) {
                     if (ScrollState.scrollDirection === 'down' && ScrollState.isUserScrolling) {
                         navbar.classList.add('navbar-hidden');
@@ -491,14 +426,11 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
         /* AGGIORNAMENTO NAVIGAZIONE ATTIVA  */
         /* ================================ */
         updateActiveNavigation(activeSectionId) {
-            // Rimuovi classe active da tutti i link
             ScrollState.navLinks.forEach(link => {
                 link.classList.remove('active');
                 const parentLi = link.closest('li');
                 if (parentLi) parentLi.classList.remove('active');
             });
-            
-            // Aggiungi classe active al link corrispondente
             const activeLink = ScrollState.navLinks.find(link => {
                 return link.getAttribute('href') === `#${activeSectionId}`;
             });
@@ -540,8 +472,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
                 if (startTime === null) startTime = currentTime;
                 const timeElapsed = currentTime - startTime;
                 const progress = Math.min(timeElapsed / duration, 1);
-                
-                // Easing function (ease-in-out-cubic)
                 const easeInOutCubic = progress < 0.5
                     ? 4 * progress * progress * progress
                     : 1 - Math.pow(-2 * progress + 2, 3) / 2;
@@ -552,15 +482,12 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
                 if (progress < 1) {
                     ScrollState.scrollAnimationFrame = requestAnimationFrame(animation);
                 } else {
-                    // Scroll completato
                     ScrollState.isUserScrolling = true;
                     document.dispatchEvent(new CustomEvent('smoothScrollComplete', {
                         detail: { targetPosition, duration: timeElapsed }
                     }));
                 }
             };
-            
-            // Cancella animazione precedente se esistente
             if (ScrollState.scrollAnimationFrame) {
                 cancelAnimationFrame(ScrollState.scrollAnimationFrame);
             }
@@ -641,8 +568,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
                     element.classList.add('animate');
                     break;
             }
-            
-            // Dispatch evento
             element.dispatchEvent(new CustomEvent('scrollAnimationTriggered', {
                 detail: { animationType }
             }));
@@ -686,8 +611,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
         /* ================================ */
         /* API PUBBLICA                     */
         /* ================================ */
-        
-        // Scroll to specific section by ID
         scrollTo(sectionId, offset = null) {
             const element = document.getElementById(sectionId);
             if (element) {
@@ -696,28 +619,18 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
             }
             return false;
         },
-
-        // Get current section
         getCurrentSection() {
             return ScrollState.currentSection;
         },
-
-        // Get scroll position
         getScrollPosition() {
             return ScrollState.scrollPosition;
         },
-
-        // Get scroll direction
         getScrollDirection() {
             return ScrollState.scrollDirection;
         },
-
-        // Check if scrolling
         isScrolling() {
             return ScrollState.isScrolling;
         },
-
-        // Enable/disable smooth scroll
         setSmoothScroll(enabled) {
             if (enabled) {
                 document.documentElement.style.scrollBehavior = 'smooth';
@@ -725,8 +638,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
                 document.documentElement.style.scrollBehavior = 'auto';
             }
         },
-
-        // Add scroll animation to element
         addScrollAnimation(element, animationType = 'fadeIn', options = {}) {
             if (typeof element === 'string') {
                 element = document.querySelector(element);
@@ -738,11 +649,7 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
             if (options.repeat) {
                 element.dataset.scrollRepeat = 'true';
             }
-            
-            // Setup initial state
             this.resetScrollAnimation(element, animationType);
-            
-            // Create observer for this element
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -761,8 +668,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
             
             return true;
         },
-
-        // Get state
         getState() {
             return {
                 currentSection: ScrollState.currentSection,
@@ -779,8 +684,6 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
         /* ================================ */
         handleError(error) {
             window.PortfolioConfig.utils.log('error', 'Scroll module error', error);
-            
-            // Fallback: abilita scroll nativo del browser
             document.documentElement.style.scrollBehavior = 'smooth';
         },
 
@@ -788,31 +691,22 @@ Gestisce smooth scroll, scroll spy, progress bar e animazioni scroll-based
         /* CLEANUP                          */
         /* ================================ */
         cleanup() {
-            // Cancella animation frames
             if (ScrollState.scrollAnimationFrame) {
                 cancelAnimationFrame(ScrollState.scrollAnimationFrame);
             }
-            
-            // Cancella timeout
             if (ScrollState.scrollTimeout) {
                 clearTimeout(ScrollState.scrollTimeout);
             }
-            
-            // Disconnetti observers
             ScrollState.observers.forEach(observer => {
                 observer.disconnect();
             });
             ScrollState.observers = [];
-            
-            // Remove event listeners
             window.removeEventListener('scroll', this.handleScroll);
             window.removeEventListener('resize', this.handleResize);
             document.removeEventListener('keydown', this.handleKeyboard);
             window.removeEventListener('hashchange', this.handleHashChange);
             document.removeEventListener('visibilitychange', this.handleVisibilityChange);
             document.removeEventListener('portfolioResize', this.handlePortfolioResize);
-            
-            // Reset states
             ScrollState.isInitialized = false;
             ScrollState.currentSection = '';
             ScrollState.scrollPosition = 0;
