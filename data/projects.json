@@ -145,11 +145,11 @@
                          "links":  {
                                        "github":  "https://github.com/FabriceGhislain7/titanic-streamlit-dashboard",
                                        "documentation":  "#",
-                                       "live":  "https://titanic-app-dashboard-ogxxezhe82g8tggobo5l2n.streamlit.app/"
+                                       "live":  "https://titanic-streamlit-dashboard.onrender.com/"
                                    },
                          "date_created":  "2025-07-15",
-                         "date_updated":  "2025-07-30",
-                         "duration":  "2 weeks",
+                         "date_updated":  "2026-03-30",
+                         "duration":  "8 months",
                          "team_size":  1,
                          "role":  "Data Scientist / ML Engineer",
                          "challenges":  [
