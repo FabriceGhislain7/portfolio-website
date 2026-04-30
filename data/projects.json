@@ -5,7 +5,7 @@
                          "id":  "pizzamama-django",
                          "title":  "PizzaMama Django (API-First Backend)",
                          "description":  "API-first backend architecture for a restaurant and pizzeria platform built with Django and Django REST Framework. The project features a modular domain structure, versioned REST APIs, token-based authentication, OpenAPI documentation, and a fully modeled e-commerce order workflow.",
-                         "image":  "assets/images/projects/pizzamama-icone.jpg",
+                         "image":  "assets/images/projects/pizzamama-icone.png",
                          "category":  "web",
                          "status":  "in_progress",
                          "featured":  true,
