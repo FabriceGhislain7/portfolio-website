@@ -292,7 +292,7 @@
                          "id":  "gdr-web-app",
                          "title":  "GDR Web App – Fantasy Role Playing Game",
                          "description":  "Multiplayer fantasy role-playing game developed during the \u0027Python Programmer and Developer\u0027 training course. A complete web application that allows players to create characters, explore environments, fight enemies, and manage inventories in an immersive fantasy world.",
-                         "image":  "assets/images/projects/gdr_flask.jpg",
+                         "image":  "assets/images/projects/gdr_flask.png",
                          "category":  "web",
                          "status":  "ongoing",
                          "featured":  true,
