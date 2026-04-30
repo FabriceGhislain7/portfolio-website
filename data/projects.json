@@ -121,7 +121,7 @@
                          "id":  "titanic-ml-analysis",
                          "title":  "Titanic Survival Prediction – Machine Learning Analysis",
                          "description":  "Comprehensive machine learning analysis to predict Titanic passenger survival. It includes exploratory data analysis, advanced feature engineering, multiple ML algorithms, ensemble methods, and an interactive Streamlit dashboard.",
-                         "image":  "assets/images/projects/Titanic_DA_ML3.jpg",
+                         "image":  "assets/images/projects/Titanic_DA_ML3.png",
                          "category":  "data",
                          "status":  "ongoing",
                          "featured":  true,
