@@ -178,6 +178,116 @@
                          "priority":  5
                      },
                      {
+                         "_comment":  "AIR QUALITY SENSOR CALIBRATION DASHBOARD",
+                         "id":  "air-quality-sensor-calibration",
+                         "title":  "Air Quality Sensor Calibration Dashboard",
+                         "description":  "Scientific Streamlit dashboard for analysing the UCI Air Quality dataset and benchmarking regression models for sensor calibration. The project combines leakage-aware preprocessing, chronological evaluation, time-series cross-validation, interactive exploratory analysis, and technical documentation of scientific limitations such as missing values, sensor drift, and cross-sensitivity.",
+                         "image":  "assets/images/projects/air_quality_sensor.png",
+                         "category":  "data",
+                         "status":  "completed",
+                         "featured":  true,
+                         "technologies":  [
+                                              "Python",
+                                              "Streamlit",
+                                              "Pandas",
+                                              "NumPy",
+                                              "Scikit-learn",
+                                              "Plotly",
+                                              "OpenPyXL",
+                                              "Pytest",
+                                              "Sphinx",
+                                              "Furo",
+                                              "Git",
+                                              "GitHub",
+                                              "Render"
+                                          ],
+                         "features":  [
+                                          "Interactive Streamlit dashboard with selector-first project flow",
+                                          "UCI Air Quality dataset loading with semicolon separators and decimal-comma parsing",
+                                          "Missing-value handling for -200 sentinel values",
+                                          "Leakage-aware feature selection for sensor calibration",
+                                          "Chronological train/test split for temporally ordered observations",
+                                          "TimeSeriesSplit cross-validation on the training period",
+                                          "Regression benchmark with dummy baseline, Ridge, Random Forest, and Gradient Boosting models",
+                                          "Model evaluation with MAE, RMSE, and R2 metrics",
+                                          "Scientific notes documenting sensor drift, cross-sensitivity, and modelling limits",
+                                          "Sphinx-ready technical documentation and automated pytest coverage"
+                                      ],
+                         "links":  {
+                                       "github":  "https://github.com/FabriceGhislain7/ml-air-quality",
+                                       "live":  "https://ml-air-quality-dashboard.onrender.com",
+                                       "documentation":  "https://github.com/FabriceGhislain7/ml-air-quality/tree/main/docs"
+                                   },
+                         "date_created":  "2026-04-13",
+                         "date_updated":  "2026-04-21",
+                         "duration":  "1 week",
+                         "team_size":  1,
+                         "role":  "Data Scientist / ML Engineer",
+                         "challenges":  [
+                                            "Cleaning a real scientific dataset with mixed separators, decimal commas, and sentinel missing values",
+                                            "Avoiding target leakage from certified reference analyzer measurements",
+                                            "Evaluating models with chronological splits instead of random sampling",
+                                            "Presenting machine learning results while documenting scientific limitations clearly"
+                                        ],
+                         "learnings":  [
+                                           "Time-aware regression evaluation for sensor datasets",
+                                           "Leakage-aware feature engineering in applied machine learning",
+                                           "Building modular Streamlit applications backed by reusable Python modules",
+                                           "Documenting assumptions and limits in scientific portfolio projects",
+                                           "Test-driven validation of data loading, preprocessing, metadata, and modelling utilities"
+                                       ],
+                         "ml_workflow":  {
+                                             "target_variables":  [
+                                                                      "CO(GT)",
+                                                                      "C6H6(GT)",
+                                                                      "NOx(GT)",
+                                                                      "NO2(GT)"
+                                                                  ],
+                                             "model_families":  [
+                                                                    "DummyRegressor median baseline",
+                                                                    "Ridge regression",
+                                                                    "RandomForestRegressor",
+                                                                    "GradientBoostingRegressor"
+                                                                ],
+                                             "evaluation":  [
+                                                                "Chronological holdout split",
+                                                                "TimeSeriesSplit cross-validation",
+                                                                "MAE",
+                                                                "RMSE",
+                                                                "R2"
+                                                            ],
+                                             "feature_groups":  [
+                                                                    "Metal oxide sensor responses",
+                                                                    "Temperature",
+                                                                    "Relative humidity",
+                                                                    "Absolute humidity",
+                                                                    "Cyclic temporal features",
+                                                                    "Day-of-week feature"
+                                                                ]
+                                         },
+                         "technical_highlights":  [
+                                                      "Modular architecture separating Streamlit UI from analysis and model code",
+                                                      "Reusable data loader for AirQualityUCI CSV parsing and timestamp construction",
+                                                      "Median-imputation pipelines built with scikit-learn",
+                                                      "Automated tests covering data loading, preprocessing, metadata, correlations, and regression",
+                                                      "Render deployment configuration for a Streamlit web service",
+                                                      "English technical documentation plus Italian explanatory notebook"
+                                                  ],
+                         "tags":  [
+                                      "Machine Learning",
+                                      "Data Science",
+                                      "Regression",
+                                      "Sensor Calibration",
+                                      "Air Quality",
+                                      "Streamlit",
+                                      "Python",
+                                      "Scikit-learn",
+                                      "Time Series",
+                                      "Scientific Dashboard"
+                                  ],
+                         "priority":  4
+                     },
+                     {
                          "_comment":  "GDR WEB APP PROJECT – MULTIPLAYER FANTASY ROLE-PLAYING GAME",
                          "id":  "gdr-web-app",
                          "title":  "GDR Web App – Fantasy Role Playing Game",
@@ -609,7 +719,7 @@
                        {
                            "id":  "all",
                            "name":  "All",
-                           "count":  8,
+                           "count":  9,
                            "color":  "#6b7280"
                        },
                        {
@@ -627,7 +737,7 @@
                        {
                            "id":  "data",
                            "name":  "Data Analysis \u0026 ML",
-                           "count":  2,
+                           "count":  3,
                            "color":  "#f59e0b"
                        },
                        {
@@ -676,15 +786,18 @@
                          "IoT",
                          "Streamlit",
                          "Plotly",
-                         "Git"
+                         "Git",
+                         "Pandas",
+                         "NumPy",
+                         "Scikit-learn"
                      ],
     "meta":  {
-                 "last_updated":  "2026-02-25",
-                 "total_projects":  8,
-                 "completed_projects":  3,
+                 "last_updated":  "2026-04-30",
+                 "total_projects":  9,
+                 "completed_projects":  4,
                  "in_progress_projects":  2,
                  "ongoing_projects":  3,
-                 "total_technologies":  13,
-                 "version":  "1.1"
+                 "total_technologies":  16,
+                 "version":  "1.2"
              }
 }
